@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
-    <title>login | DMS Project</title>
+    <title>Change Password | DMS Project</title>
   </head>
   <body>
     <!-- Box Login-->
@@ -34,23 +34,23 @@
                   <div class="col-md-6 col-lg-6 d-flex align-items-center ms-4">
                     <div class="card-body text-black">
                       <form>
-                        <h1 class="fw-bold">LOGIN</h1>
+                        <h1 class="fw-bold">CHANGE PASSWORD</h1>
 
-                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Sign in Using Bridgestone Account</h5>
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Silahkan buat password baru!!</h5>
 
                         <div class="form-outline mb-4">
                           <p class="form-label fw-bold" for="form2Example17">Email</p>
-                          <input type="email" id="email" class="form-control form-control-lg shadow fs-6" placeholder="Masukan Email anda..." />
+                          <input type="password" id="newpassword" class="form-control form-control-lg shadow fs-6" placeholder="Masukan password baru anda!!" />
                         </div>
 
                         <div class="form-outline mb-4">
                           <p class="form-label fw-bold" for="form2Example27">Password</p>
-                          <input type="password" id="password" class="form-control form-control-lg shadow fs-6" placeholder="Masukan Password anda..." />
+                          <input type="password" id="password" class="form-control form-control-lg shadow fs-6" placeholder="Ketik ulang password baru anda!!" />
                         </div>
-                        <section class="loginbtn">
+                        <section class="changebtn">
                           <div class="d-grid gap-2 mb-4 rounded-top shadow">
                             <!-- Button trigger modal -->
-                            <button class="btn btn-danger mt-4 shadow btn-lg fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</button>
+                            <button class="btn btn-danger mt-4 shadow btn-lg fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">CHANGE</button>
                             <!-- <button class="btn btn-dark btn-lg btn-block bg-danger" type="button">Login</button> -->
 
                             <!-- Modal -->
@@ -64,11 +64,13 @@
                                   </div> -->
 
                                   <div class="modal-body text-center">
-                                    <strong style="color: red">Incorrect Password!</strong> <br />
-                                    Try another Password
+                                    <strong style="color: green">Password Updated!</strong> <br />
+                                    Login Using
+                                    <strong style="color: green">NEW</strong>
+                                    Password Nexttime!
                                   </div>
                                   <div class="text-center">
-                                    <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">OK</button>
+                                    <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">OK</button>
                                   </div>
                                   <div class="mb-3"></div>
                                 </div>

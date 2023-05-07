@@ -40,7 +40,7 @@
 
                         <div class="form-outline mb-4">
                           <p class="form-label fw-bold" for="form2Example17">Email</p>
-                          <input type="password" id="newpassword" class="form-control form-control-lg shadow fs-6" placeholder="Masukan email anda..." />
+                          <input type="email" id="email" class="form-control form-control-lg shadow fs-6" placeholder="Masukan email anda..." />
                         </div>
 
                         <div class="form-outline mb-4">
@@ -68,7 +68,9 @@
                                     ..............
                                   </div>
                                   <div class="text-center">
+                                  <a href="/home">
                                     <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">OK</button>
+                                  </a>
                                   </div>
                                   <div class="mb-3"></div>
                                 </div>

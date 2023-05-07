@@ -80,7 +80,7 @@
               <hr class="text-dark" />
               <hr />
               <li class="nav-item bg-light rounded">
-                <a href="#" class="nav-link text-danger" aria-current="page">
+                <a href="/" class="nav-link text-danger" aria-current="page">
                   <svg class="bi me-2" width="16" height="16"><use xlink:href="#home" /></svg>
                   Log Out
                 </a>

@@ -39,12 +39,12 @@
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Silahkan buat password baru!!</h5>
 
                         <div class="form-outline mb-4">
-                          <p class="form-label fw-bold" for="form2Example17">Email</p>
+                          <p class="form-label fw-bold" for="form2Example17">New Password</p>
                           <input type="password" id="newpassword" class="form-control form-control-lg shadow fs-6" placeholder="Masukan password baru anda!!" />
                         </div>
 
                         <div class="form-outline mb-4">
-                          <p class="form-label fw-bold" for="form2Example27">Password</p>
+                          <p class="form-label fw-bold" for="form2Example27">Confirm Password</p>
                           <input type="password" id="password" class="form-control form-control-lg shadow fs-6" placeholder="Ketik ulang password baru anda!!" />
                         </div>
                         <section class="changebtn">
@@ -70,7 +70,9 @@
                                     Password Nexttime!
                                   </div>
                                   <div class="text-center">
+                                    <a href="/relogin">
                                     <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">OK</button>
+                                    </a>
                                   </div>
                                   <div class="mb-3"></div>
                                 </div>

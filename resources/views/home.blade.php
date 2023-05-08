@@ -65,6 +65,13 @@
                   Tree Branch
                 </a>
               </li>
+              <li>
+                <a href="/masterlist" class="nav-link text-white">
+                  <i class="bi bi-list-stars"></i>
+                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
+                  Master List
+                </a>
+              </li>
               <hr class="text-dark" />
               <hr class="text-dark" />
               <hr class="text-dark" />
@@ -81,6 +88,7 @@
               <hr />
               <li class="nav-item bg-light rounded">
                 <a href="/" class="nav-link text-danger" aria-current="page">
+                  <i class="bi bi-box-arrow-left"></i>
                   <svg class="bi me-2" width="16" height="16"><use xlink:href="#home" /></svg>
                   Log Out
                 </a>

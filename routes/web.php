@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth.login');
 });
 
 Route::get('/home', function () {
@@ -22,9 +22,16 @@ Route::get('/home', function () {
 });
 
 Route::get('/relogin', function () {
-    return view('relogin');
+    return view('auth.relogin');
 });
 
 Route::get('/changepass', function () {
-    return view('changepass');
+    return view('auth.changepass');
+});
+
+// Embed PDF
+// Route::get('/masterlist','MasterListController@index');
+
+Route::get('/masterlist', function () {
+    return view('masterlist');
 });

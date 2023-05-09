@@ -41,14 +41,14 @@
         <!-- Sidebar -->
         <div class="col-sm-2 text-start bg-dark">
           <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            {{-- <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> --}}
               <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap" /></svg>
               <span class="fs-4">Sidebar</span> -->
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                 <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
               </form>
-            </a>
+            {{-- </a> --}}
             <hr />
             <ul class="nav nav-pills flex-column mb-auto">
               <li class="nav-item">

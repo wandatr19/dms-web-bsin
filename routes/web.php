@@ -35,3 +35,11 @@ Route::get('/changepass', function () {
 Route::get('/masterlist', function () {
     return view('masterlist');
 });
+
+Route::get('/treebranch', function () {
+    return view('treebranch');
+});
+
+Route::get('/mech', function () {
+    return view('mechanical.mech');
+});

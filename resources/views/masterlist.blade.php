@@ -12,7 +12,7 @@
               <hr class="ms-0" />
             </div>
             <div id="pdf-container">
-                <embed type="application/pdf" src="img/dokumen.pdf" width="1300" height="600"></embed>
+                <embed type="application/pdf" src="img/masterlist.pdf" width="1300" height="600"></embed>
             </div>
           </div>
         </div>

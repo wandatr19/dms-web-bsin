@@ -24,7 +24,7 @@
       <hr class="ms-0" />
 
       <div class="col">
-        <a href="/mech">
+        <a href="/home/mech">
         <button type="button" class="btn btn-primary btn-light">
           <div class="card shadow-sm" style="width: 8rem">
             <div class="card-body text-center">
@@ -37,6 +37,7 @@
       </div>
 
       <div class="col">
+        <a href="/home/electrical">
         <button type="button" class="btn btn-primary btn-light">
           <div class="card shadow-sm" style="width: 8rem">
             <div class="card-body text-center">
@@ -45,6 +46,7 @@
             </div>
           </div>
         </button>
+        </a>
       </div>
 
       <div class="col">
@@ -81,6 +83,7 @@
       </div>
 
       <div class="col">
+        <a href="/treebranch">
         <button type="button" class="btn btn-primary btn-light">
           <div class="card shadow-sm" style="width: 8rem">
             <div class="card-body text-center">
@@ -89,9 +92,11 @@
             </div>
           </div>
         </button>
+        </a>
       </div>
 
       <div class="col">
+        <a href="/treebranch">
         <button type="button" class="btn btn-primary btn-light">
           <div class="card shadow-sm" style="width: 8rem">
             <div class="card-body text-center">
@@ -100,6 +105,7 @@
             </div>
           </div>
         </button>
+        </a>
       </div>
     </div>
 

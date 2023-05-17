@@ -30,4 +30,13 @@ class HomeController extends Controller
     public function elect(){
         return view('electrical.electrical');
     }
+    public function util(){
+        return view('utility.utility');
+    }
+    public function others(){
+        return view('others.others');
+    }
+    public function civil(){
+        return view('civil.civil');
+    }
 }

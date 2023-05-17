@@ -27,11 +27,15 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/treebranch', 'App\Http\Controllers\HomeController@treebr')->name('treebr');
     Route::get('/home/mechanical', 'App\Http\Controllers\HomeController@mech')->name('mech');
     Route::get('/home/electrical', 'App\Http\Controllers\HomeController@elect')->name('elect');
+    Route::get('/home/civil', 'App\Http\Controllers\HomeController@civil')->name('civil');
+    Route::get('/home/utility', 'App\Http\Controllers\HomeController@util')->name('util');
+    Route::get('/home/others', 'App\Http\Controllers\HomeController@others')->name('others');
+
 });
 
 Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin']], function() {
     Route::get('/adduser', 'App\Http\Controllers\HomeController@adduser')->name('adduser');
-    Route::get('/listuser', 'App\Http\Controllers\HomeController@listuser')->name('listuser');
+    Route::get('/listuser', 'App\Http\Controllers\UserController@index')->name('listuser');
     Route::get('/history', 'App\Http\Controllers\HomeController@history')->name('history');
 });
 

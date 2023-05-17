@@ -30,31 +30,27 @@
             </caption>
             <thead>
               <tr>
-                <th scope="col">No.</th>
                 <th scope="col">Name</th>
                 <th scope="col">Department</th>
                 <th scope="col">Role</th>
-                <th scope="col">Date Added</th>
+                <th scope="col">Email</th>
+                <th scope="col">Created at</th>
+                {{-- <th scope="col">Password</th> --}}
                 <th scope="col">---</th>
               </tr>
             </thead>
             <tbody>
+            @foreach ($users as $user)
               <tr>
-                <th scope="row">1</th>
-                <td>Uzumaki Rendra</td>
-                <td>ENGINEERING</td>
-                <td>Admin</td> 
-                <td>05/01/2023</td>
+                <td>{{ $user -> name}}</td>
+                <td>{{ $user -> department}}</td>
+                <td>{{ $user -> role}}</td> 
+                <td>{{ $user -> email}}</td>
+                <td>{{ $user -> created_at}}</td>
+                {{-- <td>{{ $user -> password}}</td> --}}
                 <td><button type="button" class="btn btn-link">Edit</button></td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Wanda Cargloss</td>
-                <td>ELECTRICAL</td>
-                <td>User</td>
-                <td>05/01/2023</td>
-                <td><button type="button" class="btn btn-link">Edit</button></td>
-              </tr>
+            @endforeach
             </tbody>
           </table>
         </div>

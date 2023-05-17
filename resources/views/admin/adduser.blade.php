@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <form>
+      <form method="POST" action="">
         <!-- Baris 2 : User Info & User Access -->
         <div class="row my-3 ms-4 fs-5">
           <!--  User Info -->
@@ -42,11 +42,15 @@
                   </div>
                   <div class="mb-3 fs-6">
                     <label for="disabledTextInput" class="form-label">Role :</label>
-                    <input type="text" id="disabledTextInput" class="form-control form-control-sm" placeholder="Isi user role ..." />
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Select role</option>
+                      <option value="admin">admin</option>
+                      <option value="user">user</option>
+                    </select>
                   </div>
                   <div class="mb-3 fs-6">
-                    <label for="disabledTextInput" class="form-label">Initial Password :</label>
-                    <input type="text" id="disabledTextInput" class="form-control form-control-sm" placeholder=" isi 1-6" />
+                    <label for="disabledTextInput" class="form-label">Enter Password :</label>
+                    <input type="password" id="disabledTextInput" class="form-control form-control-sm" placeholder="Enter Password" />
                   </div>
                   <div class="mb-3 fs-6">
                     <label for="exampleFormControlInput1" class="form-label">Email :</label>
@@ -59,7 +63,7 @@
           <!-- Akhir  User Info -->
 
           <!-- User Access -->
-          <div class="col-sm-6">
+          {{-- <div class="col-sm-6">
             <div class="container-fluid">
               <div class="row my-3 ms-4">
                 <h4 class="fw-bold fs-3">User Access</h4>
@@ -276,7 +280,7 @@
                 <!-- Akhir scroll -->
               </div>
             </div>
-          </div>
+          </div> --}}
           <!-- Akhir User Access -->
         </div>
 

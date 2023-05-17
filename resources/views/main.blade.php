@@ -18,7 +18,40 @@
 
     <!-- Link Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
-
+    <style>
+      ul,
+      #myUL {
+        list-style-type: none;
+      }
+      #myUL {
+        margin: 0;
+        padding: 0;
+      }
+      .caret {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .caret::before {
+        content: '\25B6';
+        color: black;
+        display: inline-block;
+        margin-right: 6px;
+      }
+      .caret-down::before {
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      .nested {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+    </style>
     <title>DMS | Eng Design</title>
   </head>
   <body>

@@ -3,6 +3,7 @@
 @section('utama')
 <div class="container">
     <!-- baris 1 -->
+    @if (auth()->user()->role == "user")
     <div class="row my-3 ms-4">
       <h4><i class="bi bi-star-fill text-warning me-2"></i>Favourites</h4>
       <hr class="ms-0" />
@@ -18,13 +19,15 @@
         </button>
       </div>
     </div>
+    @endif
+
     <!-- baris 2 -->
     <div class="row my-3 ms-4">
       <h4><i class="bi bi-folder-fill me-2 text-primary"></i>Documents</h4>
       <hr class="ms-0" />
 
       <div class="col">
-        <a href="/home/mech">
+        <a href="{{route('mech')}}">
         <button type="button" class="btn btn-primary btn-light">
           <div class="card shadow-sm" style="width: 8rem">
             <div class="card-body text-center">
@@ -82,6 +85,7 @@
         </button>
       </div>
 
+      @if (auth()->user()->role == "admin")
       <div class="col">
         <a href="/treebranch">
         <button type="button" class="btn btn-primary btn-light">
@@ -266,6 +270,7 @@
           </div>
         </button>
       </div>
+      @endif
     </div>
   </div>
 @endsection

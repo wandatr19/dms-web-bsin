@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
-    <title>login | DMS Project</title>
+    <title>Login | DMS Project</title>
   </head>
   <body>
     <!-- Box Login-->
@@ -33,27 +33,28 @@
                   </div>
                   <div class="col-md-6 col-lg-6 d-flex align-items-center ms-4">
                     <div class="card-body text-black">
-                      <form>
+                      <form action="{{'postlogin'}}" method="post">
+                        {{ csrf_field() }}
                         <h1 class="fw-bold">LOGIN</h1>
 
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Sign in Using Bridgestone Account</h5>
 
                         <div class="form-outline mb-4">
                           <p class="form-label fw-bold" for="form2Example17">Email</p>
-                          <input type="email" id="email" class="form-control form-control-lg shadow fs-6" placeholder="Masukan Email anda..." />
+                          <input type="email" id="email" class="form-control form-control-lg shadow fs-6" name="email" placeholder="Masukan Email anda..." >
                         </div>
 
                         <div class="form-outline mb-4">
                           <p class="form-label fw-bold" for="form2Example27">Password</p>
-                          <input type="password" id="password" class="form-control form-control-lg shadow fs-6" placeholder="Masukan Password anda..." />
+                          <input type="password" id="password" class="form-control form-control-lg shadow fs-6" name="password" placeholder="Masukan Password anda..." >
                         </div>
                         <section class="loginbtn">
                           <div class="d-grid gap-2 mb-4 rounded-top shadow">
                             <!-- Button trigger modal -->
-                            <button class="btn btn-danger mt-4 shadow btn-lg fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</button>
+                            <button type="submit" class="btn btn-danger btn-block">LOGIN</button>
                             <!-- <button class="btn btn-dark btn-lg btn-block bg-danger" type="button">Login</button> -->
 
-                            <!-- Modal -->
+                            {{-- <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -73,7 +74,7 @@
                                   <div class="mb-3"></div>
                                 </div>
                               </div>
-                            </div>
+                            </div> --}}
                           </div>
                         </section>
                       </form>

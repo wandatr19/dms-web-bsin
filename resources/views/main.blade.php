@@ -19,7 +19,7 @@
     <!-- Link Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
 
-    <title>Home | Eng Design</title>
+    <title>DMS | Eng Design</title>
   </head>
   <body>
     <div class="container-fluid">

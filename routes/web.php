@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/masterlist', 'App\Http\Controllers\HomeController@masterlist')->name('masterlist');
     Route::get('/treebranch', 'App\Http\Controllers\HomeController@treebr')->name('treebr');
     Route::get('/home/mechanical', 'App\Http\Controllers\HomeController@mech')->name('mech');
-
+    Route::get('/home/electrical', 'App\Http\Controllers\HomeController@elect')->name('elect');
 });
 
 Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin']], function() {

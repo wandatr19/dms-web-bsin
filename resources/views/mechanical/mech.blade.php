@@ -21,6 +21,7 @@
       <div class="row my-3 ms-4 fs-5 row-cols-auto">
         <!-- Card BANBURY -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -31,10 +32,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card BANBURY -->
         <!-- Card STRAINER -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -45,10 +48,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card STRAINER -->
         <!-- Card UTILITY -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -59,10 +64,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card UTILITY -->
         <!-- Card POLYFILM -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -73,10 +80,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card POLYFILM -->
         <!-- Card CALENDER -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -87,10 +96,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card CALENDER -->
         <!-- Card BEXTER -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -101,10 +112,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card BEXTER -->
         <!-- Card QCT -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -115,10 +128,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card QCT -->
         <!-- Card 1/N DCT -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -129,10 +144,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card 1/N DCT -->
         <!-- Card 8CT -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -143,10 +160,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card 8CT -->
         <!-- Card BEAD -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -157,10 +176,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card BEAD -->
         <!-- Card MONOWIRE -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -171,10 +192,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card MONOWIRE -->
         <!-- Card RTB -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -185,10 +208,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card RTB -->
         <!-- Card PLY CUTTING NO.1 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -199,10 +224,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card PLY CUTTING NO.1 -->
         <!-- Card PLY CUTTING NO.2 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -213,10 +240,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card PLY CUTTING NO.2 -->
         <!-- Card SR BELT 1 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -227,10 +256,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card SR BELT 1 -->
         <!-- Card SR BELT 2 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -241,10 +272,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card SR BELT 2 -->
         <!-- Card PSP -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -255,10 +288,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card PSP -->
         <!-- Card IL 2RH -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -269,10 +304,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card IL 2RH -->
         <!-- Card KBN2 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -283,10 +320,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card KBN2 -->
         <!-- Card K1-S -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -297,10 +336,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card K1-S -->
         <!-- Card HF-1 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -311,10 +352,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card HF-1 -->
         <!-- Card CURE -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -325,10 +368,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card CURE -->
         <!-- Card APDD-1 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -339,10 +384,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card APDD-1 -->
         <!-- Card INNER APDD-1 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -353,10 +400,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card INNER APDD-1 -->
         <!-- Card WHITE BUFF-2 -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -367,10 +416,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card WHITE BUFF-2 -->
         <!-- Card RIM FLOW -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -381,10 +432,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card RIM FLOW -->
         <!-- Card UNIFORMITY -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -395,10 +448,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card UNIFORMITY-->
         <!-- Card HP LRP -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -409,10 +464,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card HP LRP -->
         <!-- Card LW BUFF -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -423,10 +480,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card LW BUFF -->
         <!-- Card REWORK -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -437,10 +496,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card REWORK -->
         <!-- Card TIRE REPAIR -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -451,10 +512,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card TIRE REPAIR -->
         <!-- Card FURNITURE -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -465,10 +528,12 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card FURNITURE -->
         <!-- Card CEMENT HOUSE -->
         <div class="col">
+        <a href="">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -479,6 +544,7 @@
               </div>
             </div>
           </button>
+        </a>
         </div>
         <!-- Akhir Card CEMENT HOUSE -->
       </div>

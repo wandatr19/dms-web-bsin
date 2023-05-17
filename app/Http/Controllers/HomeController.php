@@ -27,6 +27,7 @@ class HomeController extends Controller
     public function mech(){
         return view('mechanical.mech');
     }
-
-
+    public function elect(){
+        return view('electrical.electrical');
+    }
 }

@@ -40,7 +40,7 @@
       </div>
 
       <div class="col">
-        <a href="/home/electrical">
+        <a href="{{route('elect')}}">
         <button type="button" class="btn btn-primary btn-light">
           <div class="card shadow-sm" style="width: 8rem">
             <div class="card-body text-center">

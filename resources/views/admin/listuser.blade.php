@@ -30,11 +30,12 @@
             </caption>
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">No.</th>
                 <th scope="col">Name</th>
                 <th scope="col">Department</th>
+                <th scope="col">Role</th>
                 <th scope="col">Date Added</th>
-                <th scope="col">...</th>
+                <th scope="col">---</th>
               </tr>
             </thead>
             <tbody>
@@ -42,6 +43,7 @@
                 <th scope="row">1</th>
                 <td>Uzumaki Rendra</td>
                 <td>ENGINEERING</td>
+                <td>Admin</td> 
                 <td>05/01/2023</td>
                 <td><button type="button" class="btn btn-link">Edit</button></td>
               </tr>
@@ -49,6 +51,7 @@
                 <th scope="row">2</th>
                 <td>Wanda Cargloss</td>
                 <td>ELECTRICAL</td>
+                <td>User</td>
                 <td>05/01/2023</td>
                 <td><button type="button" class="btn btn-link">Edit</button></td>
               </tr>

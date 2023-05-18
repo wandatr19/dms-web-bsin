@@ -39,4 +39,27 @@ class HomeController extends Controller
     public function civil(){
         return view('civil.civil');
     }
+
+    // layer2 mechanical
+    public function banbury(){
+        return view('mechanical.layer2.banbury');
+    }
+    public function strainer(){
+        return view('mechanical.layer2.strainer');
+    }
+    public function utility(){
+        return view('mechanical.layer2.utility');
+    }
+    public function polyfilm(){
+        return view('mechanical.layer2.polyfilm');
+    }
+    public function calender(){
+        return view('mechanical.layer2.calender');
+    }
+    public function bexter(){
+        return view('mechanical.layer2.bexter');
+    }
+    public function qct(){
+        return view('mechanical.layer2.qct');
+    }
 }

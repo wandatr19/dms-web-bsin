@@ -137,28 +137,28 @@
               <hr />
               <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item btn-outline-secondary rounded">
-                  <a href="#" class="nav-link text-white" aria-current="page">
+                  <a href="{{route('home')}}" class="nav-link text-white" aria-current="page">
                     <i class="bi bi-house-door fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#home" /></svg>
                     Home
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">
-                  <a href="#" class="nav-link text-white">
+                  <a href="{{route('treebr')}}" class="nav-link text-white">
                     <i class="bi bi-signpost-split fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Tree Branch
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">
-                  <a href="#" class="nav-link text-white">
+                  <a href="{{route('masterlist')}}" class="nav-link text-white">
                     <i class="bi bi-easel3-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Masterlist Drg.
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">
-                  <a href="#" class="nav-link text-white">
+                  <a href="{{route('adduser')}}" class="nav-link text-white">
                     <i class="bi bi-person-fill-add fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Add User
@@ -172,14 +172,14 @@
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">
-                  <a href="#" class="nav-link text-white">
+                  <a href="{{route('listuser')}}" class="nav-link text-white">
                     <i class="bi bi-person-lines-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     List User
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">
-                  <a href="#" class="nav-link text-white">
+                  <a href="{{route('history')}}" class="nav-link text-white">
                     <i class="bi bi-clock-history fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     History

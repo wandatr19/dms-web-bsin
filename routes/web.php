@@ -31,6 +31,13 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/utility', 'App\Http\Controllers\HomeController@util')->name('util');
     Route::get('/home/others', 'App\Http\Controllers\HomeController@others')->name('others');
 
+    Route::get('/home/mechanical/banbury', 'App\Http\Controllers\HomeController@banbury')->name('banbury');
+    Route::get('/home/mechanical/strainer', 'App\Http\Controllers\HomeController@strainer')->name('strainer');
+    Route::get('/home/mechanical/utility', 'App\Http\Controllers\HomeController@utility')->name('utility');
+    Route::get('/home/mechanical/polyfilm', 'App\Http\Controllers\HomeController@polyfilm')->name('polyfilm');
+    Route::get('/home/mechanical/calender', 'App\Http\Controllers\HomeController@calender')->name('calender');
+    Route::get('/home/mechanical/bexter', 'App\Http\Controllers\HomeController@bexter')->name('bexter');
+    Route::get('/home/mechanical/qct', 'App\Http\Controllers\HomeController@qct')->name('qct');
 });
 
 Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin']], function() {

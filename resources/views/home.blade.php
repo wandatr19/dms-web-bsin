@@ -448,23 +448,125 @@
         </div>
         <!-- Akhir Card AREA 24 -->
 
-        <!-- Card AREA 25 -->
+        <!-- Card AREA 26 -->
         <div class="col">
           <a href="">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
                   <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  <span class="tt" data-bs-placement="top" title="AREA 25">
-                    <p class="card-text word-wrap text-truncate">AREA 25</p>
+                  <span class="tt" data-bs-placement="top" title="AREA 26">
+                    <p class="card-text word-wrap text-truncate">AREA 26</p>
                   </span>
                 </div>
               </div>
             </button>
           </a>
         </div>
+        <!-- Akhir Card AREA 26 -->
+
+        <!-- Card AREA 27 -->
+        <div class="col">
+          <a href="">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  <span class="tt" data-bs-placement="top" title="AREA 27">
+                    <p class="card-text word-wrap text-truncate">AREA 27</p>
+                  </span>
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card AREA 27 -->
+
+        <!-- Card AREA 28 -->
+        <div class="col">
+          <a href="">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  <span class="tt" data-bs-placement="top" title="AREA 28">
+                    <p class="card-text word-wrap text-truncate">AREA 28</p>
+                  </span>
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card AREA 28 -->
+
+        <!-- Card AREA 29 -->
+        <div class="col">
+          <a href="">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  <span class="tt" data-bs-placement="top" title="AREA 29">
+                    <p class="card-text word-wrap text-truncate">AREA 29</p>
+                  </span>
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card AREA 29 -->
+
+        <!-- Card AREA 30 -->
+        <div class="col">
+          <a href="">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  <span class="tt" data-bs-placement="top" title="AREA 30">
+                    <p class="card-text word-wrap text-truncate">AREA 30</p>
+                  </span>
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card AREA 30 -->
+
+        <!-- Card AREA 31 -->
+        <div class="col">
+          <a href="">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  <span class="tt" data-bs-placement="top" title="AREA 31">
+                    <p class="card-text word-wrap text-truncate">AREA 31</p>
+                  </span>
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card AREA 31 -->
+
+        <!-- Card AREA 32 -->
+        <div class="col">
+          <a href="">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  <span class="tt" data-bs-placement="top" title="AREA 32">
+                    <p class="card-text word-wrap text-truncate">AREA 32</p>
+                  </span>
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card AREA 32 -->
         @endif
-        <!-- Akhir Card AREA 25 -->
       </div>
     </div>
   </div>

@@ -21,7 +21,7 @@
       <div class="row my-3 ms-4 fs-5 row-cols-auto">
         <!-- Card BANBURY -->
         <div class="col">
-        <a href="">
+        <a href="{{route('banbury')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -37,7 +37,7 @@
         <!-- Akhir Card BANBURY -->
         <!-- Card STRAINER -->
         <div class="col">
-        <a href="">
+        <a href="{{route('strainer')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -53,7 +53,7 @@
         <!-- Akhir Card STRAINER -->
         <!-- Card UTILITY -->
         <div class="col">
-        <a href="">
+        <a href="{{route('utility')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -69,7 +69,7 @@
         <!-- Akhir Card UTILITY -->
         <!-- Card POLYFILM -->
         <div class="col">
-        <a href="">
+        <a href="{{route('polyfilm')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -85,7 +85,7 @@
         <!-- Akhir Card POLYFILM -->
         <!-- Card CALENDER -->
         <div class="col">
-        <a href="">
+        <a href="{{route('calender')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -101,7 +101,7 @@
         <!-- Akhir Card CALENDER -->
         <!-- Card BEXTER -->
         <div class="col">
-        <a href="">
+        <a href="{{route('bexter')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -117,7 +117,7 @@
         <!-- Akhir Card BEXTER -->
         <!-- Card QCT -->
         <div class="col">
-        <a href="">
+        <a href="{{route('qct')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">

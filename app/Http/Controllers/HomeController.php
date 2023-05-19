@@ -15,9 +15,9 @@ class HomeController extends Controller
     public function masterlist(){
         return view('masterlist');
     }
-    public function adduser(){
-        return view('admin.adduser');
-    }
+    // public function adduser(){
+    //     return view('admin.adduser');
+    // }
     public function listuser(){
         return view('admin.listuser');
     }

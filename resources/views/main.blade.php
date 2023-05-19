@@ -62,25 +62,17 @@
           <nav class="navbar navbar-light bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
-                <img src="img/bs-putih.png" alt="" height="24" />
+                <img src="/img/bs-putih.png" alt="" height="24" />
               </a>
             </div>
           </nav>
         </div>
 
         <div class="col-auto bg-dark mt-3 text-end">
-          <a href="#" class="d-flex align-items-center text-white text-decoration-none fs-6" id="UserInfo" data-bs-toggle="UserInfo" aria-expanded="false">
+          <p class="d-flex align-items-center text-white text-decoration-none fs-6" id="UserInfo" data-bs-toggle="UserInfo" aria-expanded="false"">
             <i class="bi bi-person-circle mx-2 fs-5"></i>
             {{auth()->user()->name}}
-          </a>
-          <!-- <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-              <p class="text-center">Email:</p>
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Log out</a></li>
-            </ul> -->
+          </p>
         </div>
 
         <!-- Garis Merah -->

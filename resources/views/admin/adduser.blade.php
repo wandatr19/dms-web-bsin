@@ -19,7 +19,13 @@
         </div>
       </div>
 
-      <form method="POST" action="">
+      <form method="POST" action="{{route('save-adduser')}}">
+        {{ csrf_field() }}
+        @if(session('success'))
+          <div class="alert alert-success">
+            {{ session('success') }}
+          </div>
+        @endif
         <!-- Baris 2 : User Info & User Access -->
         <div class="row my-3 ms-4 fs-5">
           <!--  User Info -->
@@ -33,28 +39,28 @@
 
                 <fieldset>
                   <div class="mb-3 fs-6">
-                    <label for="disabledTextInput" class="form-label">Name :</label>
-                    <input type="text" id="disabledTextInput" class="form-control form-control-sm" placeholder="Nama User..." />
+                    <label for="name" class="form-label">Name :</label>
+                    <input type="text" name="name" id="name" class="form-control form-control-sm" placeholder="Nama User..." />
                   </div>
                   <div class="mb-3 fs-6">
-                    <label for="disabledTextInput" class="form-label">Department :</label>
-                    <input type="text" id="disabledTextInput" class="form-control form-control-sm" placeholder="Department User..." />
+                    <label for="department" class="form-label">Department :</label>
+                    <input type="text" id="department" name="department" class="form-control form-control-sm" placeholder="Department User..." />
                   </div>
                   <div class="mb-3 fs-6">
-                    <label for="disabledTextInput" class="form-label">Role :</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <label for="role" class="form-label">Role :</label>
+                    <select class="form-select" name="role" id="role" aria-label="Default select example">
                       <option selected>Select role</option>
                       <option value="admin">admin</option>
                       <option value="user">user</option>
                     </select>
                   </div>
                   <div class="mb-3 fs-6">
-                    <label for="disabledTextInput" class="form-label">Enter Password :</label>
-                    <input type="password" id="disabledTextInput" class="form-control form-control-sm" placeholder="Enter Password" />
+                    <label for="password" class="form-label">Enter Password :</label>
+                    <input type="password" id="password" name="password" class="form-control form-control-sm" placeholder="Enter Password" />
                   </div>
                   <div class="mb-3 fs-6">
-                    <label for="exampleFormControlInput1" class="form-label">Email :</label>
-                    <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="name@example.com" />
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="email" class="form-control form-control-sm" name="email" id="email" placeholder="name@example.com" />
                   </div>
                 </fieldset>
               </div>
@@ -63,7 +69,7 @@
           <!-- Akhir  User Info -->
 
           <!-- User Access -->
-          {{-- <div class="col-sm-6">
+          <div class="col-sm-6">
             <div class="container-fluid">
               <div class="row my-3 ms-4">
                 <h4 class="fw-bold fs-3">User Access</h4>
@@ -280,17 +286,19 @@
                 <!-- Akhir scroll -->
               </div>
             </div>
-          </div> --}}
+          </div>
           <!-- Akhir User Access -->
         </div>
 
         <!-- Baris 3 : Button Add User -->
         <div class="row text-center">
           <div class="col">
-            <button type="button" class="btn btn-success shadow px-5" style="border-radius: 20px">Add User</button>
+            <button type="submit" class="btn btn-success shadow px-5" style="border-radius: 20px">Add User</button>
           </div>
         </div>
       </form>
+      
+
     </div>
     <!-- Akhir Isi Konten Kanan -->
   </div>

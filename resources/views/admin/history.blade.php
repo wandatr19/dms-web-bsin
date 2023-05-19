@@ -97,6 +97,7 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
+                <th scope="col">File Name</th>
                 <th scope="col">Name</th>
                 <th scope="col">Department</th>
                 <th scope="col">Print Date</th>
@@ -107,6 +108,7 @@
             <tbody>
               <tr>
                 <th scope="row">1</th>
+                <td>Banbury 1 Manual</td>
                 <td>Uzumaki Rendra</td>
                 <td>ENGINEERING</td>
                 <td>05/01/2023</td>
@@ -119,6 +121,7 @@
               </tr>
               <tr>
                 <th scope="row">2</th>
+                <td>Banbury 3 Drawing</td>
                 <td>Arya Uchiha</td>
                 <td>MECHANICAL</td>
                 <td>05/01/2023</td>

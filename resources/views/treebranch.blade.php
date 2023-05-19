@@ -95,7 +95,7 @@
           <a href="#" class="d-flex align-items-center text-white text-decoration-none fs-6" id="UserInfo" data-bs-toggle="UserInfo" aria-expanded="false">
             <!-- <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2" /> -->
             <i class="bi bi-person-circle mx-2 fs-5"></i>
-            Reyhan Arya Hermawan
+            {{auth()->user()->name}}
           </a>
           <!-- <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
               <p class="text-center">Email:</p>
@@ -157,6 +157,7 @@
                     Masterlist Drg.
                   </a>
                 </li>
+                @if (auth()->user()->role == "admin")
                 <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('adduser')}}" class="nav-link text-white">
                     <i class="bi bi-person-fill-add fs-5"></i>
@@ -185,6 +186,7 @@
                     History
                   </a>
                 </li>
+                @endif
                 <!-- <hr class="text-dark" />
                 <hr class="text-dark" />
                 <hr class="text-dark" />
@@ -243,7 +245,7 @@
             <section class="container-fluid">
               <div class="row content d-flex">
                 <div class="col-lg-5 py-4">
-                  <div class="box shadow-sm bg-light p-4 rounded-3 border border-dark border-5">
+                  <div class="p-4 rounded-3">
                     <ul id="myUL">
                       <!-- MECHANICAL -->
                       <li>

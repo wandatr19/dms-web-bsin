@@ -40,10 +40,14 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/qct', 'App\Http\Controllers\HomeController@qct')->name('qct');
 });
 
-Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin']], function() {
-    Route::get('/adduser', 'App\Http\Controllers\HomeController@adduser')->name('adduser');
+Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], function () {
     Route::get('/listuser', 'App\Http\Controllers\UserController@index')->name('listuser');
     Route::get('/history', 'App\Http\Controllers\HomeController@history')->name('history');
+
+    Route::get('/adduser', 'App\Http\Controllers\UserController@create')->name('adduser');
+    Route::post('/save-adduser', 'App\Http\Controllers\UserController@store')->name('save-adduser');
+    Route::get('/deleteUser/{id}', 'App\Http\Controllers\UserController@deleteUser')->name('deleteUser');
+
 });
 
 

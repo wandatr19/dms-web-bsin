@@ -37,7 +37,6 @@
 
                         <thead>
                             <tr>
-                                <th scope="col">Id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Department</th>
                                 <th scope="col">Role</th>
@@ -51,7 +50,6 @@
                         <tbody>
                             @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->department }}</td>
                                     <td>{{ $user->role }}</td>

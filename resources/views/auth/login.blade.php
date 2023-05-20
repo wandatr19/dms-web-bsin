@@ -31,8 +31,7 @@
         id="app-dark-stylesheet" />
 
     <!-- icons -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-
+    <link rel="icon" href="img/bs-logo-white.png">
     <title>Login | DMS Project</title>
 </head>
 

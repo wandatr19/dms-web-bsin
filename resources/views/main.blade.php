@@ -52,7 +52,7 @@
         display: block;
       }
     </style>
-    <link rel="icon" href="img/bs-logo-white.png">
+    <link rel="icon" href="/img/bs-logo-white.png">
     <title>DMS | Eng Design</title>
   </head>
   <body>

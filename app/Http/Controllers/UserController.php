@@ -10,12 +10,11 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    protected $data;
-    public function __construct()
-    {
-        $this->data = new User();
-    }
-    //
+    // protected $data;
+    // public function __construct()
+    // {
+    //     $this->data = new User();
+    // }
     public function create()
     {
         return view('admin.adduser');
@@ -31,23 +30,27 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'role' => 'required',
-            // 'user_access' => 'required',
+            // 'user_access' => 'required|array',
             'password' => 'required',
             'department' => 'required',
 
         ]);
-        // $user_access = implode(',', $request->input('user_access'));
 
-        $this->data->name = $validatedData['name'];
-        $this->data->email = $validatedData['email'];
-        $this->data->role = $validatedData['role'];
-        $this->data->department = $validatedData['department'];
-        $this->data->password = bcrypt($validatedData['password']);
+        $data = new User();
+        $data->name = $validatedData['name'];
+        $data->email = $validatedData['email'];
+        $data->role = $validatedData['role'];
+        // $data->user_access  = implode(',', $validatedData['user_access'] ?? []);
+        $data->department = $validatedData['department'];
+        $data->password = Hash::make($validatedData['password']);
+        $data->remember_token = Str::random(60);
+        $data->save();
 
-        $this->data->setRememberToken(Str::random(60));
-        // $this->data->user_acess = $request->input('user_access');
-        $this->data->save();
+        // foreach ($validatedData['user_access'] as $value) {
+        //     $data->userAccess()->create(['value' => $value]);
+        // }
 
+        
         return redirect()->route('adduser')->with('success', 'Pengguna Berhasil Ditambahkan!');
     }
 

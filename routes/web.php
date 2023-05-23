@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,14 +22,13 @@ Route::get('/logout', 'App\Http\Controllers\LoginController@logout')->name('logo
 
 Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']], function() {
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-    Route::get('/masterlist', 'App\Http\Controllers\HomeController@masterlist')->name('masterlist');
     Route::get('/treebranch', 'App\Http\Controllers\HomeController@treebr')->name('treebr');
     Route::get('/home/mechanical', 'App\Http\Controllers\HomeController@mech')->name('mech');
     Route::get('/home/electrical', 'App\Http\Controllers\HomeController@elect')->name('elect');
     Route::get('/home/civil', 'App\Http\Controllers\HomeController@civil')->name('civil');
     Route::get('/home/utility', 'App\Http\Controllers\HomeController@util')->name('util');
     Route::get('/home/others', 'App\Http\Controllers\HomeController@others')->name('others');
-
+    //Mechanical
     Route::get('/home/mechanical/banbury', 'App\Http\Controllers\HomeController@banbury')->name('banbury');
     Route::get('/home/mechanical/strainer', 'App\Http\Controllers\HomeController@strainer')->name('strainer');
     Route::get('/home/mechanical/utility', 'App\Http\Controllers\HomeController@utility')->name('utility');
@@ -38,6 +36,13 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/calender', 'App\Http\Controllers\HomeController@calender')->name('calender');
     Route::get('/home/mechanical/bexter', 'App\Http\Controllers\HomeController@bexter')->name('bexter');
     Route::get('/home/mechanical/qct', 'App\Http\Controllers\HomeController@qct')->name('qct');
+    //Electrical
+    //Masterlist
+    Route::get('/masterlist', 'App\Http\Controllers\MasterListController@mstrlist')->name('masterlist');
+    Route::post('/add-masterlist', 'App\Http\Controllers\MasterListController@upload')->name('upload-mstr');
+
+
+
 });
 
 Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], function () {

@@ -62,4 +62,84 @@ class HomeController extends Controller
     public function qct(){
         return view('mechanical.layer2.qct');
     }
+    public function ndct()
+    {
+        return view('mechanical.layer2.1n-dct');
+    }
+    public function dlpn_ct()
+    {
+        return view('mechanical.layer2.8ct');
+    }
+    public function bead()
+    {
+        return view('mechanical.layer2.bead');
+    }
+    public function monowire()
+    {
+        return view('mechanical.layer2.monowire');
+    }
+    public function rtb()
+    {
+        return view('mechanical.layer2.rtb');
+    }
+    public function plycut1()
+    {
+        return view('mechanical.layer2.plycutting1');
+    }
+    public function srbelt1()
+    {
+        return view('mechanical.layer2.srbelt1');
+    }
+    public function srbelt2()
+    {
+        return view('mechanical.layer2.srbelt2');
+    }
+    public function psp()
+    {
+        return view('mechanical.layer2.psp');
+    }
+    public function il2rh()
+    {
+        return view('mechanical.layer2.il2rh');
+    }
+    public function kbn2()
+    {
+        return view('mechanical.layer2.kbn2');
+    }
+    public function k1s()
+    {
+        return view('mechanical.layer2.k1-s');
+    }
+    public function hf1()
+    {
+        return view('mechanical.layer2.hf-1');
+    }
+    public function cure()
+    {
+        return view('mechanical.layer2.cure');
+    }
+    public function apdd1()
+    {
+        return view('mechanical.layer2.apdd-1');
+    }
+    public function inner_apdd1()
+    {
+        return view('mechanical.layer2.inner_apdd1');
+    }
+    public function white_buff2()
+    {
+        return view('mechanical.layer2.white_buff2');
+    }
+    public function rim_flow()
+    {
+        return view('mechanical.layer2.rim_flow');
+    }
+    public function uniformity()
+    {
+        return view('mechanical.layer2.uniformity');
+    }
+    public function hp_lrp()
+    {
+        return view('mechanical.layer2.hp_lrp');
+    }
 }

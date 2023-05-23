@@ -3,16 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Document;
 use File;
 use Response;
 
 class MasterListController extends Controller
 {
     //
-    public function index(){
+    public function mstrlist()
+    {
+        return view('masterlist');
+    }
+    public function upload(Request $request)
+    {
+        if ($request->hasFile('pdf_file')) {
+            $file = $request->file('pdf_file');
+            $path = $file->store('pdfs'); // Simpan file di folder "storage/app/pdfs"
+
+            // Simpan path file PDF ke dalam session
+            session(['storage/app/pdfs/' => $path]);
+        }
+
+        return redirect()->back();
+    }
         
-        return Response::make(file_get_contents('img/dokumen.pdf'), 200, [
-                       'content-type'=>'application/pdf',
-                   ]);
-   }
+    
+   
 }

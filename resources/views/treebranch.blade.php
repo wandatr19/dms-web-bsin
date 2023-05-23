@@ -74,8 +74,9 @@
         display: block;
       }
     </style>
+    <link rel="icon" href="/img/bs-logo-white.png">
 
-    <title>Tree Branch | DMS Project</title>
+    <title>DMS | Eng Design</title>
   </head>
   <body>
     <div class="container-fluid">
@@ -85,7 +86,7 @@
           <nav class="navbar navbar-light bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
-                <img src="asset/bs-putih.png" alt="" height="24" />
+                <img src="/img/bs-putih.png" alt="" height="24" />
               </a>
             </div>
           </nav>

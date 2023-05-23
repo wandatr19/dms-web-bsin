@@ -44,7 +44,7 @@
                                 <th scope="col">Created at</th>
                                 <th scope="col">User Access</th>
                                 {{-- <th scope="col">Password</th> --}}
-                                <th scope="col">---</th>
+                                <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>

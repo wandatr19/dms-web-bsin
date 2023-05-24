@@ -13,4 +13,12 @@ class Document extends Model
         'path',
         'category',
     ];
+
+    public static function search($keyword)
+    {
+        return self::where('doc_name', 'LIKE', "%$keyword%")->get();
+    }
+
+
+
 }

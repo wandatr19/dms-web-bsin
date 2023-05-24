@@ -45,7 +45,6 @@ class HomeController extends Controller
     public function banbury(){
         $documents = Document::all();
         return view('mechanical.layer2.banbury', ['documents' => $documents]);
-        // return view('mechanical.layer2.banbury');
     }
     public function show($id)
     {
@@ -56,9 +55,10 @@ class HomeController extends Controller
 
         // Lakukan logika untuk membuka file PDF
     }
-    public function strainer(){
-        return view('mechanical.layer2.strainer');
-    }
+    // public function strainer(){
+    //     $documents = Document::all();
+    //     return view('mechanical.layer2.strainer', ['documents' => $documents]);
+    // }
     public function utility(){
         return view('mechanical.layer2.utility');
     }

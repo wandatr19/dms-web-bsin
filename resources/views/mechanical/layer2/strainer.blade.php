@@ -11,4 +11,70 @@
     </div>
 </div>
 
+<!-- List Doc -->
+<table class="table table-sm table-bordered table-striped table-hover">
+  
+
+  <thead>
+      <tr>
+          <th scope="col">Doc Name</th>
+          <th scope="col">Size</th>
+          <th scope="col">created_at</th>
+          <th scope="col">Action</th>
+          <th scope="col">Delete</th>
+      </tr>
+  </thead>
+  <tbody>
+    @foreach ($documents as $document)
+      @if ($document->category == "strainer")
+          <tr>
+              <td>{{ $document->doc_name }}</td>
+              <td>{{ $document->size }} mb</td>
+              <td>{{ $document->created_at }}</td>
+              <td><a href="{{ route('showstrainer', $document->id) }}" target="_blank">Open</a></td>
+              <td><a href="{{ route('deleteStrainer', ['id' => $document->id]) }}" type="button"
+                class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
+          </tr>
+      @endif
+    @endforeach
+  </tbody>
+</table>
+
+
+
+<!-- Button Plus -->
+<div class="position-relative">
+  <!-- Button trigger modal -->
+
+  <a href="#" class="rounded" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalbtnplus">
+    <span class="tt" data-bs-placement="top" title="Add Document">
+      <i class="bi bi-plus-circle-fill fs-1 text-dark"></i>
+    </span>
+  </a>
+
+  <!-- <button class="btn btn-dark btn-lg btn-block bg-danger" type="button">Login</button> -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalbtnplus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content shadow p-3" style="border-radius: 15px">
+        
+        <div class="text-center">
+        <!-- Dropzone Baru -->
+          <form action="{{route('upstrainer')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
+            @csrf
+          </form>  
+        <!-- Akhri Dropzone baru -->
+
+          <a href="">
+            <button type="button" class="btn btn-secondary btn-success mt-3" data-bs-dismiss="modal">Confirm</button>
+          </a>
+        </div>
+        <div class="mb-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Akhir Button Plus -->
+
 @endsection

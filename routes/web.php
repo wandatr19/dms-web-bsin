@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BanburyController;
 use App\Http\Controllers\MasterListController;
+use App\Http\Controllers\StrainerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,8 @@ Route::post('/postlogin', 'App\Http\Controllers\LoginController@postlogin')->nam
 Route::get('/logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']], function() {
+    //Search
+    Route::get('/search', [BanburyController::class, 'searchUser'])->name('searchdoc');
     Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
     Route::get('/treebranch', 'App\Http\Controllers\HomeController@treebr')->name('treebr');
     Route::get('/home/mechanical', 'App\Http\Controllers\HomeController@mech')->name('mech');
@@ -36,7 +39,12 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/banbury/{id}', 'App\Http\Controllers\HomeController@show')->name('show-banbury');
     Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'deleteUser'])->name('deleteBB');
 
-    Route::get('/home/mechanical/strainer', 'App\Http\Controllers\HomeController@strainer')->name('strainer');
+    Route::get('/home/mechanical/strainer', [StrainerController::class, 'strainer'])->name('strainer');
+    Route::post('/home/mechanical/add-strainer', [StrainerController::class, 'upload'])->name('upstrainer');
+    Route::get('/home/mechanical/strainer/delete/{id}', [StrainerController::class, 'deleteUser'])->name('deleteStrainer');
+    Route::get('/home/mechanical/strainer/{doc_name}/open', [StrainerController::class, 'show'])->name('showstrainer');
+
+
     Route::get('/home/mechanical/utility', 'App\Http\Controllers\HomeController@utility')->name('utility');
     Route::get('/home/mechanical/polyfilm', 'App\Http\Controllers\HomeController@polyfilm')->name('polyfilm');
     Route::get('/home/mechanical/calender', 'App\Http\Controllers\HomeController@calender')->name('calender');

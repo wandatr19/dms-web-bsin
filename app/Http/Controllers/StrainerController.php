@@ -5,8 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Document;
 
-class BanburyController extends Controller
+
+class StrainerController extends Controller
 {
+    //
+    public function strainer()
+    {
+        $documents = Document::all();
+        return view('mechanical.layer2.strainer', ['documents' => $documents]);
+    }
     public function upload(Request $request)
     {
         if ($request->hasFile('file')) {
@@ -20,12 +27,12 @@ class BanburyController extends Controller
             ]);
 
             // Simpan file ke dalam folder 'documents' di dalam direktori 'storage/app/public'
-            $path = $file->store('mechanical/banbury');
+            $path = $file->store('mechanical/strainer');
 
             // Simpan data dokumen ke dalam database
             $document = new Document;
             $document->doc_name = $file_name;
-            $document->category = "banbury";
+            $document->category = "strainer";
             $document->path = $path;
             $document->size = $sizeInMegabytes;
             $document->save();
@@ -40,21 +47,28 @@ class BanburyController extends Controller
             'message' => 'Tidak ada file yang diunggah'
         ], 400);
     }
+    public function show($id)
+    {
+        $document = Document::findOrFail($id);
+        $filePath = storage_path('app/' . $document->path);
+        if (file_exists($filePath)) {
+            // Mengirimkan file sebagai respons HTTP dengan nama asli
+            return response()->file($filePath, ['Content-Disposition' => 'inline']);
+        } else {
+            // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
+            // ...
+        }
+    }
+
+
+
     public function deleteUser($id)
     {
         $document = Document::find($id);
         if ($document) {
             $document->delete();
             // Tindakan lain setelah penghapusan data
-            return redirect()->route('banbury')->with('success', 'Pengguna Berhasil Dihapus!');
+            return redirect()->route('strainer')->with('success', 'Pengguna Berhasil Dihapus!');
         }
     }
-
-    public function searchUser(Request $request)
-    {
-        $keyword = $request->input('keyword');
-        $documents = Document::search($keyword);
-        return view('search', compact('documents'));
-    }
-
 }

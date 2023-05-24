@@ -11,30 +11,70 @@
     </div>
 </div>
 
+<!-- List Doc -->
+<table class="table table-sm table-bordered table-striped table-hover">
+  
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+  <thead>
+      <tr>
+          <th scope="col">Doc Name</th>
+          <th scope="col">Size</th>
+          <th scope="col">created_at</th>
+          <th scope="col">Delete</th>
+      </tr>
+  </thead>
+  <tbody>
+    @foreach ($documents as $document)
+      @if ($document->category == "banbury")
+          <tr>
+              <td>{{ $document->doc_name }}</td>
+              <td>{{ $document->size }} mb</td>
+              <td>{{ $document->created_at }}</td>
+              <td><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
+                class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
+          </tr>
+      @endif
+    @endforeach
+  </tbody>
+</table>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
+
+<!-- Button Plus -->
+<div class="position-relative">
+  <!-- Button trigger modal -->
+
+  <a href="#" class="rounded" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalbtnplus">
+    <span class="tt" data-bs-placement="top" title="Add Document">
+      <i class="bi bi-plus-circle-fill fs-1 text-dark"></i>
+    </span>
+  </a>
+
+  <!-- <button class="btn btn-dark btn-lg btn-block bg-danger" type="button">Login</button> -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalbtnplus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content shadow p-3" style="border-radius: 15px">
+        
+        <div class="text-center">
+        <!-- Dropzone Baru -->
+          <form action="{{route('upbanbury')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
+            @csrf
+          </form>  
+        <!-- Akhri Dropzone baru -->
+
+          <a href="">
+            <button type="button" class="btn btn-secondary btn-success mt-3" data-bs-dismiss="modal">Confirm</button>
+          </a>
+        </div>
+        <div class="mb-3"></div>
       </div>
     </div>
   </div>
 </div>
+<!-- Akhir Button Plus -->
+
+
+
 @endsection

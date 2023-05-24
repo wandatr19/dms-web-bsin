@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Document;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -42,7 +43,18 @@ class HomeController extends Controller
 
     // layer2 mechanical
     public function banbury(){
-        return view('mechanical.layer2.banbury');
+        $documents = Document::all();
+        return view('mechanical.layer2.banbury', ['documents' => $documents]);
+        // return view('mechanical.layer2.banbury');
+    }
+    public function show($id)
+    {
+        $documents = Document::all();
+        $document = Document::findOrFail($id);
+        $pdfPath = storage_path($document->path);
+        return view('mechanical.layer2.banbury', compact('document', 'pdfPath'));
+
+        // Lakukan logika untuk membuka file PDF
     }
     public function strainer(){
         return view('mechanical.layer2.strainer');
@@ -82,9 +94,13 @@ class HomeController extends Controller
     {
         return view('mechanical.layer2.rtb');
     }
-    public function plycut1()
+    public function plycutting1()
     {
         return view('mechanical.layer2.plycutting1');
+    }
+    public function plycutting2()
+    {
+        return view('mechanical.layer2.plycutting2');
     }
     public function srbelt1()
     {
@@ -142,4 +158,25 @@ class HomeController extends Controller
     {
         return view('mechanical.layer2.hp_lrp');
     }
+    public function lw_buff()
+    {
+        return view('mechanical.layer2.lw_buff');
+    }
+    public function rework()
+    {
+        return view('mechanical.layer2.rework');
+    }
+    public function tire_repair()
+    {
+        return view('mechanical.layer2.tire_repair');
+    }
+    public function furniture()
+    {
+        return view('mechanical.layer2.furniture');
+    }
+    public function cement_house()
+    {
+        return view('mechanical.layer2.cement_house');
+    }
+
 }

@@ -133,7 +133,7 @@
         <!-- Akhir Card QCT -->
         <!-- Card 1/N DCT -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('ndct')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -149,7 +149,7 @@
         <!-- Akhir Card 1/N DCT -->
         <!-- Card 8CT -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('8ct')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -165,7 +165,7 @@
         <!-- Akhir Card 8CT -->
         <!-- Card BEAD -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('bead')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -181,7 +181,7 @@
         <!-- Akhir Card BEAD -->
         <!-- Card MONOWIRE -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('monowire')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -197,7 +197,7 @@
         <!-- Akhir Card MONOWIRE -->
         <!-- Card RTB -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('rtb')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -213,7 +213,7 @@
         <!-- Akhir Card RTB -->
         <!-- Card PLY CUTTING NO.1 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('plycutting1')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -229,7 +229,7 @@
         <!-- Akhir Card PLY CUTTING NO.1 -->
         <!-- Card PLY CUTTING NO.2 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('plycutting2')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -245,7 +245,7 @@
         <!-- Akhir Card PLY CUTTING NO.2 -->
         <!-- Card SR BELT 1 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('srbelt1')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -261,7 +261,7 @@
         <!-- Akhir Card SR BELT 1 -->
         <!-- Card SR BELT 2 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('srbelt2')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -277,7 +277,7 @@
         <!-- Akhir Card SR BELT 2 -->
         <!-- Card PSP -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('psp')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -293,7 +293,7 @@
         <!-- Akhir Card PSP -->
         <!-- Card IL 2RH -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('il2rh')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -309,7 +309,7 @@
         <!-- Akhir Card IL 2RH -->
         <!-- Card KBN2 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('kbn2')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -325,7 +325,7 @@
         <!-- Akhir Card KBN2 -->
         <!-- Card K1-S -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('k1-s')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -341,7 +341,7 @@
         <!-- Akhir Card K1-S -->
         <!-- Card HF-1 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('hf-1')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -357,7 +357,7 @@
         <!-- Akhir Card HF-1 -->
         <!-- Card CURE -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('cure')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -373,7 +373,7 @@
         <!-- Akhir Card CURE -->
         <!-- Card APDD-1 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('apdd-1')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -389,7 +389,7 @@
         <!-- Akhir Card APDD-1 -->
         <!-- Card INNER APDD-1 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('inner_apdd1')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -405,7 +405,7 @@
         <!-- Akhir Card INNER APDD-1 -->
         <!-- Card WHITE BUFF-2 -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('white_buff')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -421,7 +421,7 @@
         <!-- Akhir Card WHITE BUFF-2 -->
         <!-- Card RIM FLOW -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('rim_flow')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -437,7 +437,7 @@
         <!-- Akhir Card RIM FLOW -->
         <!-- Card UNIFORMITY -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('uniformity')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -453,7 +453,7 @@
         <!-- Akhir Card UNIFORMITY-->
         <!-- Card HP LRP -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('hp_lrp')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -469,7 +469,7 @@
         <!-- Akhir Card HP LRP -->
         <!-- Card LW BUFF -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('lw_buff')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -485,7 +485,7 @@
         <!-- Akhir Card LW BUFF -->
         <!-- Card REWORK -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('rework')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -501,7 +501,7 @@
         <!-- Akhir Card REWORK -->
         <!-- Card TIRE REPAIR -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('tire_repair')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -517,7 +517,7 @@
         <!-- Akhir Card TIRE REPAIR -->
         <!-- Card FURNITURE -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('furniture')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
@@ -533,7 +533,7 @@
         <!-- Akhir Card FURNITURE -->
         <!-- Card CEMENT HOUSE -->
         <div class="col">
-        <a href="">
+        <a href="{{ route('cement_house')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">

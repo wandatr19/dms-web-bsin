@@ -18,6 +18,11 @@
 
     <!-- Link Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+
+    <!-- Link CDN Buat Dropzone -->
+    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
+    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+
     <style>
       ul,
       #myUL {
@@ -51,6 +56,19 @@
       .active {
         display: block;
       }
+      /* Masterlist */
+      .pdf-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 75%; /* Aspek rasio 4:3 */
+        position: relative;
+        }
+    
+      .pdf-container iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        }
     </style>
     <link rel="icon" href="/img/bs-logo-white.png">
     <title>DMS | Eng Design</title>
@@ -252,4 +270,14 @@
       });
     </script> -->
   </body>
+  <script type="text/javascript">
+    new Dropzone('#pdf-upload', {
+      thumbnailWidth: 200,
+      maxFilesize: 1000,
+      acceptedFiles: ' .jpeg,.jpg,.png,.pdf',
+    });
+  </script>
+  
+  <script src="../node_modules/dropzone/dist/min/dropzone.min.js"></script>
+  <script src="../assets/js/dropzone.js"></script>
 </html>

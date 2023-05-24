@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BanburyController;
+use App\Http\Controllers\MasterListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,16 +32,52 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/others', 'App\Http\Controllers\HomeController@others')->name('others');
     //Mechanical
     Route::get('/home/mechanical/banbury', 'App\Http\Controllers\HomeController@banbury')->name('banbury');
+    Route::post('/home/mechanical/add-banbury', [BanburyController::class, 'upload'])->name('upbanbury');
+    Route::get('/home/mechanical/banbury/{id}', 'App\Http\Controllers\HomeController@show')->name('show-banbury');
+    Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'deleteUser'])->name('deleteBB');
+
     Route::get('/home/mechanical/strainer', 'App\Http\Controllers\HomeController@strainer')->name('strainer');
     Route::get('/home/mechanical/utility', 'App\Http\Controllers\HomeController@utility')->name('utility');
     Route::get('/home/mechanical/polyfilm', 'App\Http\Controllers\HomeController@polyfilm')->name('polyfilm');
     Route::get('/home/mechanical/calender', 'App\Http\Controllers\HomeController@calender')->name('calender');
     Route::get('/home/mechanical/bexter', 'App\Http\Controllers\HomeController@bexter')->name('bexter');
     Route::get('/home/mechanical/qct', 'App\Http\Controllers\HomeController@qct')->name('qct');
+    Route::get('/home/mechanical/1ndct', 'App\Http\Controllers\HomeController@ndct')->name('ndct');
+    Route::get('/home/mechanical/8ct', 'App\Http\Controllers\HomeController@dlpn_ct')->name('8ct');
+    Route::get('/home/mechanical/bead', 'App\Http\Controllers\HomeController@bead')->name('bead');
+    Route::get('/home/mechanical/monowire', 'App\Http\Controllers\HomeController@monowire')->name('monowire');
+    Route::get('/home/mechanical/rtb', 'App\Http\Controllers\HomeController@rtb')->name('rtb');
+    Route::get('/home/mechanical/plycutting1', 'App\Http\Controllers\HomeController@plycutting1')->name('plycutting1');
+    Route::get('/home/mechanical/plycutting2', 'App\Http\Controllers\HomeController@plycutting2')->name('plycutting2');
+    Route::get('/home/mechanical/srbelt1', 'App\Http\Controllers\HomeController@srbelt1')->name('srbelt1');
+    Route::get('/home/mechanical/srbelt2', 'App\Http\Controllers\HomeController@srbelt2')->name('srbelt2');
+    Route::get('/home/mechanical/psp', 'App\Http\Controllers\HomeController@psp')->name('psp');
+    Route::get('/home/mechanical/il2rh', 'App\Http\Controllers\HomeController@il2rh')->name('il2rh');
+    Route::get('/home/mechanical/kbn2', 'App\Http\Controllers\HomeController@kbn2')->name('kbn2');
+    Route::get('/home/mechanical/k1-s', 'App\Http\Controllers\HomeController@k1-s')->name('k1-s');
+    Route::get('/home/mechanical/hf-1', 'App\Http\Controllers\HomeController@hf-1')->name('hf-1');
+    Route::get('/home/mechanical/cure', 'App\Http\Controllers\HomeController@cure')->name('cure');
+    Route::get('/home/mechanical/apdd-1', 'App\Http\Controllers\HomeController@apdd1')->name('apdd-1');
+    Route::get('/home/mechanical/inner_apdd1', 'App\Http\Controllers\HomeController@inner_apdd1')->name('inner_apdd1');
+    Route::get('/home/mechanical/white_buff', 'App\Http\Controllers\HomeController@white_buff')->name('white_buff');
+    Route::get('/home/mechanical/rim_flow', 'App\Http\Controllers\HomeController@rim_flow')->name('rim_flow');
+    Route::get('/home/mechanical/uniformity', 'App\Http\Controllers\HomeController@uniformity')->name('uniformity');
+    Route::get('/home/mechanical/hp_lrp', 'App\Http\Controllers\HomeController@hp_lrp')->name('hp_lrp');
+    Route::get('/home/mechanical/lw_buff', 'App\Http\Controllers\HomeController@lw_buff')->name('lw_buff');
+    Route::get('/home/mechanical/rework', 'App\Http\Controllers\HomeController@rework')->name('rework');
+    Route::get('/home/mechanical/tire_repair', 'App\Http\Controllers\HomeController@tire_repair')->name('tire_repair');
+    Route::get('/home/mechanical/furniture', 'App\Http\Controllers\HomeController@furniture')->name('furniture');
+    Route::get('/home/mechanical/cement_house', 'App\Http\Controllers\HomeController@cement_house')->name('cement_house');
+
+    
+
     //Electrical
     //Masterlist
     Route::get('/masterlist', 'App\Http\Controllers\MasterListController@mstrlist')->name('masterlist');
     Route::post('/add-masterlist', 'App\Http\Controllers\MasterListController@upload')->name('upload-mstr');
+    Route::get('masterlist/{id}', [MasterListController::class, 'show'])->name('mstrlist.show');
+
+
 
 
 

@@ -56,7 +56,7 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->created_at }}</td>
                                     <td>{{ $user->user_access }}</td>
-                                    {{-- <td>{{ $user -> password}}</td> --}}
+                                    {{-- <td>{{ $user ->password}}</td> --}}
                                     <td><a href="{{ route('deleteUser', ['id' => $user->id]) }}" type="button"
                                             class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
                                 </tr>

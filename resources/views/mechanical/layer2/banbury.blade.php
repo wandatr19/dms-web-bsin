@@ -13,14 +13,15 @@
 
 <!-- List Doc -->
 <table class="table table-sm table-bordered table-striped table-hover">
-  
-
   <thead>
       <tr>
           <th scope="col">Doc Name</th>
           <th scope="col">Size</th>
           <th scope="col">created_at</th>
+          <th scope="col">Action</th>
+          @if (auth()->user()->role == "admin")
           <th scope="col">Delete</th>
+          @endif
       </tr>
   </thead>
   <tbody>
@@ -30,8 +31,11 @@
               <td>{{ $document->doc_name }}</td>
               <td>{{ $document->size }} mb</td>
               <td>{{ $document->created_at }}</td>
-              <td><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
+              <td><a href="{{route('show-banbury', $document->id)}}" target="_blank">Open</a></td>
+              @if (auth()->user()->role == "admin")
+                <td><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
+              @endif
           </tr>
       @endif
     @endforeach
@@ -41,6 +45,7 @@
 
 
 <!-- Button Plus -->
+@if (auth()->user()->role == "admin")
 <div class="position-relative">
   <!-- Button trigger modal -->
 
@@ -73,6 +78,7 @@
     </div>
   </div>
 </div>
+@endif
 <!-- Akhir Button Plus -->
 
 

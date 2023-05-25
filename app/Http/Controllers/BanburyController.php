@@ -7,6 +7,11 @@ use App\Models\Document;
 
 class BanburyController extends Controller
 {
+    public function banbury()
+    {
+        $documents = Document::all();
+        return view('mechanical.layer2.banbury', ['documents' => $documents]);
+    }
     public function upload(Request $request)
     {
         if ($request->hasFile('file')) {
@@ -49,12 +54,16 @@ class BanburyController extends Controller
             return redirect()->route('banbury')->with('success', 'Pengguna Berhasil Dihapus!');
         }
     }
-
-    public function searchUser(Request $request)
+    public function show($id)
     {
-        $keyword = $request->input('keyword');
-        $documents = Document::search($keyword);
-        return view('search', compact('documents'));
+        $document = Document::findOrFail($id);
+        $filePath = storage_path('app/' . $document->path);
+        if (file_exists($filePath)) {
+            // Mengirimkan file sebagai respons HTTP dengan nama asli
+            return response()->file($filePath, ['Content-Disposition' => 'inline']);
+        } else {
+            // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
+            // ...
+        }
     }
-
 }

@@ -11,7 +11,7 @@ class LoginController extends Controller
         if (Auth::attempt($request->only('email','password'))){
             return redirect('/home');
         }
-        return redirect('/');
+        return redirect()->route('login')->with('failed', 'Login Failed');
     }
     public function logout (Request $request){
         Auth::logout();

@@ -42,10 +42,10 @@ class HomeController extends Controller
     }
 
     // layer2 mechanical
-    public function banbury(){
-        $documents = Document::all();
-        return view('mechanical.layer2.banbury', ['documents' => $documents]);
-    }
+    // public function banbury(){
+    //     $documents = Document::all();
+    //     return view('mechanical.layer2.banbury', ['documents' => $documents]);
+    // }
     public function show($id)
     {
         $documents = Document::all();

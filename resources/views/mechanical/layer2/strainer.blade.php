@@ -21,7 +21,9 @@
           <th scope="col">Size</th>
           <th scope="col">created_at</th>
           <th scope="col">Action</th>
+          @if (auth()->user()->role == "admin")
           <th scope="col">Delete</th>
+          @endif
       </tr>
   </thead>
   <tbody>
@@ -32,8 +34,10 @@
               <td>{{ $document->size }} mb</td>
               <td>{{ $document->created_at }}</td>
               <td><a href="{{ route('showstrainer', $document->id) }}" target="_blank">Open</a></td>
-              <td><a href="{{ route('deleteStrainer', ['id' => $document->id]) }}" type="button"
+              @if (auth()->user()->role == "admin")
+                <td><a href="{{ route('deleteStrainer', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
+              @endif
           </tr>
       @endif
     @endforeach
@@ -43,6 +47,7 @@
 
 
 <!-- Button Plus -->
+@if (auth()->user()->role == "admin")
 <div class="position-relative">
   <!-- Button trigger modal -->
 
@@ -75,6 +80,7 @@
     </div>
   </div>
 </div>
+@endif
 <!-- Akhir Button Plus -->
 
 @endsection

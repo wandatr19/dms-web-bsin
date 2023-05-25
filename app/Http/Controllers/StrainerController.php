@@ -59,9 +59,6 @@ class StrainerController extends Controller
             // ...
         }
     }
-
-
-
     public function deleteUser($id)
     {
         $document = Document::find($id);

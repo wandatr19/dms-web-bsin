@@ -24,6 +24,7 @@
             <th scope="col">Doc Name</th>
             <th scope="col">Size</th>
             <th scope="col">created_at</th>
+            <th scope="col">Action</th>
             {{-- <th scope="col">Delete</th> --}}
         </tr>
     </thead>
@@ -34,6 +35,7 @@
                 <td>{{ $document->doc_name }}</td>
                 <td>{{ $document->size }} mb</td>
                 <td>{{ $document->created_at }}</td>
+                <td><a href="{{ route('showdoc', $document->id) }}" target="_blank">Open</a></td>
                 {{-- <td><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
                   class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td> --}}
             </tr>

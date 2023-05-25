@@ -13,7 +13,8 @@ class MasterListController extends Controller
     //
     public function mstrlist()
     {
-        return view('masterlist');
+        $documents = Document::all();
+        return view('masterlist', ['documents' => $documents]);
     }
     public function upload(Request $request)
     {
@@ -34,15 +35,23 @@ class MasterListController extends Controller
     }
     public function show($id)
     {
-        $document = Document::find($id);
-
-        if ($document) {
-            return Response::make($document->pdf_data, 200, [
-                'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'inline; filename="' . $document->doc_name . '.pdf"',
-            ]);
+        $document = Document::findOrFail($id);
+        $filePath = storage_path('app/' . $document->path);
+        if (file_exists($filePath)) {
+            // Mengirimkan file sebagai respons HTTP dengan nama asli
+            return response()->file($filePath, ['Content-Disposition' => 'inline']);
         } else {
-            return abort(404);
+            // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
+            // ...
+        }
+    }
+    public function delete($id)
+    {
+        $document = Document::find($id);
+        if ($document) {
+            $document->delete();
+            // Tindakan lain setelah penghapusan data
+            return redirect()->route('masterlist')->with('success', 'Pengguna Berhasil Dihapus!');
         }
     }
         

@@ -58,6 +58,11 @@
 
                                             <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Sign in Using
                                                 Bridgestone Account</h5>
+                                            @if (session('failed'))
+                                                <div class="alert alert-danger">
+                                                    {{ session('failed') }}
+                                                </div>
+                                            @endif
 
                                             <div class="form-outline mb-4">
                                                 <p class="form-label fw-bold" for="form2Example17">Email</p>
@@ -83,29 +88,6 @@
                                                     <!-- Button trigger modal -->
                                                     <button type="submit"
                                                         class="btn btn-danger btn-block">LOGIN</button>
-                                                    <!-- <button class="btn btn-dark btn-lg btn-block bg-danger" type="button">Login</button> -->
-
-                                                    {{-- <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                  <!-- Header Modal & Tanda Silang -->
-                                  <!-- <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div> -->
-
-                                  <div class="modal-body text-center">
-                                    <strong style="color: red">Incorrect Password!</strong> <br />
-                                    Try another Password
-                                  </div>
-                                  <div class="text-center">
-                                    <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">OK</button>
-                                  </div>
-                                  <div class="mb-3"></div>
-                                </div>
-                              </div>
-                            </div> --}}
                                                 </div>
                                             </section>
                                         </form>

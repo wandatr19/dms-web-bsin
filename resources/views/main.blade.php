@@ -80,7 +80,7 @@
         <div class="col-auto text-start bg-dark p-0 me-auto">
           <nav class="navbar navbar-light bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="{{route('home')}}">
                 <img src="/img/bs-putih.png" alt="" height="24" />
               </a>
             </div>
@@ -152,13 +152,13 @@
                     Add User
                   </a>
                 </li>
-                <li class="nav-item btn-outline-secondary rounded">
+                {{-- <li class="nav-item btn-outline-secondary rounded">
                   <a href="" class="nav-link text-white">
                     <i class="bi bi-file-earmark-plus-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Add Document
                   </a>
-                </li>
+                </li> --}}
                 <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('listuser')}}" class="nav-link text-white">
                     <i class="bi bi-person-lines-fill fs-5"></i>

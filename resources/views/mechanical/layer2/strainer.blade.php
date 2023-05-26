@@ -13,13 +13,11 @@
 
 <!-- List Doc -->
 <table class="table table-sm table-bordered table-striped table-hover">
-  
-
   <thead>
       <tr>
           <th scope="col">Doc Name</th>
           <th scope="col">Size</th>
-          <th scope="col">created_at</th>
+          <th scope="col">Date Added</th>
           <th scope="col">Action</th>
           @if (auth()->user()->role == "admin")
           <th scope="col">Delete</th>

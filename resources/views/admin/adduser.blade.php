@@ -82,15 +82,15 @@
                   <ul class="list-group fs-6">
                     <li class="list-group-item bg-secondary text-light sticky-top">Area Access<i class="bi bi-caret-up-fill ms-2"></i><i class="bi bi-caret-down-fill"></i></li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="mechanical" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="mech" aria-label="..." />
                       MECHANICAL
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="electrical" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="elect" aria-label="..." />
                       ELECTRICAL
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="utility" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="util" aria-label="..." />
                       UTILITY
                     </li>
                     <li class="list-group-item">
@@ -98,11 +98,11 @@
                       CIVIL
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="others" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="oth" aria-label="..." />
                       OTHERS
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area6" aria-label="..." />
                       AREA 6
                     </li>
                     <li class="list-group-item">

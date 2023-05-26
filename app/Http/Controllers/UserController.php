@@ -30,7 +30,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'role' => 'required',
-            // 'user_access' => 'required|array',
+            'user_access' => 'required|array',
             'password' => 'required',
             'department' => 'required',
 
@@ -40,15 +40,15 @@ class UserController extends Controller
         $data->name = $validatedData['name'];
         $data->email = $validatedData['email'];
         $data->role = $validatedData['role'];
-        // $data->user_access  = implode(',', $validatedData['user_access'] ?? []);
+        $data->user_access  = implode(',', $validatedData['user_access'] ?? []);
         $data->department = $validatedData['department'];
         $data->password = Hash::make($validatedData['password']);
         $data->remember_token = Str::random(60);
         $data->save();
 
-        // foreach ($validatedData['user_access'] as $value) {
-        //     $data->userAccess()->create(['value' => $value]);
-        // }
+        foreach ($validatedData['user_access'] as $value) {
+            $data->userAccess()->create(['value' => $value]);
+        }
 
         
         return redirect()->route('adduser')->with('success', 'Pengguna Berhasil Ditambahkan!');

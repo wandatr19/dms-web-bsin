@@ -12,6 +12,7 @@ class Document extends Model
         'doc_name',
         'path',
         'category',
+        'user_access',
     ];
 
     public static function search($keyword)

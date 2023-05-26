@@ -19,6 +19,9 @@
     <!-- Link Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
 
+    {{-- Titik 3 --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
     <!-- Link CDN Buat Dropzone -->
     <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
     <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
@@ -152,13 +155,13 @@
                     Add User
                   </a>
                 </li>
-                {{-- <li class="nav-item btn-outline-secondary rounded">
-                  <a href="" class="nav-link text-white">
+                <li class="nav-item btn-outline-secondary rounded">
+                  <a href="/trial" class="nav-link text-white">
                     <i class="bi bi-file-earmark-plus-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Add Document
                   </a>
-                </li> --}}
+                </li>
                 <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('listuser')}}" class="nav-link text-white">
                     <i class="bi bi-person-lines-fill fs-5"></i>
@@ -278,6 +281,10 @@
     });
   </script>
   
+  {{-- Dropzone --}}
   <script src="../node_modules/dropzone/dist/min/dropzone.min.js"></script>
   <script src="../assets/js/dropzone.js"></script>
+  {{-- Bootstrap --}}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </html>

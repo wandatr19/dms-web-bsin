@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\BanburyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasterListController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StrainerController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UtilityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +25,8 @@ Route::get('/', function () {
     return view('auth.login');
 })->name('login');
 
-Route::post('/postlogin', 'App\Http\Controllers\LoginController@postlogin')->name('postlogin');
-Route::get('/logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
+Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']], function() {
     //Search
@@ -46,12 +49,17 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/strainer', [StrainerController::class, 'strainer'])->name('strainer');
     Route::post('/home/mechanical/add-strainer', [StrainerController::class, 'upload'])->name('upstrainer');
     Route::get('/home/mechanical/strainer/delete/{id}', [StrainerController::class, 'deleteUser'])->name('deleteStrainer');
-    Route::get('/home/mechanical/strainer/{doc_name}/open', [StrainerController::class, 'show'])->name('showstrainer');
+    Route::get('/home/mechanical/strainer/{id}', [StrainerController::class, 'show'])->name('showstrainer');
+    //Utility
+    Route::get('/home/mechanical/utility', [UtilityController::class, 'utility'])->name('utility');
+    Route::post('/home/mechanical/add-utility', [UtilityController::class, 'upload'])->name('uputility');
+    Route::get('/home/mechanical/utility/delete/{id}', [UtilityController::class, 'deleteUser'])->name('deleteutility');
+    Route::get('/home/mechanical/utility/{id}', [UtilityController::class, 'show'])->name('showutility');
 
-
-    Route::get('/home/mechanical/utility', [HomeController::class, 'utility'])->name('utility');
     Route::get('/home/mechanical/polyfilm', [HomeController::class, 'polyfilm'])->name('polyfilm');
+    
     Route::get('/home/mechanical/calender', [HomeController::class, 'calender'])->name('calender');
+
     Route::get('/home/mechanical/bexter', [HomeController::class, 'bexter'])->name('bexter');
     Route::get('/home/mechanical/qct', [HomeController::class, 'qct'])->name('qct');
     Route::get('/home/mechanical/1ndct', [HomeController::class, 'ndct'])->name('ndct');
@@ -97,88 +105,11 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
 });
 
 Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], function () {
-    Route::get('/listuser', 'App\Http\Controllers\UserController@index')->name('listuser');
-    Route::get('/history', 'App\Http\Controllers\HomeController@history')->name('history');
+    Route::get('/listuser', [UserController::class, 'index'])->name('listuser');
+    Route::get('/history', [HomeController::class, 'history'])->name('history');
 
-    Route::get('/adduser', 'App\Http\Controllers\UserController@create')->name('adduser');
-    Route::post('/save-adduser', 'App\Http\Controllers\UserController@store')->name('save-adduser');
-    Route::get('/deleteUser/{id}', 'App\Http\Controllers\UserController@deleteUser')->name('deleteUser');
+    Route::get('/adduser', [UserController::class, 'create'])->name('adduser');
+    Route::post('/save-adduser', [UserController::class, 'store'])->name('save-adduser');
+    Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
 });
-
-
-
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
-// Route::get('/relogin', function () {
-//     return view('auth.relogin');
-// });
-
-// Route::get('/changepass', function () {
-//     return view('auth.changepass');
-// });
-
-// // Embed PDF
-// // Route::get('/masterlist','MasterListController@index');
-
-// Route::get('/masterlist', function () {
-//     return view('masterlist');
-// });
-
-// Route::get('/treebranch', function () {
-//     return view('treebranch');
-// });
-
-// Route::get('/home/mech', function () {
-//     return view('mechanical.mech');
-// });
-
-// Route::get('/home/mech/p1', function () {
-//     return view('mechanical.p1area');
-// });
-
-// Route::get('/home/mech/p2', function () {
-//     return view('mechanical.p2area');
-// });
-
-// Route::get('/home/mech/p3', function () {
-//     return view('mechanical.p3area');
-// });
-
-// Route::get('/home/mech/p4', function () {
-//     return view('mechanical.p4area');
-// });
-
-// Route::get('/home/mech/p5', function () {
-//     return view('mechanical.p5area');
-// });
-
-// Route::get('/home/mech/p6', function () {
-//     return view('mechanical.p6area');
-// });
-
-// Route::get('/home/mech/p7', function () {
-//     return view('mechanical.p7area');
-// });
-
-// Route::get('/home/mech/p8', function () {
-//     return view('mechanical.p8area');
-// });
-
-// Route::get('/home/mech/p1/bunbury', function () {
-//     return view('mechanical.layer3.bunbury');
-// });
-
-// Route::get('/home/mech/p1/strainer', function () {
-//     return view('mechanical.layer3.strainer');
-// });
-
-// Route::get('/home/mech/p1/polyfilm', function () {
-//     return view('mechanical.layer3.polyfilm');
-// });
-
-// Route::get('/home/electrical', function () {
-//     return view('electrical.electrical');
-// });

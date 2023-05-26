@@ -11,7 +11,8 @@ class HomeController extends Controller
         return view('home');
     }
     public function treebr(){
-        return view('treebranch');
+        $documents = Document::all();
+        return view('treebranch', ['documents' => $documents]);
     }
     public function masterlist(){
         return view('masterlist');
@@ -40,12 +41,6 @@ class HomeController extends Controller
     public function civil(){
         return view('civil.civil');
     }
-
-    // layer2 mechanical
-    // public function banbury(){
-    //     $documents = Document::all();
-    //     return view('mechanical.layer2.banbury', ['documents' => $documents]);
-    // }
     public function show($id)
     {
         $documents = Document::all();
@@ -55,10 +50,6 @@ class HomeController extends Controller
 
         // Lakukan logika untuk membuka file PDF
     }
-    // public function strainer(){
-    //     $documents = Document::all();
-    //     return view('mechanical.layer2.strainer', ['documents' => $documents]);
-    // }
     public function utility(){
         return view('mechanical.layer2.utility');
     }

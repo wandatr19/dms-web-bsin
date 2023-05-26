@@ -22,8 +22,9 @@
     <thead>
         <tr>
             <th scope="col">Doc Name</th>
+            <th scope="col">Folder</th>
             <th scope="col">Size</th>
-            <th scope="col">created_at</th>
+            <th scope="col">Date Added</th>
             <th scope="col">Action</th>
             {{-- <th scope="col">Delete</th> --}}
         </tr>
@@ -33,6 +34,7 @@
         {{-- @if ($document->category == "banbury") --}}
             <tr>
                 <td>{{ $document->doc_name }}</td>
+                <td>{{ $document->category }}</td>
                 <td>{{ $document->size }} mb</td>
                 <td>{{ $document->created_at }}</td>
                 <td><a href="{{ route('showdoc', $document->id) }}" target="_blank">Open</a></td>

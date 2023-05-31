@@ -10,8 +10,55 @@
       <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled />
     </div>
 </div>
+@if (session('success'))
+  <div class="alert alert-danger">
+    {{ session('success') }}
+  </div>
+@endif
+
+<!-- Baris 2: Btn Delete All-->
+@if (auth()->user()->role == "admin")
+<div class="row text-end mx-3">
+  <div class="col">
+    <!-- Button Delete All History -->
+    <!-- Button trigger modal -->
+    <button href="#" type="button" class="btn btn-danger btn-sm" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">Delete</button>
+    <!-- Akhir Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow" style="border-radius: 15px">
+          <!-- Header Modal & Tanda Silang -->
+
+          <div class="modal-body text-center">
+            <strong style="color: rgb(0, 0, 0)"
+              >Are you sure you want to
+              <span class="text-danger">Delete</span>
+              All the History?
+            </strong>
+          </div>
+          <div class="text-center">
+          <a href="{{route('deleteBanbury', ['category'=>'banbury'])}}">
+            <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
+          </a>
+            <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">No</button>
+          </div>
+          <div class="mb-3"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Modal -->
+    <!-- Akhir Button Delete All History -->
+  </div>
+</div>
+@endif
+<!-- Akhir Baris 2: Btn Export & Delete -->
+
+        
 
 <!-- List Doc -->
+<div class="overflow-auto" style="max-width: 100%; max-height: 93%">
 <table class="table table-sm table-bordered table-striped table-hover">
   <thead>
       <tr>
@@ -41,8 +88,7 @@
     @endforeach
   </tbody>
 </table>
-
-
+</div>
 
 <!-- Button Plus -->
 @if (auth()->user()->role == "admin")

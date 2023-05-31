@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('folders', FolderController::class);
+
 Route::get('/', function () {
     return view('auth.login');
 })->name('login');
@@ -38,25 +40,30 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical', [HomeController::class, 'mech'])->name('mech');
     Route::get('/home/electrical', [HomeController::class, 'elect'])->name('elect');
     Route::get('/home/civil', [HomeController::class, 'civil'])->name('civil');
-    Route::get('/home/utility', [HomeController::class, 'util'])->name('util');
+
     Route::get('/home/others', [HomeController::class, 'others'])->name('others');
     //Mechanical Banbury
     Route::get('/home/mechanical/banbury', [BanburyController::class, 'banbury'])->name('banbury');
     Route::post('/home/mechanical/add-banbury', [BanburyController::class, 'upload'])->name('upbanbury');
     Route::get('/home/mechanical/banbury/{id}', [BanburyController::class, 'show'])->name('show-banbury');
     Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'deleteUser'])->name('deleteBB');
+    Route::get('/home/mechanical/banbury/deleteAll/{category}', [BanburyController::class, 'deleteAll'])->name('deleteBanbury');
     //Strainer
     Route::get('/home/mechanical/strainer', [StrainerController::class, 'strainer'])->name('strainer');
     Route::post('/home/mechanical/add-strainer', [StrainerController::class, 'upload'])->name('upstrainer');
     Route::get('/home/mechanical/strainer/delete/{id}', [StrainerController::class, 'deleteUser'])->name('deleteStrainer');
     Route::get('/home/mechanical/strainer/{id}', [StrainerController::class, 'show'])->name('showstrainer');
-    //Utility
-    Route::get('/home/mechanical/utility', [UtilityController::class, 'utility'])->name('utility');
-    Route::post('/home/mechanical/add-utility', [UtilityController::class, 'upload'])->name('uputility');
-    Route::get('/home/mechanical/utility/delete/{id}', [UtilityController::class, 'deleteUser'])->name('deleteutility');
-    Route::get('/home/mechanical/utility/{id}', [UtilityController::class, 'show'])->name('showutility');
-
+    //Polyfilm
     Route::get('/home/mechanical/polyfilm', [HomeController::class, 'polyfilm'])->name('polyfilm');
+
+    Route::get('/home/utility', [UtilityController::class, 'index'])->name('util');
+    Route::post('/home/add-utility', [UtilityController::class, 'store'])->name('uputil');
+    Route::get('/home/utility/{id}', [UtilityController::class, 'show'])->name('show-util');
+    Route::get('/home/utility/delete/{id}', [UtilityController::class, 'delete'])->name('delUtil');
+    Route::get('/home/utility/deleteAll/{category}', [BanburyController::class, 'deleteAll'])->name('deleteUtil');
+
+
+
     
     Route::get('/home/mechanical/calender', [HomeController::class, 'calender'])->name('calender');
 

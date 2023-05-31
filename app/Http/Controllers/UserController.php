@@ -26,6 +26,7 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -40,15 +41,22 @@ class UserController extends Controller
         $data->name = $validatedData['name'];
         $data->email = $validatedData['email'];
         $data->role = $validatedData['role'];
+        // $data->user_access = json_encode($validatedData['user_access']);
         $data->user_access  = implode(',', $validatedData['user_access'] ?? []);
         $data->department = $validatedData['department'];
         $data->password = Hash::make($validatedData['password']);
         $data->remember_token = Str::random(60);
         $data->save();
 
-        foreach ($validatedData['user_access'] as $value) {
-            $data->userAccess()->create(['value' => $value]);
-        }
+        // foreach ($validatedData['user_access'] as $value) {
+        //     $data->userAccess()->create(['value' => $value]);
+        // }
+        // $userAccess = $request->input('user_access');
+        // $userAccess = json_encode($userAccess);
+        // User::create([
+        //     'user_access' => $userAccess
+        // ]);
+        
 
         
         return redirect()->route('adduser')->with('success', 'Pengguna Berhasil Ditambahkan!');

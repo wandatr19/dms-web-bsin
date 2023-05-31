@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Document;
 
@@ -10,7 +11,11 @@ class BanburyController extends Controller
     public function banbury()
     {
         $documents = Document::all();
-        return view('mechanical.layer2.banbury', ['documents' => $documents]);
+        $users = User::pluck('user_access')->toArray();
+        return view('mechanical.layer2.banbury', [
+            'documents' => $documents,
+            'users' => $users
+        ]);
     }
     public function upload(Request $request)
     {
@@ -57,6 +62,7 @@ class BanburyController extends Controller
     public function show($id)
     {
         $document = Document::findOrFail($id);
+        // $fileName = $document->doc_name;
         $filePath = storage_path('app/' . $document->path);
         if (file_exists($filePath)) {
             // Mengirimkan file sebagai respons HTTP dengan nama asli
@@ -65,5 +71,11 @@ class BanburyController extends Controller
             // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
             // ...
         }
+    }
+
+    public function deleteAll($category)
+    {
+        Document::where('category', $category)->delete();
+        return redirect()->route('banbury')->with('success', 'Dokumen Banbury Berhasil Dihapus');
     }
 }

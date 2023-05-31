@@ -3,16 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UtilityController extends Controller
 {
-    public function utility()
+    public function index()
     {
         $documents = Document::all();
-        return view('mechanical.layer2.utility', ['documents' => $documents]);
+        $users = User::pluck('user_access')->toArray();
+        return view('utility.utility', [
+            'documents' => $documents,
+            'users' => $users
+        ]);
     }
-    public function upload(Request $request)
+    public function store(Request $request)
     {
         if ($request->hasFile('file')) {
             $file = $request->file('file');
@@ -25,7 +30,7 @@ class UtilityController extends Controller
             ]);
 
             // Simpan file ke dalam folder 'documents' di dalam direktori 'storage/app/public'
-            $path = $file->store('mechanical/utility');
+            $path = $file->store('utility');
 
             // Simpan data dokumen ke dalam database
             $document = new Document;
@@ -48,6 +53,7 @@ class UtilityController extends Controller
     public function show($id)
     {
         $document = Document::findOrFail($id);
+        // $fileName = $document->doc_name;
         $filePath = storage_path('app/' . $document->path);
         if (file_exists($filePath)) {
             // Mengirimkan file sebagai respons HTTP dengan nama asli
@@ -57,13 +63,18 @@ class UtilityController extends Controller
             // ...
         }
     }
-    public function deleteUser($id)
+    public function delete($id)
     {
         $document = Document::find($id);
         if ($document) {
             $document->delete();
             // Tindakan lain setelah penghapusan data
-            return redirect()->route('utility')->with('success', 'Pengguna Berhasil Dihapus!');
+            return redirect()->route('util')->with('success', 'Pengguna Berhasil Dihapus!');
         }
+    }
+    public function deleteAll($category)
+    {
+        Document::where('category', $category)->delete();
+        return redirect()->route('util')->with('success', 'Dokumen Banbury Berhasil Dihapus');
     }
 }

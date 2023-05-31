@@ -8,7 +8,6 @@ use App\Models\Document;
 
 class StrainerController extends Controller
 {
-    //
     public function strainer()
     {
         $documents = Document::all();

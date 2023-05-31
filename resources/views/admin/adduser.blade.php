@@ -106,179 +106,179 @@
                       AREA 6
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area7" aria-label="..." />
                       AREA 7
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area8" aria-label="..." />
                       AREA 8
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area9" aria-label="..." />
                       AREA 9
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area10" aria-label="..." />
                       AREA 10
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area11" aria-label="..." />
                       AREA 11
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area12" aria-label="..." />
                       AREA 12
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area13" aria-label="..." />
                       AREA 13
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area14" aria-label="..." />
                       AREA 14
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area15" aria-label="..." />
                       AREA 15
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area16" aria-label="..." />
                       AREA 16
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area17" aria-label="..." />
                       AREA 17
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area18" aria-label="..." />
                       AREA 18
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area19" aria-label="..." />
                       AREA 19
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area20" aria-label="..." />
                       AREA 20
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area21" aria-label="..." />
                       AREA 21
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area22" aria-label="..." />
                       AREA 22
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area23" aria-label="..." />
                       AREA 23
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area24" aria-label="..." />
                       AREA 24
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area25" aria-label="..." />
                       AREA 25
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area26" aria-label="..." />
                       AREA 26
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area27" aria-label="..." />
                       AREA 27
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area28" aria-label="..." />
                       AREA 28
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area29" aria-label="..." />
                       AREA 29
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area30" aria-label="..." />
                       AREA 30
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area31" aria-label="..." />
                       AREA 31
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area32" aria-label="..." />
                       AREA 32
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area33" aria-label="..." />
                       AREA 33
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area34" aria-label="..." />
                       AREA 34
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area35" aria-label="..." />
                       AREA 35
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area36" aria-label="..." />
                       AREA 36
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area37" aria-label="..." />
                       AREA 37
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area38" aria-label="..." />
                       AREA 38
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area39" aria-label="..." />
                       AREA 39
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area40" aria-label="..." />
                       AREA 40
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area41" aria-label="..." />
                       AREA 41
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area42" aria-label="..." />
                       AREA 42
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area43" aria-label="..." />
                       AREA 43
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area44" aria-label="..." />
                       AREA 44
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area45" aria-label="..." />
                       AREA 45
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area46" aria-label="..." />
                       AREA 46
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area47" aria-label="..." />
                       AREA 47
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area48" aria-label="..." />
                       AREA 48
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area49" aria-label="..." />
                       AREA 49
                     </li>
                     <li class="list-group-item">
-                      <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." />
+                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area50" aria-label="..." />
                       AREA 50
                     </li>
                   </ul>

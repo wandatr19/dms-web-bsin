@@ -134,9 +134,10 @@
                   <a href="{{route('masterlist')}}" class="nav-link text-white">
                     <i class="bi bi-easel3-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
-                    Masterlist Drg.
+                    Masterlist
                   </a>
                 </li>
+                @if (auth()->user()->role == "admin")
                 <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('adduser')}}" class="nav-link text-white">
                     <i class="bi bi-person-fill-add fs-5"></i>
@@ -144,13 +145,13 @@
                     Add User
                   </a>
                 </li>
-                {{-- <li class="nav-item btn-outline-secondary rounded">
+                <li class="nav-item btn-outline-secondary rounded">
                   <a href="#" class="nav-link text-white">
                     <i class="bi bi-file-earmark-plus-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Add Document
                   </a>
-                </li> --}}
+                </li>
                 <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('listuser')}}" class="nav-link text-white">
                     <i class="bi bi-person-lines-fill fs-5"></i>
@@ -165,6 +166,7 @@
                     History
                   </a>
                 </li>
+                @endif
               </ul>
               <hr />
             </div>
@@ -190,7 +192,9 @@
                     <strong style="color: rgb(0, 0, 0)">Are you sure you want to exit? </strong>
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
+                    <a href="{{route('logout')}}">
+                      <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
+                    </a>
                     <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">No</button>
                   </div>
                   <div class="mb-3"></div>
@@ -271,7 +275,7 @@
                               </span>
                               <ul class="nested">
                               @foreach ($documents as $document)
-                                @if ($document->category == "utility")
+                                @if ($document->category == "")
                                 <li>
                                   <span>
                                     <a href="{{route('show-banbury', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
@@ -1800,18 +1804,17 @@
                             UTILITY
                           </span>
                           <ul class="nested">
-                            <li>
-                              <span class="caret">
-                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                                Doc Item 1
-                              </span>
-                            </li>
-                            <li>
-                              <span class="caret">
-                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                                Doc Item 2
-                              </span>
-                            </li>
+                            @foreach ($documents as $document)
+                                @if ($document->category == "utility")
+                                <li>
+                                  <span>
+                                    <a href="{{route('show-banbury', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                    <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                    {{ $document->doc_name }}</a>
+                                  </span>
+                                </li>
+                              @endif
+                            @endforeach
                           </ul>
                       </li>
                       <!-- AKHIR UTILITY -->

@@ -156,7 +156,7 @@
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">
-                  <a href="/trial" class="nav-link text-white">
+                  <a href="/folder" class="nav-link text-white">
                     <i class="bi bi-file-earmark-plus-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Add Document

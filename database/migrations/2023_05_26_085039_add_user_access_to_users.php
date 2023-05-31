@@ -15,7 +15,7 @@ class AddUserAccessToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('user_access')->nullable();
+            $table->json('user_access');
         });
     }
 
@@ -28,6 +28,7 @@ class AddUserAccessToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->dropColumn('user_access');
         });
     }
 }

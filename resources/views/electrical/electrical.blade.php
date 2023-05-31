@@ -51,22 +51,6 @@
         </a>
         </div>
         <!-- Akhir Card STRAINER -->
-        <!-- Card UTILITY -->
-        <div class="col">
-        <a href="">
-          <button type="button" class="btn btn-primary btn-light">
-            <div class="card shadow-sm" style="width: 8rem">
-              <div class="card-body text-center">
-                <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="UTILITY">
-                  <p class="card-text word-wrap text-truncate">UTILITY</p>
-                </span>
-              </div>
-            </div>
-          </button>
-        </a>
-        </div>
-        <!-- Akhir Card UTILITY -->
         <!-- Card POLYFILM -->
         <div class="col">
         <a href="">

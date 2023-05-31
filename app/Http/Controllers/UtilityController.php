@@ -75,6 +75,6 @@ class UtilityController extends Controller
     public function deleteAll($category)
     {
         Document::where('category', $category)->delete();
-        return redirect()->route('util')->with('success', 'Dokumen Banbury Berhasil Dihapus');
+        return redirect()->route('util')->with('success', 'Dokumen Utility Berhasil Dihapus');
     }
 }

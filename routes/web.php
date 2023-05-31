@@ -55,7 +55,7 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/strainer/{id}', [StrainerController::class, 'show'])->name('showstrainer');
     //Polyfilm
     Route::get('/home/mechanical/polyfilm', [HomeController::class, 'polyfilm'])->name('polyfilm');
-
+    //Utility
     Route::get('/home/utility', [UtilityController::class, 'index'])->name('util');
     Route::post('/home/add-utility', [UtilityController::class, 'store'])->name('uputil');
     Route::get('/home/utility/{id}', [UtilityController::class, 'show'])->name('show-util');

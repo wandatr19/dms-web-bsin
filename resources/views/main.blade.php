@@ -116,15 +116,16 @@
         <div class="col-sm-2 text-start bg-dark py-1">
           <div class="container-fluid m-0 p-0">
             <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-0 text-white bg-dark shadow py-1" style="height: 100vh">
-              {{-- <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> --}}
-                <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap" /></svg>
-              <span class="fs-4">Sidebar</span> -->
                 <form class="d-flex" action="{{route('searchdoc')}}" method="GET">
-                  <input class="form-control me-2" type="text" name="keyword" placeholder="Search" aria-label="Search" />
+                  <input class="form-control me-2" type="text" name="keyword" placeholder="Search by Title" aria-label="Search" />
                   <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                 </form>
-              {{-- </a> --}}
-              <hr />
+              <hr>
+                {{-- <form class="d-flex" action="{{route('searchdoc')}}" method="GET">
+                  <input class="form-control me-2" type="text" name="keyword" placeholder="Search by Keyword" aria-label="Search" />
+                  <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              <hr> --}}
               <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('home')}}" class="nav-link text-white" aria-current="page">
@@ -153,13 +154,6 @@
                     <i class="bi bi-person-fill-add fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Add User
-                  </a>
-                </li>
-                <li class="nav-item btn-outline-secondary rounded">
-                  <a href="/folder" class="nav-link text-white">
-                    <i class="bi bi-file-earmark-plus-fill fs-5"></i>
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
-                    Add Document
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">

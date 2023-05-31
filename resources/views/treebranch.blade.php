@@ -73,18 +73,9 @@
 
         <div class="col-auto bg-dark mt-3 text-end">
           <p class="d-flex align-items-center text-white text-decoration-none fs-6" id="UserInfo" data-bs-toggle="UserInfo" aria-expanded="false">
-            <!-- <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2" /> -->
             <i class="bi bi-person-circle mx-2 fs-5"></i>
             {{auth()->user()->name}}
           </p>
-          <!-- <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-              <p class="text-center">Email:</p>
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Log out</a></li>
-            </ul> -->
         </div>
 
         <!-- Garis Merah -->
@@ -106,14 +97,10 @@
         <div class="col-sm-2 text-start bg-dark py-1">
           <div class="container-fluid m-0 p-0">
             <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-0 text-white bg-dark shadow py-1" style="height: 100vh">
-              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap" /></svg>
-              <span class="fs-4">Sidebar</span> -->
-                <form class="d-flex">
+                <form class="d-flex" action="{{route('searchdoc')}}" method="GET">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                   <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                 </form>
-              </a>
               <hr />
               <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item btn-outline-secondary rounded">
@@ -143,13 +130,6 @@
                     <i class="bi bi-person-fill-add fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
                     Add User
-                  </a>
-                </li>
-                <li class="nav-item btn-outline-secondary rounded">
-                  <a href="#" class="nav-link text-white">
-                    <i class="bi bi-file-earmark-plus-fill fs-5"></i>
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
-                    Add Document
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">

@@ -75,7 +75,8 @@
     @foreach ($documents as $document)
       @if ($document->category == "banbury")
           <tr>
-              <td>{{ $document->doc_name }}</td>
+              
+              <td><a href="{{ route('open-bb', $document->id) }}">{{ $document->doc_name }}</a></td>
               <td>{{ $document->size }} mb</td>
               <td>{{ $document->created_at }}</td>
               <td><a href="{{route('show-banbury', $document->id)}}" target="_blank">Open</a></td>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Document;
+use Illuminate\Support\Facades\Storage;
 
 class BanburyController extends Controller
 {
@@ -50,13 +51,14 @@ class BanburyController extends Controller
             'message' => 'Tidak ada file yang diunggah'
         ], 400);
     }
-    public function deleteUser($id)
+    public function deleteDoc($id)
     {
         $document = Document::find($id);
+        Storage::delete($document->path); 
         if ($document) {
             $document->delete();
             // Tindakan lain setelah penghapusan data
-            return redirect()->route('banbury')->with('success', 'Pengguna Berhasil Dihapus!');
+            return redirect()->route('banbury')->with('success', 'Dokumen Berhasil Dihapus!');
         }
     }
     public function show($id)
@@ -75,7 +77,20 @@ class BanburyController extends Controller
 
     public function deleteAll($category)
     {
-        Document::where('category', $category)->delete();
+        $documents = Document::where('category', $category)->get();
+        foreach ($documents as $document) {
+            Storage::delete($document->path);
+            $document->delete();
+        }
         return redirect()->route('banbury')->with('success', 'Dokumen Banbury Berhasil Dihapus');
+    }
+
+    public function open($id)
+    {
+        $document = Document::findOrFail($id);
+        $pdfPath = storage_path('app/' . $document->path);
+        $pdfLink = Storage::url($document->path);
+
+        return view('openpdf', compact('pdfPath', 'pdfLink'));
     }
 }

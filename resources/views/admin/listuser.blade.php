@@ -19,6 +19,11 @@
                 <hr class="ms-0" />
             </div>
         </div>
+        @if (session('success1'))
+            <div class="alert alert-success">
+                {{ session('success1') }}
+            </div>
+        @endif
 
         <!-- Baris 2: List User Text -->
         <div class="row my-3 ms-4">
@@ -28,7 +33,7 @@
                     {{ session('success') }}
                 </div>
             @endif
-            <div class="overflow-auto" style="max-width: 1200px; max-height: 500px">
+            <div class="overflow-auto" style="max-width: 100%; max-height: 100%">
                 <div class="table-responsive">
                     <table class="table table-sm table-bordered table-striped table-hover">
                         <caption>
@@ -41,10 +46,11 @@
                                 <th scope="col">Department</th>
                                 <th scope="col">Role</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Created at</th>
+                                {{-- <th scope="col">Created at</th> --}}
                                 <th scope="col">User Access</th>
                                 {{-- <th scope="col">Password</th> --}}
                                 <th scope="col">Delete</th>
+                                <th scope="col">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,11 +60,12 @@
                                     <td>{{ $user->department }}</td>
                                     <td>{{ $user->role }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
+                                    {{-- <td>{{ $user->created_at }}</td> --}}
                                     <td>{{ $user->user_access }}</td>
                                     {{-- <td>{{ $user ->password}}</td> --}}
                                     <td><a href="{{ route('deleteUser', ['id' => $user->id]) }}" type="button"
                                             class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
+                                    <td><a href="{{ route('edit-user', $user->id) }}"><i class="bi bi-pencil-square"></i></a></td>
                                 </tr>
                             @endforeach
                         </tbody>

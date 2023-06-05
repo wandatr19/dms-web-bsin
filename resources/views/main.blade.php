@@ -157,6 +157,13 @@
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">
+                  <a href="{{route('addfolder')}}" class="nav-link text-white">
+                    <i class="bi bi-folder-plus"></i>
+                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
+                    Add Folder
+                  </a>
+                </li>
+                <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('listuser')}}" class="nav-link text-white">
                     <i class="bi bi-person-lines-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
@@ -193,7 +200,6 @@
           <div class="d-grid gap-2 shadow nav-item bg-light rounded">
             <!-- Button trigger modal -->
             <a href="#" class="nav-link text-danger text-center btn-outline-secondary rounded" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <!-- <svg class="bi me-2" width="16" height="16"><use xlink:href="#home" /></svg> -->
               <i class="bi bi-box-arrow-right"></i>
               Log Out
             </a>
@@ -258,15 +264,8 @@
         new bootstrap.Tooltip(t);
       });
     </script>
-
-    <!-- Buat Tooltip -->
-    <!-- <script>
-      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-      });
-    </script> -->
   </body>
+
   <script type="text/javascript">
     new Dropzone('#pdf-upload', {
       thumbnailWidth: 200,
@@ -281,4 +280,29 @@
   {{-- Bootstrap --}}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+  {{-- password-eye --}}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var passwordInput = document.getElementById('password');
+      var passwordVisibleInput = document.getElementById('password_visible');
+      var showPasswordCheckbox = document.getElementById('show_password');
+    
+      passwordVisibleInput.style.display = 'none'; // Sembunyikan input field password_visible saat halaman dimuat
+      
+      passwordInput.addEventListener('keyup', function() {
+        passwordVisibleInput.value = passwordInput.value;
+      });
+      
+      showPasswordCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          passwordInput.style.display = 'none';
+          passwordVisibleInput.style.display = 'block';
+        } else {
+          passwordInput.style.display = 'block';
+          passwordVisibleInput.style.display = 'none';
+        }
+      });
+    });
+  </script>
+    
 </html>

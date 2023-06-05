@@ -10,11 +10,6 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    // protected $data;
-    // public function __construct()
-    // {
-    //     $this->data = new User();
-    // }
     public function create()
     {
         return view('admin.adduser');
@@ -26,12 +21,11 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
-        
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required',
             'role' => 'required',
-            'user_access' => 'required|array',
+            'user_access' => 'nullable|array',
             'password' => 'required',
             'department' => 'required',
 
@@ -41,33 +35,40 @@ class UserController extends Controller
         $data->name = $validatedData['name'];
         $data->email = $validatedData['email'];
         $data->role = $validatedData['role'];
-        // $data->user_access = json_encode($validatedData['user_access']);
         $data->user_access  = implode(',', $validatedData['user_access'] ?? []);
         $data->department = $validatedData['department'];
         $data->password = Hash::make($validatedData['password']);
         $data->remember_token = Str::random(60);
         $data->save();
 
-        // foreach ($validatedData['user_access'] as $value) {
-        //     $data->userAccess()->create(['value' => $value]);
-        // }
-        // $userAccess = $request->input('user_access');
-        // $userAccess = json_encode($userAccess);
-        // User::create([
-        //     'user_access' => $userAccess
-        // ]);
-        
-
-        
         return redirect()->route('adduser')->with('success', 'Pengguna Berhasil Ditambahkan!');
     }
+    public function edit(User $user)
+    {
+        $user->user_access = explode(',', $user->user_access);
+        return view('admin.edituser', compact('user'));
+    }
+    public function update(Request $request, User $user)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'password' => 'nullable',
+            'user_access' => 'nullable|array',
+        ]);
 
+        $validatedData['user_access'] = implode(',', $validatedData['user_access']);
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        $user->update($validatedData);
+
+        return redirect()->route('listuser')->with('success1', 'Data pengguna berhasil diperbarui.');
+    }
     public function deleteUser($id)
     {
         $user = User::find($id);
         if ($user) {
             $user->delete();
-            // Tindakan lain setelah penghapusan data
             return redirect()->route('listuser')->with('success', 'Pengguna Berhasil Dihapus!');
         }
     }

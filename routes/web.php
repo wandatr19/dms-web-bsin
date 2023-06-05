@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BanburyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FolderController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasterListController;
 use App\Http\Controllers\SearchController;
@@ -46,7 +47,8 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/banbury', [BanburyController::class, 'banbury'])->name('banbury');
     Route::post('/home/mechanical/add-banbury', [BanburyController::class, 'upload'])->name('upbanbury');
     Route::get('/home/mechanical/banbury/{id}', [BanburyController::class, 'show'])->name('show-banbury');
-    Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'deleteUser'])->name('deleteBB');
+    Route::get('/home/opendoc/{id}', [BanburyController::class, 'open'])->name('open-bb');
+    Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'deleteDoc'])->name('deleteBB');
     Route::get('/home/mechanical/banbury/deleteAll/{category}', [BanburyController::class, 'deleteAll'])->name('deleteBanbury');
     //Strainer
     Route::get('/home/mechanical/strainer', [StrainerController::class, 'strainer'])->name('strainer');
@@ -118,5 +120,10 @@ Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], fu
     Route::get('/adduser', [UserController::class, 'create'])->name('adduser');
     Route::post('/save-adduser', [UserController::class, 'store'])->name('save-adduser');
     Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+    Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('edit-user');
+    Route::put('/user/{user}', [UserController::class, 'update'])->name('update-user');
+
+    Route::get('/addfolder', [FolderController::class, 'index'])->name('addfolder');
+    Route::post('/addfolders', [FolderController::class, 'addFolder'])->name('folder');
 
 });

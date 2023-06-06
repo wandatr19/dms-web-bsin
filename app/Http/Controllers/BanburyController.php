@@ -57,17 +57,14 @@ class BanburyController extends Controller
         Storage::delete($document->path); 
         if ($document) {
             $document->delete();
-            // Tindakan lain setelah penghapusan data
             return redirect()->route('banbury')->with('success', 'Dokumen Berhasil Dihapus!');
         }
     }
     public function show($id)
     {
         $document = Document::findOrFail($id);
-        // $fileName = $document->doc_name;
         $filePath = storage_path('app/' . $document->path);
         if (file_exists($filePath)) {
-            // Mengirimkan file sebagai respons HTTP dengan nama asli
             return response()->file($filePath, ['Content-Disposition' => 'inline']);
         } else {
             // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda

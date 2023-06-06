@@ -11,13 +11,17 @@ use Illuminate\Http\Request;
 
 class FavoriteController extends Controller
 {
-    public function addFav(Request $request, Document $document)
+    public function add(Request $request, Document $document)
     {
         $user = $request->user();
 
-        if ($user->favorites()->where('document_id', $document->id)->exist()) {
+        if ($user->favorites()->where('document_id', $document->id)->count() > 0) {
+            return response()->json(['message' => 'Dokumen sudah ditandai sebagai favorit.'], 422);
         }
         $favorite = new Favorite();
-        $favorite = user_id = $user->id;
+        $favorite->user_id = $user->id;
+        $favorite->document_id = $document->id;
+        $favorite->save();
+
     }
 }

@@ -44,7 +44,7 @@
                   </div>
                   <div class="mb-3 fs-6">
                     <label for="email" class="form-label">Email :</label>
-                    <input type="email" class="form-control form-control-sm" name="email" id="email" placeholder="name@example.com" />
+                    <input type="email" class="form-control form-control-sm" name="email" id="email" placeholder="name@bridgestone.com" />
                   </div>
                   <div class="mb-3 fs-6">
                     <label for="department" class="form-label">Department :</label>
@@ -54,8 +54,8 @@
                     <label for="role" class="form-label">Role :</label>
                     <select class="form-select" name="role" id="role" aria-label="Default select example">
                       <option selected>Select role</option>
-                      <option value="admin">admin</option>
                       <option value="user">user</option>
+                      <option value="admin">admin</option>
                     </select>
                   </div>
                   <div class="mb-3 fs-6">

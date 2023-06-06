@@ -63,11 +63,12 @@
   <thead>
       <tr>
           <th scope="col">Doc Name</th>
-          <th scope="col">Size</th>
-          <th scope="col">Date Added</th>
-          <th scope="col">Action</th>
+          <th scope="col" style="text-align: center">Size</th>
+          <th scope="col" style="text-align: center">Date Added</th>
+          <th scope="col" style="text-align: center">Action</th>
+          <th scope="col" style="text-align: center">Favorite</th>
           @if (auth()->user()->role == "admin")
-          <th scope="col">Delete</th>
+          <th scope="col" style="text-align: center">Delete</th>
           @endif
       </tr>
   </thead>
@@ -77,11 +78,12 @@
           <tr>
               
               <td><a href="{{ route('open-bb', $document->id) }}">{{ $document->doc_name }}</a></td>
-              <td>{{ $document->size }} mb</td>
-              <td>{{ $document->created_at }}</td>
-              <td><a href="{{route('show-banbury', $document->id)}}" target="_blank">Open</a></td>
+              <td style="text-align: center">{{ $document->size }} mb</td>
+              <td style="text-align: center">{{ $document->created_at }}</td>
+              <td style="text-align: center"><a href="{{route('show-banbury', $document->id)}}" target="_blank"><i class="bi bi-download"></i></a></td>
+              <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td>
               @if (auth()->user()->role == "admin")
-                <td><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
+                <td style="text-align: center"><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
               @endif
           </tr>

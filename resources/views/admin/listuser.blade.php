@@ -3,7 +3,7 @@
 @section('utama')
     <div class="row">
         <div class="input-group input-group-sm m-0 p-0">
-            <button class="input-group-text" id="inputGroup-sizing-sm" onclick="">Back</button>
+            <button class="input-group-text" id="inputGroup-sizing-sm" onclick=""><b>Back</b></button>
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
                 disabled />
         </div>
@@ -49,8 +49,8 @@
                                 {{-- <th scope="col">Created at</th> --}}
                                 <th scope="col">User Access</th>
                                 {{-- <th scope="col">Password</th> --}}
-                                <th scope="col">Delete</th>
-                                <th scope="col">Edit</th>
+                                <th scope="col" style="text-align: center">Delete</th>
+                                <th scope="col" style="text-align: center">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,9 +63,9 @@
                                     {{-- <td>{{ $user->created_at }}</td> --}}
                                     <td>{{ $user->user_access }}</td>
                                     {{-- <td>{{ $user ->password}}</td> --}}
-                                    <td><a href="{{ route('deleteUser', ['id' => $user->id]) }}" type="button"
+                                    <td style="text-align: center"><a href="{{ route('deleteUser', ['id' => $user->id]) }}" type="button"
                                             class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
-                                    <td><a href="{{ route('edit-user', $user->id) }}"><i class="bi bi-pencil-square"></i></a></td>
+                                    <td style="text-align: center"><a href="{{ route('edit-user', $user->id) }}"><i class="bi bi-pencil-square"></i></a></td>
                                 </tr>
                             @endforeach
                         </tbody>

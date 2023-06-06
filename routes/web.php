@@ -4,6 +4,7 @@ use App\Http\Controllers\BanburyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FolderController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MasterListController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StrainerController;
@@ -35,6 +36,9 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     //Search
     Route::get('/search', [SearchController::class, 'searchUser'])->name('searchdoc');
     Route::get('/search/{id}', [SearchController::class, 'show'])->name('showdoc');
+
+    //Favorite
+    Route::get('/favorite/add/{document}', [FavoriteController::class, 'add'])->name('add-fav');
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/treebranch', [HomeController::class, 'treebr'])->name('treebr');

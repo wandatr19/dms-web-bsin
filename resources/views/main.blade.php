@@ -73,6 +73,13 @@
         height: 100%;
         }
     </style>
+    <style>
+      /* Gaya tampilan untuk elemen PDF viewer */
+      #pdf-viewer {
+          width: 100%;
+          height: 600px;
+      }
+    </style>
     <link rel="icon" href="/img/bs-logo-white.png">
     <title>DMS | Eng Design</title>
   </head>
@@ -157,13 +164,6 @@
                   </a>
                 </li>
                 <li class="nav-item btn-outline-secondary rounded">
-                  <a href="{{route('addfolder')}}" class="nav-link text-white">
-                    <i class="bi bi-folder-plus"></i>
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
-                    Add Folder
-                  </a>
-                </li>
-                <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('listuser')}}" class="nav-link text-white">
                     <i class="bi bi-person-lines-fill fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
@@ -178,19 +178,7 @@
                   </a>
                 </li>
                 @endif
-                <!-- <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" />
-                <hr class="text-dark" /> -->
+                
               </ul>
               <hr />
             </div>
@@ -203,7 +191,6 @@
               <i class="bi bi-box-arrow-right"></i>
               Log Out
             </a>
-            <!-- <button class="btn btn-dark btn-lg btn-block bg-danger" type="button">Login</button> -->
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

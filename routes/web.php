@@ -51,9 +51,10 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/banbury', [BanburyController::class, 'banbury'])->name('banbury');
     Route::post('/home/mechanical/add-banbury', [BanburyController::class, 'upload'])->name('upbanbury');
     Route::get('/home/mechanical/banbury/{id}', [BanburyController::class, 'show'])->name('show-banbury');
-    Route::get('/home/opendoc/{id}', [BanburyController::class, 'open'])->name('open-bb');
+    Route::get('/home/opendoc/{id}', [BanburyController::class, 'buka'])->name('open-bb');
     Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'deleteDoc'])->name('deleteBB');
     Route::get('/home/mechanical/banbury/deleteAll/{category}', [BanburyController::class, 'deleteAll'])->name('deleteBanbury');
+    Route::post('/home/mechanical/banbury/pw/{id}', [BanburyController::class, 'passwordPage'])->name('passwordBB');
     //Strainer
     Route::get('/home/mechanical/strainer', [StrainerController::class, 'strainer'])->name('strainer');
     Route::post('/home/mechanical/add-strainer', [StrainerController::class, 'upload'])->name('upstrainer');

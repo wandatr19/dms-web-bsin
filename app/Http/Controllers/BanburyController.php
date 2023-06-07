@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Document;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
+
 
 class BanburyController extends Controller
 {
@@ -71,6 +73,18 @@ class BanburyController extends Controller
             // ...
         }
     }
+    public function passwordPage(Request $request, $id)
+    {
+        $password = $request->input('password');
+
+        $document = Document::findOrFail($id);
+
+        if ($password === '123456') {
+            return redirect()->route('show-banbury', $document->id);
+        } else {
+            return back();
+        }
+    }
 
     public function deleteAll($category)
     {
@@ -89,5 +103,17 @@ class BanburyController extends Controller
         $pdfLink = Storage::url($document->path);
 
         return view('openpdf', compact('pdfPath', 'pdfLink'));
+    }
+    public function buka($id)
+    {
+        $document = Document::findOrFail($id);
+        $filePath = storage_path('app/' . $document->path);
+        if (file_exists($filePath)) {
+            $pdfUrl = asset($document->path);
+            return view('openpdf', compact('pdfUrl'));
+        } else {
+            // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
+            // ...
+        }
     }
 }

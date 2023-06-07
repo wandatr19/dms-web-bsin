@@ -23,5 +23,7 @@ class FavoriteController extends Controller
         $favorite->document_id = $document->id;
         $favorite->save();
 
+        return redirect()->back();
+        
     }
 }

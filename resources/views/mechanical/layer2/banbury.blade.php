@@ -76,11 +76,36 @@
     @foreach ($documents as $document)
       @if ($document->category == "banbury")
           <tr>
-              
               <td><a href="{{ route('open-bb', $document->id) }}">{{ $document->doc_name }}</a></td>
               <td style="text-align: center">{{ $document->size }} mb</td>
               <td style="text-align: center">{{ $document->created_at }}</td>
-              <td style="text-align: center"><a href="{{route('show-banbury', $document->id)}}" target="_blank"><i class="bi bi-download"></i></a></td>
+              <td style="text-align: center"><a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalOpen{{ $document->id }}"><i class="bi bi-download"></i></a>
+              <!-- Modal buat open Doc-->
+                <div class="modal fade" id="exampleModalOpen{{ $document->id }}" tabindex="-1" aria-labelledby="exampleModalOpen{{ $document->id }}" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content shadow px-5" style="border-radius: 15px">
+                      <!-- Header Modal & Tanda Silang -->
+                      <div class="modal-body text-center">
+                        <strong style="color: rgb(0, 0, 0)">Please Input Password! </strong>
+                      </div>
+                      <!-- buat input password -->
+                      <div class="mb-3 row">
+                        <form action="{{route('passwordBB', $document->id)}}" method="POST" target="_blank">
+                          @csrf
+                          <div class="form-group">
+                            <label for="password" class=" col-form-label"></label>
+                            <input type="password" class="form-control" id="password" name="password">
+                          </div>
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-secondary btn-success">Confirm</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Akhir modal buat open doc -->
+              </td>
               <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td>
               @if (auth()->user()->role == "admin")
                 <td style="text-align: center"><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
@@ -129,7 +154,4 @@
 </div>
 @endif
 <!-- Akhir Button Plus -->
-
-
-
 @endsection

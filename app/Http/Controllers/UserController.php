@@ -58,7 +58,12 @@ class UserController extends Controller
         ]);
 
         $validatedData['user_access'] = implode(',', $validatedData['user_access']);
-        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        if (!empty($validatedData['password'])) {
+            $validatedData['password'] = Hash::make($validatedData['password']);
+        } else {
+            unset($validatedData['password']);
+        }
 
         $user->update($validatedData);
 
@@ -71,5 +76,11 @@ class UserController extends Controller
             $user->delete();
             return redirect()->route('listuser')->with('success', 'Pengguna Berhasil Dihapus!');
         }
+    }
+
+    public function favorite(User $user)
+    {
+        $favorites = $user->favorites()->with('document')->get();
+        return view('favorites.index', compact('favorites'));
     }
 }

@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('home');
+    public function index(User $user)
+    {
+        $favorites = $user->favorites()->with('document')->get();
+        return view('home', compact('favorites'));
     }
     public function treebr(){
         $documents = Document::all();

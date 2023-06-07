@@ -1,18 +1,46 @@
-@extends('main')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Viewer</title>
+    <style>
+        #pdfViewer {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="pdfViewer"></div>
 
-@section('utama')
-<!-- Back Button -->
-<div class="row">
-    <div class="input-group input-group-sm m-0 p-0">
-      <a href="{{route('banbury')}}">
-      <button class="input-group-text" id="inputGroup-sizing-sm" onclick="">Back</button>
-      </a>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled />
-    </div>
-</div>
-  <!-- Akhir Back Button -->
-  {{-- @php
-    dd($pdfLink) 
-  @endphp --}}
-<embed style="width: 100%; height:100vh" src="{{$pdfLink}}" type="application/pdf">
-@endsection
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        var url = '{{ $pdfUrl }}'; // Mengambil URL dokumen PDF dari controller
+
+        // Fungsi untuk memuat dokumen PDF menggunakan PDF.js
+        function renderPDF(url) {
+            pdfjsLib.getDocument(url).promise.then(function(pdf) {
+                pdf.getPage(1).then(function(page) {
+                    var canvas = document.createElement('canvas');
+                    var context = canvas.getContext('2d');
+                    var viewport = page.getViewport({ scale: 1.5 });
+
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+
+                    page.render(renderContext).promise.then(function() {
+                        document.getElementById('pdfViewer').appendChild(canvas);
+                    });
+                });
+            });
+        }
+
+        // Memanggil fungsi renderPDF dengan URL dokumen PDF
+        renderPDF(url);
+    </script>
+</body>
+</html>

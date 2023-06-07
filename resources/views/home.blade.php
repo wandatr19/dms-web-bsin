@@ -8,7 +8,7 @@
 <div class="overflow-auto" style="max-width: 100%; max-height: 100%">
 <div class="container-fluid m-0 p-0">
   <!-- Baris 1: Favourites -->
-  @if (auth()->user()->role == "user")
+  {{-- @if (auth()->user()->role == "user") --}}
   <div class="row my-3 ms-4">
     <h4><i class="bi bi-star-fill text-warning me-2"></i>Favourites</h4>
     <div class="row">
@@ -17,24 +17,30 @@
   </div>
   <!-- Baris 2 : card document -->
   {{-- <div class="overflow-auto" style="max-width: 100%; max-height: 200px"> --}}
-    <div class="container-fluid">
-      <div class="row my-3 ms-4 fs-5 row-cols-auto">
-        <div class="col">
-          <button type="button" class="btn btn-primary btn-light">
-            <div class="card shadow-sm" style="width: 8rem">
-              <div class="card-body text-center">
-                <i class="bi bi-filetype-pdf fs-1 text-danger"></i>
-                <span class="tt" data-bs-placement="top" title="Banbury 1 - 1/20.pdf">
-                  <p class="card-text word-wrap text-truncate">BB1 - 1/20</p>
-                </span>
+  @if ($favorites->isEmpty())
+    <p>Tidak ada dokumen favorit.</p>
+  @else
+    @foreach ($favorites as $favorite)     
+      <div class="container-fluid">
+        <div class="row my-3 ms-4 fs-5 row-cols-auto">
+          <div class="col">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-filetype-pdf fs-1 text-danger"></i>
+                  <span class="tt" data-bs-placement="top" title="Banbury 1 - 1/20.pdf">
+                    <p class="card-text word-wrap text-truncate">{{ $favorite->document->doc_name }}</p>
+                  </span>
+                </div>
               </div>
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  {{-- </div> --}}
+    @endforeach
   @endif
+  {{-- </div> --}}
+  {{-- @endif --}}
 
   <!-- Baris 3: Document Text -->
   <div class="row my-3 ms-4">

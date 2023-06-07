@@ -48,7 +48,6 @@
                                 <th scope="col">Email</th>
                                 {{-- <th scope="col">Created at</th> --}}
                                 <th scope="col">User Access</th>
-                                {{-- <th scope="col">Password</th> --}}
                                 <th scope="col" style="text-align: center">Delete</th>
                                 <th scope="col" style="text-align: center">Edit</th>
                             </tr>
@@ -62,7 +61,6 @@
                                     <td>{{ $user->email }}</td>
                                     {{-- <td>{{ $user->created_at }}</td> --}}
                                     <td>{{ $user->user_access }}</td>
-                                    {{-- <td>{{ $user ->password}}</td> --}}
                                     <td style="text-align: center"><a href="{{ route('deleteUser', ['id' => $user->id]) }}" type="button"
                                             class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
                                     <td style="text-align: center"><a href="{{ route('edit-user', $user->id) }}"><i class="bi bi-pencil-square"></i></a></td>

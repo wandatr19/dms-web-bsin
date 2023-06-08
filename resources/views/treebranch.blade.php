@@ -193,7 +193,7 @@
           <div class="overflow-auto" style="max-width: 100%; max-height: 100%">
             <section class="container-fluid">
               <div class="row content d-flex">
-                <div class="col-lg-5 py-4">
+                <div class="col-lg-10 py-4">
                   <div class="box p-4 rounded-3">
                     <ul id="myUL">
                       <!-- MECHANICAL -->
@@ -214,7 +214,7 @@
                                 @if ($document->category == "banbury")
                                 <li>
                                   <span>
-                                    <a href="{{route('show-banbury', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                    <a href="{{route('open-bb', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
                                     <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
                                     {{ $document->doc_name }}</a>
                                   </span>
@@ -236,7 +236,7 @@
                                 @if ($document->category == "strainer")
                                 <li>
                                   <span>
-                                    <a href="{{route('show-banbury', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                    <a href="{{route('open-bb', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
                                     <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
                                     {{ $document->doc_name }}</a>
                                   </span>

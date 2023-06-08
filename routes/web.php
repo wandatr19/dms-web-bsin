@@ -10,6 +10,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StrainerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UtilityController;
+use App\Http\Controllers\PwDocController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,7 +57,7 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/banbury/{id}', [BanburyController::class, 'open'])->name('show-banbury');
     Route::get('/home/mechanical/banbury/view/{id}', [BanburyController::class, 'view'])->name('open-bb');
     Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'delete'])->name('deleteBB');
-    Route::get('/home/mechanical/banbury/deleteAll/{category}', [BanburyController::class, 'destroy'])->name('deleteBanbury');
+    Route::get('/home/mechanical/banbury/deleteAll/{category}', [BanburyController::class, 'destroy'])->name('destroyBB');
     Route::post('/home/mechanical/banbury/pw/{id}', [BanburyController::class, 'verifPw'])->name('passwordBB');
     //Strainer
     Route::get('/home/mechanical/strainer', [StrainerController::class, 'strainer'])->name('strainer');
@@ -134,4 +135,6 @@ Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], fu
     Route::get('/addfolder', [FolderController::class, 'index'])->name('addfolder');
     Route::post('/addfolders', [FolderController::class, 'addFolder'])->name('folder');
 
+    Route::get('pwdoc/', [PwDocController::class, 'index'])->name('pwdoc');
+    Route::post('pwdoc/store', [PwDocController::class, 'store'])->name('store-pw');
 });

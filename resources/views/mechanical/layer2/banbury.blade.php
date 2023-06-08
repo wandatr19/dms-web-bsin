@@ -15,6 +15,11 @@
     {{ session('success') }}
   </div>
 @endif
+@if (session('failed'))
+  <div class="alert alert-danger">
+    {{ session('failed') }}
+  </div>
+@endif
 
 <!-- Baris 2: Btn Delete All-->
 @if (auth()->user()->role == "admin")
@@ -39,7 +44,7 @@
             </strong>
           </div>
           <div class="text-center">
-          <a href="{{route('deleteBanbury', ['category'=>'banbury'])}}">
+          <a href="{{route('destroyBB', ['category'=>'banbury'])}}">
             <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
           </a>
             <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">No</button>
@@ -66,7 +71,7 @@
           <th scope="col" style="text-align: center">Size</th>
           <th scope="col" style="text-align: center">Date Added</th>
           <th scope="col" style="text-align: center">Action</th>
-          <th scope="col" style="text-align: center">Favorite</th>
+          {{-- <th scope="col" style="text-align: center">Favorite</th> --}}
           @if (auth()->user()->role == "admin")
           <th scope="col" style="text-align: center">Delete</th>
           @endif
@@ -106,7 +111,7 @@
                 </div>
               <!-- Akhir modal buat open doc -->
               </td>
-              <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td>
+              {{-- <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td> --}}
               @if (auth()->user()->role == "admin")
                 <td style="text-align: center"><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>

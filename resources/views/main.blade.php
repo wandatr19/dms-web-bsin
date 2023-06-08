@@ -157,6 +157,13 @@
                 </li>
                 @if (auth()->user()->role == "admin")
                 <li class="nav-item btn-outline-secondary rounded">
+                  <a href="{{route('pwdoc')}}" class="nav-link text-white">
+                    <i class="bi bi-file-earmark-lock2-fill"></i>
+                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>
+                    Password Doc
+                  </a>
+                </li>
+                <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('adduser')}}" class="nav-link text-white">
                     <i class="bi bi-person-fill-add fs-5"></i>
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2" /></svg>

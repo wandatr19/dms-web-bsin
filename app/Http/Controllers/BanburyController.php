@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Document;
+use App\Models\History;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
@@ -33,7 +34,7 @@ class BanburyController extends Controller
             ]);
 
             // Simpan file ke dalam folder 'documents' di dalam direktori 'storage/app/public'
-            $path = $file->store('mechanical/banbury');
+            $path = $file->store('mechanical/banbury', 'public');
 
             // Simpan data dokumen ke dalam database
             $document = new Document;
@@ -53,7 +54,7 @@ class BanburyController extends Controller
             'message' => 'Tidak ada file yang diunggah'
         ], 400);
     }
-    public function deleteDoc($id)
+    public function delete($id)
     {
         $document = Document::find($id);
         Storage::delete($document->path); 
@@ -62,18 +63,19 @@ class BanburyController extends Controller
             return redirect()->route('banbury')->with('success', 'Dokumen Berhasil Dihapus!');
         }
     }
-    public function show($id)
+    public function open($id)
     {
         $document = Document::findOrFail($id);
-        $filePath = storage_path('app/' . $document->path);
+        $filePath = storage_path('app/public/' . $document->path);
         if (file_exists($filePath)) {
             return response()->file($filePath, ['Content-Disposition' => 'inline']);
         } else {
             // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
             // ...
         }
+
     }
-    public function passwordPage(Request $request, $id)
+    public function verifPw(Request $request, $id)
     {
         $password = $request->input('password');
 
@@ -86,7 +88,7 @@ class BanburyController extends Controller
         }
     }
 
-    public function deleteAll($category)
+    public function destroy($category)
     {
         $documents = Document::where('category', $category)->get();
         foreach ($documents as $document) {
@@ -95,25 +97,16 @@ class BanburyController extends Controller
         }
         return redirect()->route('banbury')->with('success', 'Dokumen Banbury Berhasil Dihapus');
     }
-
-    public function open($id)
+    public function view($id)
     {
         $document = Document::findOrFail($id);
-        $pdfPath = storage_path('app/' . $document->path);
-        $pdfLink = Storage::url($document->path);
-
-        return view('openpdf', compact('pdfPath', 'pdfLink'));
-    }
-    public function buka($id)
-    {
-        $document = Document::findOrFail($id);
-        $filePath = storage_path('app/' . $document->path);
+        $filePath = storage_path('app/public/' . $document->path);
         if (file_exists($filePath)) {
-            $pdfUrl = asset($document->path);
-            return view('openpdf', compact('pdfUrl'));
+            $pdfData = base64_encode(file_get_contents($filePath));
+            return view('openpdf', compact('pdfData'));
         } else {
-            // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
-            // ...
+            
         }
+        
     }
 }

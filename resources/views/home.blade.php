@@ -8,16 +8,16 @@
 <div class="overflow-auto" style="max-width: 100%; max-height: 100%">
 <div class="container-fluid m-0 p-0">
   <!-- Baris 1: Favourites -->
-  {{-- @if (auth()->user()->role == "user") --}}
+  {{-- @if (auth()->user()->role == "user")
   <div class="row my-3 ms-4">
     <h4><i class="bi bi-star-fill text-warning me-2"></i>Favourites</h4>
     <div class="row">
       <hr class="ms-0" />
     </div>
-  </div>
+  </div> --}}
   <!-- Baris 2 : card document -->
   {{-- <div class="overflow-auto" style="max-width: 100%; max-height: 200px"> --}}
-  @if ($favorites->isEmpty())
+  {{-- @if ($favorites->isEmpty())
     <p>Tidak ada dokumen favorit.</p>
   @else
     @foreach ($favorites as $favorite)     
@@ -39,8 +39,8 @@
       </div>
     @endforeach
   @endif
-  {{-- </div> --}}
-  {{-- @endif --}}
+  </div>
+  @endif --}}
 
   <!-- Baris 3: Document Text -->
   <div class="row my-3 ms-4">

@@ -3,44 +3,54 @@
 <head>
     <title>PDF Viewer</title>
     <style>
-        #pdfViewer {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #pdf-container {
             width: 100%;
             height: 100vh;
         }
     </style>
 </head>
 <body>
-    <div id="pdfViewer"></div>
+    <div id="pdf-container"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script>
-        var url = '{{ $pdfUrl }}'; // Mengambil URL dokumen PDF dari controller
+        const pdfData = "{{ $pdfData }}";
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
 
-        // Fungsi untuk memuat dokumen PDF menggunakan PDF.js
-        function renderPDF(url) {
-            pdfjsLib.getDocument(url).promise.then(function(pdf) {
-                pdf.getPage(1).then(function(page) {
-                    var canvas = document.createElement('canvas');
-                    var context = canvas.getContext('2d');
-                    var viewport = page.getViewport({ scale: 1.5 });
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
 
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
+        const container = document.getElementById('pdf-container');
 
-                    var renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
+        function renderPDF(data) {
+            const loadingTask = pdfjsLib.getDocument({ data });
+            loadingTask.promise.then((pdf) => {
+                for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+                    pdf.getPage(pageNumber).then((page) => {
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        const viewport = page.getViewport({ scale: 1 });
 
-                    page.render(renderContext).promise.then(function() {
-                        document.getElementById('pdfViewer').appendChild(canvas);
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        container.appendChild(canvas);
+
+                        page.render({
+                            canvasContext: context,
+                            viewport: viewport
+                        });
                     });
-                });
+                }
             });
         }
 
-        // Memanggil fungsi renderPDF dengan URL dokumen PDF
-        renderPDF(url);
+        renderPDF(atob(pdfData));
     </script>
 </body>
 </html>

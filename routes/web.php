@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('folders', FolderController::class);
 
 Route::get('/', function () {
     return view('auth.login');
@@ -31,6 +30,10 @@ Route::get('/', function () {
 
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin,user', 'history']], function () {
+//     Route::get('/home/mechanical/banbury/{id}', [BanburyController::class, 'show'])->name('show-banbury');
+// });
 
 Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']], function() {
     //Search
@@ -50,11 +53,11 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     //Mechanical Banbury
     Route::get('/home/mechanical/banbury', [BanburyController::class, 'banbury'])->name('banbury');
     Route::post('/home/mechanical/add-banbury', [BanburyController::class, 'upload'])->name('upbanbury');
-    Route::get('/home/mechanical/banbury/{id}', [BanburyController::class, 'show'])->name('show-banbury');
-    Route::get('/home/opendoc/{id}', [BanburyController::class, 'buka'])->name('open-bb');
-    Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'deleteDoc'])->name('deleteBB');
-    Route::get('/home/mechanical/banbury/deleteAll/{category}', [BanburyController::class, 'deleteAll'])->name('deleteBanbury');
-    Route::post('/home/mechanical/banbury/pw/{id}', [BanburyController::class, 'passwordPage'])->name('passwordBB');
+    Route::get('/home/mechanical/banbury/{id}', [BanburyController::class, 'open'])->name('show-banbury');
+    Route::get('/home/mechanical/banbury/view/{id}', [BanburyController::class, 'view'])->name('open-bb');
+    Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'delete'])->name('deleteBB');
+    Route::get('/home/mechanical/banbury/deleteAll/{category}', [BanburyController::class, 'destroy'])->name('deleteBanbury');
+    Route::post('/home/mechanical/banbury/pw/{id}', [BanburyController::class, 'verifPw'])->name('passwordBB');
     //Strainer
     Route::get('/home/mechanical/strainer', [StrainerController::class, 'strainer'])->name('strainer');
     Route::post('/home/mechanical/add-strainer', [StrainerController::class, 'upload'])->name('upstrainer');

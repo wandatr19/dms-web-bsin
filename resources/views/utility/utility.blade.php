@@ -4,17 +4,20 @@
 <!-- Back Button -->
 <div class="row">
     <div class="input-group input-group-sm m-0 p-0">
-      <a href="{{route('home')}}">
+      <a href="{{route('mech')}}">
       <button class="input-group-text" id="inputGroup-sizing-sm" onclick="">Back</button>
       </a>
       <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled />
     </div>
 </div>
-<!-- Akhir Back Button -->
-
 @if (session('success'))
   <div class="alert alert-danger">
     {{ session('success') }}
+  </div>
+@endif
+@if (session('failed'))
+  <div class="alert alert-danger">
+    {{ session('failed') }}
   </div>
 @endif
 
@@ -37,11 +40,11 @@
             <strong style="color: rgb(0, 0, 0)"
               >Are you sure you want to
               <span class="text-danger">Delete</span>
-              All the History?
+              All Document?
             </strong>
           </div>
           <div class="text-center">
-          <a href="{{route('deleteUtil', ['category'=>'utility'])}}">
+          <a href="{{route('destroyUT', ['category'=>'utility'])}}">
             <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
           </a>
             <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">No</button>
@@ -65,11 +68,12 @@
   <thead>
       <tr>
           <th scope="col">Doc Name</th>
-          <th scope="col">Size</th>
-          <th scope="col">Date Added</th>
-          <th scope="col">Action</th>
+          <th scope="col" style="text-align: center">Size</th>
+          <th scope="col" style="text-align: center">Action</th>
+          {{-- <th scope="col" style="text-align: center">Favorite</th> --}}
           @if (auth()->user()->role == "admin")
-          <th scope="col">Delete</th>
+          <th scope="col" style="text-align: center">Date Added</th>
+          <th scope="col" style="text-align: center">Delete</th>
           @endif
       </tr>
   </thead>
@@ -77,12 +81,39 @@
     @foreach ($documents as $document)
       @if ($document->category == "utility")
           <tr>
-              <td>{{ $document->doc_name }}</td>
-              <td>{{ $document->size }} mb</td>
-              <td>{{ $document->created_at }}</td>
-              <td><a href="{{route('show-util', $document->id)}}" target="_blank">Open</a></td>
+              <td><a href="{{ route('open-ut', $document->id) }}" target="_blank">{{ $document->doc_name }}</a></td>
+              <td style="text-align: center">{{ $document->size }} mb</td>
+              <td style="text-align: center"><a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalOpen{{ $document->id }}"><i class="bi bi-download"></i></a>
+              <!-- Modal buat open Doc-->
+                <div class="modal fade" id="exampleModalOpen{{ $document->id }}" tabindex="-1" aria-labelledby="exampleModalOpen{{ $document->id }}" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content shadow px-5" style="border-radius: 15px">
+                      <!-- Header Modal & Tanda Silang -->
+                      <div class="modal-body text-center">
+                        <strong style="color: rgb(0, 0, 0)">Please Input Password! </strong>
+                      </div>
+                      <!-- buat input password -->
+                      <div class="mb-3 row">
+                        <form action="{{route('passwordUT', $document->id)}}" method="POST" target="_blank">
+                          @csrf
+                          <div class="form-group">
+                            <label for="password" class=" col-form-label"></label>
+                            <input type="password" class="form-control" id="password" name="password">
+                          </div>
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-secondary btn-success">Confirm</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Akhir modal buat open doc -->
+              </td>
+              {{-- <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td> --}}
               @if (auth()->user()->role == "admin")
-                <td><a href="{{ route('delUtil', ['id' => $document->id]) }}" type="button"
+                <td style="text-align: center">{{ $document->created_at }}</td>
+                <td style="text-align: center"><a href="{{ route('deleteUT', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
               @endif
           </tr>
@@ -128,5 +159,4 @@
 </div>
 @endif
 <!-- Akhir Button Plus -->
-
 @endsection

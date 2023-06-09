@@ -3,38 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\PasswordDoc;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PolyfilmController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $documents = Document::all();
-        return view('mechanical.layer2.polyfilm', ['documents' => $documents]);
+        $users = User::pluck('user_access')->toArray();
+        return view('mechanical.layer2.polyfilm', [
+            'documents' => $documents,
+            'users' => $users
+        ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function upload(Request $request)
     {
         if ($request->hasFile('file')) {
             $file = $request->file('file');
@@ -47,7 +32,7 @@ class PolyfilmController extends Controller
             ]);
 
             // Simpan file ke dalam folder 'documents' di dalam direktori 'storage/app/public'
-            $path = $file->store('mechanical/polyfilm');
+            $path = $file->store('mechanical/polyfilm', 'public');
 
             // Simpan data dokumen ke dalam database
             $document = new Document;
@@ -67,62 +52,63 @@ class PolyfilmController extends Controller
             'message' => 'Tidak ada file yang diunggah'
         ], 400);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function open(Request $request, $id)
     {
         $document = Document::findOrFail($id);
-        $filePath = storage_path('app/' . $document->path);
+        $user = $request->user();
+        $filePath = storage_path('app/public/' . $document->path);
         if (file_exists($filePath)) {
-            // Mengirimkan file sebagai respons HTTP dengan nama asli
+            activity()
+                ->causedBy($user)
+                ->performedOn($document)
+                ->withProperties($document->doc_name)
+                ->log("Open {$document->doc_name}");
             return response()->file($filePath, ['Content-Disposition' => 'inline']);
         } else {
             // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
             // ...
         }
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function view($id)
     {
-        //
+        $document = Document::findOrFail($id);
+        $filePath = storage_path('app/public/' . $document->path);
+        if (file_exists($filePath)) {
+            $pdfData = base64_encode(file_get_contents($filePath));
+            return view('openpdf', compact('pdfData'));
+        } else {
+        }
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function delete($id)
     {
         $document = Document::find($id);
         if ($document) {
+            $path = $document->path;
+            Storage::disk('public')->delete($path);
             $document->delete();
-            // Tindakan lain setelah penghapusan data
-            return redirect()->route('polyfilm')->with('success', 'Pengguna Berhasil Dihapus!');
+            return redirect()->route('polyfilm')->with('success', 'Dokumen Berhasil Dihapus!');
         }
     }
+    public function destroy($category)
+    {
+        $documents = Document::where('category', $category)->get();
+        foreach ($documents as $document) {
+            Storage::disk('public')->delete($document->path);
+            $document->delete();
+        }
+        return redirect()->route('polyfilm')->with('success', 'Dokumen Polyfilm Berhasil Dihapus');
+    }
+    public function verifPw(Request $request, $id)
+    {
+        $password = $request->input('password');
+        $passwordDoc = PasswordDoc::find(1);
+        $document = Document::findOrFail($id);
+
+        if ($password === $passwordDoc->password) {
+            return redirect()->route('show-polyfilm', $document->id);
+        } else {
+            return back()->with('failed', 'Password yang dimasukan salah');
+        }
+    }
+
 }

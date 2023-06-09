@@ -71,5 +71,23 @@ class FolderController extends Controller
 
         return redirect()->back()->with('success', 'Folder berhasil ditambahkan!');
     }
+
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
+
+        $folder = Folder::find($id);
+
+        if (!$folder) {
+            return redirect()->back()->with('error', 'Folder tidak ditemukan!');
+        }
+
+        $folder->name = $validatedData['name'];
+        $folder->save();
+
+        return redirect()->back();
+    }
     
 }

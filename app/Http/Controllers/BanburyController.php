@@ -100,7 +100,7 @@ class BanburyController extends Controller
             Storage::disk('public')->delete($document->path);
             $document->delete();
         }
-        return redirect()->route('banbury')->with('success', 'Dokumen Banbury Berhasil Dihapus');
+        return redirect()->route('polyfilm')->with('success', 'Dokumen Banbury Berhasil Dihapus');
     }
     public function verifPw(Request $request, $id)
     {

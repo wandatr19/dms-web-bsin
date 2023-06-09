@@ -81,7 +81,7 @@
     @foreach ($documents as $document)
       @if ($document->category == "banbury")
           <tr>
-              <td><a href="{{ route('open-bb', $document->id) }}">{{ $document->doc_name }}</a></td>
+              <td><a href="{{ route('open-bb', $document->id) }}" target="_blank">{{ $document->doc_name }}</a></td>
               <td style="text-align: center">{{ $document->size }} mb</td>
               <td style="text-align: center"><a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalOpen{{ $document->id }}"><i class="bi bi-download"></i></a>
               <!-- Modal buat open Doc-->

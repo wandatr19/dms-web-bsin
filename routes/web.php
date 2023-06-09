@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BanburyController;
+use App\Http\Controllers\PolyfilmController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FolderController;
 use App\Http\Controllers\LoginController;
@@ -76,16 +77,22 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/strainer/view/{id}', [StrainerController::class, 'view'])->name('view-strain');
     Route::get('/home/mechanical/strainer/deleteAll/{category}', [StrainerController::class, 'destroy'])->name('destroy-strain');
     Route::post('/home/mechanical/strainer/pw/{id}', [StrainerController::class, 'verifPw'])->name('password-strain');
-
-
     //Polyfilm
-    Route::get('/home/mechanical/polyfilm', [HomeController::class, 'polyfilm'])->name('polyfilm');
+    Route::get('/home/mechanical/polyfilm', [PolyfilmController::class, 'index'])->name('polyfilm');
+    Route::post('/home/mechanical/add-polyfilm', [PolyfilmController::class, 'upload'])->name('uppolyfilm');
+    Route::get('/home/mechanical/polyfilm/{id}', [PolyfilmController::class, 'open'])->name('show-polyfilm');
+    Route::get('/home/mechanical/polyfilm/view/{id}', [PolyfilmController::class, 'view'])->name('open-pf');
+    Route::get('/home/mechanical/polyfilm/delete/{id}', [PolyfilmController::class, 'delete'])->name('deletePF');
+    Route::get('/home/mechanical/polyfilm/deleteAll/{category}', [PolyfilmController::class, 'destroy'])->name('destroyPF');
+    Route::post('/home/mechanical/polyfilm/pw/{id}', [PolyfilmController::class, 'verifPw'])->name('passwordPF');
     //Utility
     Route::get('/home/utility', [UtilityController::class, 'index'])->name('util');
-    Route::post('/home/add-utility', [UtilityController::class, 'store'])->name('uputil');
-    Route::get('/home/utility/{id}', [UtilityController::class, 'show'])->name('show-util');
-    Route::get('/home/utility/delete/{id}', [UtilityController::class, 'delete'])->name('delUtil');
-    Route::get('/home/utility/deleteAll/{category}', [BanburyController::class, 'deleteAll'])->name('deleteUtil');
+    Route::post('/home/add-utility', [UtilityController::class, 'upload'])->name('uputil');
+    Route::get('/home/utility/{id}', [UtilityController::class, 'open'])->name('show-ut');
+    Route::get('/home/utility/view/{id}', [UtilityController::class, 'view'])->name('open-ut');
+    Route::get('/home/utility/delete/{id}', [UtilityController::class, 'destroy'])->name('deleteUT');
+    Route::get('/home/utility/deleteAll/{category}', [UtilityController::class, 'destroy'])->name('destroyUT');
+    Route::post('/home/utility/pw/{id}', [UtilityController::class, 'verifPw'])->name('passwordUT');
 
 
 
@@ -148,6 +155,7 @@ Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], fu
 
     Route::get('/folder', [FolderController::class, 'index'])->name('folder');
     Route::post('/add-folder', [FolderController::class, 'addFolder'])->name('add-folder');
+    Route::post('/re-folder/{folder}', [FolderController::class, 'update'])->name('re-folder');
 
     Route::get('pwdoc/', [PwDocController::class, 'index'])->name('pwdoc');
     Route::post('pwdoc/store', [PwDocController::class, 'store'])->name('store-pw');

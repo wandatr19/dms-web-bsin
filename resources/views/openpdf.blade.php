@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <div id="pdf-container"></div>
+    <div id="pdf-container" style="width: 100%; height:100vh"></div>
 
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script>

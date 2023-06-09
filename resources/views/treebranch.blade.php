@@ -255,10 +255,10 @@
                               </span>
                               <ul class="nested">
                               @foreach ($documents as $document)
-                                @if ($document->category == "")
+                                @if ($document->category == "polyfilm")
                                 <li>
                                   <span>
-                                    <a href="{{route('show-banbury', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                    <a href="{{route('open-bb', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
                                     <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
                                     {{ $document->doc_name }}</a>
                                   </span>

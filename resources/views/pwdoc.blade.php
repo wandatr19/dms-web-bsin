@@ -27,23 +27,16 @@
 </form> --}}
 
 <p>Password Document : <br><b>{{$passwordDoc->password}}</b></p>
-{{-- <table border="1">
-  <thead>
-    <th>Password : </th>
-  </thead>
-  <tbody>
-    <td>{{$passwordDoc->password}}</td>
-  </tbody>
-</table> --}}
+
 
 <form action="{{ route('update-pw') }}" method="POST">
   @csrf
 
-  <div class="mb-3">
-      <label for="password" class="form-label">Edit Password</label>
-      <input type="password" class="form-control" id="password" name="password">
+  <div class="mb-1">
+      <label for="password">Edit Password : </label>
+      <input type="password"  id="password" name="password">
   </div>
 
-  <button type="submit" class="btn btn-primary">Update Password</button>
+  <button type="submit" >Update Password</button>
 </form>
 @endsection

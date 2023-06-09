@@ -30,7 +30,7 @@ class UtilityController extends Controller
             ]);
 
             // Simpan file ke dalam folder 'documents' di dalam direktori 'storage/app/public'
-            $path = $file->store('utility');
+            $path = $file->store('utility', 'public');
 
             // Simpan data dokumen ke dalam database
             $document = new Document;
@@ -54,13 +54,23 @@ class UtilityController extends Controller
     {
         $document = Document::findOrFail($id);
         // $fileName = $document->doc_name;
-        $filePath = storage_path('app/' . $document->path);
+        $filePath = storage_path('app/public' . $document->path);
         if (file_exists($filePath)) {
             // Mengirimkan file sebagai respons HTTP dengan nama asli
             return response()->file($filePath, ['Content-Disposition' => 'inline']);
         } else {
             // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
             // ...
+        }
+    }
+    public function view($id)
+    {
+        $document = Document::findOrFail($id);
+        $filePath = storage_path('app/public/' . $document->path);
+        if (file_exists($filePath)) {
+            $pdfData = base64_encode(file_get_contents($filePath));
+            return view('openpdf', compact('pdfData'));
+        } else {
         }
     }
     public function delete($id)

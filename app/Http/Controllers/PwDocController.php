@@ -10,7 +10,8 @@ class PwDocController extends Controller
     //
     public function index()
     {
-        return view('pwdoc');
+        $passwordDoc = PasswordDoc::first();
+        return view('pwdoc', compact('passwordDoc'));
     }
     public function store(Request $request)
     {
@@ -20,7 +21,13 @@ class PwDocController extends Controller
         ]);
         return redirect()->back()->with('success', 'Password saved successfully');
     }
-    public function update()
+    public function update(Request $request)
     {
+        $password = $request->input('password');
+        $passwordDoc = PasswordDoc::first();
+        $passwordDoc->password = $password;
+        $passwordDoc->save();
+
+        return redirect()->back()->with('success', 'Password berhasil diganti');
     }
 }

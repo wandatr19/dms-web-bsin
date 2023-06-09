@@ -54,16 +54,22 @@ class FolderController extends Controller
     // }
     public function index()
     {
-        return view('folder');
+        $folders = Folder::all();
+        return view('folder', compact('folders')); 
     }
     public function addFolder(Request $request)
     {
-        $FolderName = $request->input('name');
-        $FolderContent = $request->input('category');
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+        ]);
 
-        $FolderPath = resource_path('views/' . $FolderName . '.blade.php');
-        Folder::put($FolderPath, $FolderContent);
+        $folder = new Folder;
+        $folder->name = $validatedData['name'];
+        $folder->category = $validatedData['category'];
+        $folder->save();
 
-        return response()->json(['message' => 'File blade berhasil ditambahkan.']);
+        return redirect()->back()->with('success', 'Folder berhasil ditambahkan!');
     }
+    
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\Folder;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,9 @@ class HomeController extends Controller
 {
     public function index(User $user)
     {
-        $favorites = $user->favorites()->with('document')->get();
-        return view('home', compact('favorites'));
+        // $favorites = $user->favorites()->with('document')->get();
+        $folders = Folder::all();
+        return view('home', compact('folders'));
     }
     public function treebr(){
         $documents = Document::all();

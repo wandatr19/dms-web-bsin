@@ -11,6 +11,7 @@ use App\Http\Controllers\StrainerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UtilityController;
 use App\Http\Controllers\PwDocController;
+use App\Http\Controllers\CivilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,11 +60,24 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/mechanical/banbury/delete/{id}', [BanburyController::class, 'delete'])->name('deleteBB');
     Route::get('/home/mechanical/banbury/deleteAll/{category}', [BanburyController::class, 'destroy'])->name('destroyBB');
     Route::post('/home/mechanical/banbury/pw/{id}', [BanburyController::class, 'verifPw'])->name('passwordBB');
+    //Civil
+    Route::get('/home/civil', [CivilController::class, 'civil'])->name('civil');
+    Route::post('/home/add-civil', [CivilController::class, 'upload'])->name('upcivil');
+    Route::get('/home/civil/{id}', [CivilController::class, 'open'])->name('open-civil');
+    Route::get('/home/civil/view/{id}', [CivilController::class, 'view'])->name('view-cv');
+    Route::get('/home/civil/delete/{id}', [CivilController::class, 'delete'])->name('deleteCV');
+    Route::get('/home/civil/deleteAll/{category}', [CivilController::class, 'destroy'])->name('destroyCV');
+    Route::post('/home/civil/pw/{id}', [CivilController::class, 'verifPw'])->name('passwordCV');
     //Strainer
     Route::get('/home/mechanical/strainer', [StrainerController::class, 'strainer'])->name('strainer');
-    Route::post('/home/mechanical/add-strainer', [StrainerController::class, 'upload'])->name('upstrainer');
-    Route::get('/home/mechanical/strainer/delete/{id}', [StrainerController::class, 'deleteUser'])->name('deleteStrainer');
-    Route::get('/home/mechanical/strainer/{id}', [StrainerController::class, 'show'])->name('showstrainer');
+    Route::post('/home/mechanical/add-strainer', [StrainerController::class, 'upload'])->name('up-strain');
+    Route::get('/home/mechanical/strainer/delete/{id}', [StrainerController::class, 'delete'])->name('delete-strain');
+    Route::get('/home/mechanical/strainer/{id}', [StrainerController::class, 'open'])->name('open-strain');
+    Route::get('/home/mechanical/strainer/view/{id}', [StrainerController::class, 'view'])->name('view-strain');
+    Route::get('/home/mechanical/strainer/deleteAll/{category}', [StrainerController::class, 'destroy'])->name('destroy-strain');
+    Route::post('/home/mechanical/strainer/pw/{id}', [StrainerController::class, 'verifPw'])->name('password-strain');
+
+
     //Polyfilm
     Route::get('/home/mechanical/polyfilm', [HomeController::class, 'polyfilm'])->name('polyfilm');
     //Utility
@@ -132,9 +146,11 @@ Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], fu
     Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('edit-user');
     Route::put('/user/{user}', [UserController::class, 'update'])->name('update-user');
 
-    Route::get('/addfolder', [FolderController::class, 'index'])->name('addfolder');
-    Route::post('/addfolders', [FolderController::class, 'addFolder'])->name('folder');
+    Route::get('/folder', [FolderController::class, 'index'])->name('folder');
+    Route::post('/add-folder', [FolderController::class, 'addFolder'])->name('add-folder');
 
     Route::get('pwdoc/', [PwDocController::class, 'index'])->name('pwdoc');
     Route::post('pwdoc/store', [PwDocController::class, 'store'])->name('store-pw');
+    Route::post('pwdoc/update', [PwDocController::class, 'update'])->name('update-pw');
+
 });

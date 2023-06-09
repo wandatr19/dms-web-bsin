@@ -1806,18 +1806,17 @@
                             CIVIL
                           </span>
                           <ul class="nested">
-                            <li>
-                              <span class="caret">
-                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                                Doc Item 1
-                              </span>
-                            </li>
-                            <li>
-                              <span class="caret">
-                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                                Doc Item 2
-                              </span>
-                            </li>
+                            @foreach ($documents as $document)
+                                @if ($document->category == "civil")
+                                <li>
+                                  <span>
+                                    <a href="{{route('open-bb', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                    <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                    {{ $document->doc_name }}</a>
+                                  </span>
+                                </li>
+                                @endif
+                              @endforeach
                           </ul>
                       </li>
                       <!-- AKHIR CIVIL -->

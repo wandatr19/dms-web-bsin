@@ -69,10 +69,10 @@
       <tr>
           <th scope="col">Doc Name</th>
           <th scope="col" style="text-align: center">Size</th>
-          <th scope="col" style="text-align: center">Date Added</th>
           <th scope="col" style="text-align: center">Action</th>
           {{-- <th scope="col" style="text-align: center">Favorite</th> --}}
           @if (auth()->user()->role == "admin")
+          <th scope="col" style="text-align: center">Date Added</th>
           <th scope="col" style="text-align: center">Delete</th>
           @endif
       </tr>
@@ -83,7 +83,6 @@
           <tr>
               <td><a href="{{ route('open-bb', $document->id) }}">{{ $document->doc_name }}</a></td>
               <td style="text-align: center">{{ $document->size }} mb</td>
-              <td style="text-align: center">{{ $document->created_at }}</td>
               <td style="text-align: center"><a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalOpen{{ $document->id }}"><i class="bi bi-download"></i></a>
               <!-- Modal buat open Doc-->
                 <div class="modal fade" id="exampleModalOpen{{ $document->id }}" tabindex="-1" aria-labelledby="exampleModalOpen{{ $document->id }}" aria-hidden="true">
@@ -113,6 +112,7 @@
               </td>
               {{-- <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td> --}}
               @if (auth()->user()->role == "admin")
+                <td style="text-align: center">{{ $document->created_at }}</td>
                 <td style="text-align: center"><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
               @endif

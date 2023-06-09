@@ -13,20 +13,19 @@
     <link rel="stylesheet" href="css/home.css" />
 
     <!-- Font Link Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    {{-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" /> --}}
 
     <!-- Link Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" /> --}}
-
-    {{-- Titik 3 --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap-icons-1.10.5\font\bootstrap-icons.css') }}">
     
     <!-- Link CDN Buat Dropzone -->
-    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
-    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+    {{-- <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script> --}}
+    <script src="{{ asset('vendor/dropzone/dist/dropzone-min.js') }}"></script>
+    {{-- <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" /> --}}
+    <link href="{{ asset('vendor/dropzone/dist/dropzone.css') }}" rel="stylesheet" type="text/css" />
 
     <style>
       ul,
@@ -61,19 +60,6 @@
       .active {
         display: block;
       }
-      /* Masterlist */
-      .pdf-container {
-        width: 100%;
-        height: 0;
-        padding-bottom: 75%; /* Aspek rasio 4:3 */
-        position: relative;
-        }
-    
-      .pdf-container iframe {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        }
     </style>
     <style>
       /* Gaya tampilan untuk elemen PDF viewer */
@@ -100,8 +86,12 @@
         </div>
 
         <div class="col-auto bg-dark mt-3 text-end">
-          <p class="d-flex align-items-center text-white text-decoration-none fs-6" id="UserInfo" data-bs-toggle="UserInfo" aria-expanded="false"">
-            <i class="bi bi-person-circle mx-2 fs-5"></i>
+          <p class="d-flex align-items-center text-white text-decoration-none fs-6" id="UserInfo" data-bs-toggle="UserInfo" aria-expanded="false">
+            {{-- <i class="bi bi-person-circle mx-2 fs-5"></i> --}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
             {{auth()->user()->name}}
           </p>
         </div>
@@ -280,8 +270,6 @@
   {{-- Dropzone --}}
   <script src="../node_modules/dropzone/dist/min/dropzone.min.js"></script>
   <script src="../assets/js/dropzone.js"></script>
-  {{-- Bootstrap --}}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   {{-- password-eye --}}
   <script>

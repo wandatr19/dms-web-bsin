@@ -4,7 +4,7 @@
 <!-- Back Button -->
 <div class="row">
     <div class="input-group input-group-sm m-0 p-0">
-      <a href="{{route('home')}}">
+      <a href="{{route('folder')}}">
       <button class="input-group-text" id="inputGroup-sizing-sm" onclick="">Back</button>
       </a>
       <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled />
@@ -22,6 +22,7 @@
     <table class="table table-sm table-bordered table-striped table-hover">
       <thead>
         <tr>
+          <th scope="col">ID</th>
           <th scope="col">Folder Name</th>
           <th scope="col">Rename</th>
           <th scope="col">Category</th>
@@ -31,7 +32,8 @@
         @foreach ($folders as $folder)
           @if ($folder->category == "main")
             <tr>
-              <td>{{$folder->name}}</td>
+              <td>{{ $folder->id }}</td>
+              <td>{{ $folder->name }}</td>
               <td>
                 <a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#ModalOpen{{ $folder->id }}">
                   Edit

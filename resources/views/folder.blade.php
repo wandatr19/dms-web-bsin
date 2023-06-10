@@ -11,82 +11,54 @@
     </div>
 </div>
 
-@if (session('success'))
-  <div class="alert alert-success">
-    {{ session('success') }}
-  </div>
-@endif
 
-<form method="POST" action="{{route('add-folder')}}">
-    @csrf
-    <div>
-        <label for="name">Nama Folder:</label>
-        <input type="text" name="name" id="name">
-    </div>
-    <div>
-        <label for="category">Kategori:</label>
-        <select name="category" id="category">
-            <option value="main">Main</option>
-            <option value="mechanical">Mechanical</option>
-            <option value="electrical">Electrical</option>
-        </select>
-    </div>
-    <button type="submit">Tambah Folder</button>
-</form>
-<h4>List Folder</h4>
 
-<div class="overflow-auto" style="max-width: 100%; max-height: 500px">
-  <div class="table-responsive">
-    <table class="table table-sm table-bordered table-striped table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Folder Name</th>
-          <th scope="col">Rename</th>
-          <th scope="col">Category</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($folders as $folder)
-          @if ($folder->category == "main")
-            <tr>
-              <td>{{$folder->name}}</td>
-              <td>
-                <a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#ModalOpen{{ $folder->id }}">
-                  Edit
-                </a>
-                <div class="modal fade" id="ModalOpen{{ $folder->id }}" tabindex="-1" aria-labelledby="ModalOpen{{ $folder->id }}" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content shadow px-5" style="border-radius: 15px">
-                      <!-- Header Modal & Tanda Silang -->
-                      <div class="modal-body text-center">
-                        <strong style="color: rgb(0, 0, 0)">Rename Folder </strong>
-                      </div>
-                      <!-- buat input password -->
-                      <div class="mb-3 row">
-                        <form action="{{route('re-folder', $folder->id)}}" method="POST" >
-                          @csrf
-                          <div class="form-group">
-                            <label for="name" class=" col-form-label"></label>
-                            <input type="name" class="form-control" id="name" name="name" value="{{ $folder->name }}" required>
-                          </div>
-                          <div class="text-center">
-                            <button type="submit" class="btn btn-secondary btn-success">Confirm</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td>{{$folder->category}}</td>
-            </tr>
-          @endif
-        @endforeach
-      </tbody>
-    </table>
+<div class="container-fluid">
+  <div class="row my-3 ms-4 fs-5 row-cols-auto">
+    <div class="col">
+      <a href="{{route("main-folder")}}">
+        <button type="button" class="btn btn-primary btn-light">
+          <div class="card shadow-sm" style="width: 8rem">
+            <div class="card-body text-center">
+              <i class="bi bi-folder-fill me-1 fs-1"></i>
+                <span class="tt" data-bs-placement="top" title="Main">
+                  <p class="card-text word-wrap text-truncate">Main</p>
+                </span>
+            </div>
+          </div>
+        </button>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="{{route("mech-folder")}}">
+        <button type="button" class="btn btn-primary btn-light">
+          <div class="card shadow-sm" style="width: 8rem">
+            <div class="card-body text-center">
+              <i class="bi bi-folder-fill me-1 fs-1"></i>
+                <span class="tt" data-bs-placement="top" title="Mechanical">
+                  <p class="card-text word-wrap text-truncate">Mechanical</p>
+                </span>
+            </div>
+          </div>
+        </button>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="{{route("elect-folder")}}">
+        <button type="button" class="btn btn-primary btn-light">
+          <div class="card shadow-sm" style="width: 8rem">
+            <div class="card-body text-center">
+              <i class="bi bi-folder-fill me-1 fs-1"></i>
+                <span class="tt" data-bs-placement="top" title="Electrical">
+                  <p class="card-text word-wrap text-truncate">Electrical</p>
+                </span>
+            </div>
+          </div>
+        </button>
+      </a>
+    </div>
   </div>
 </div>
-
-
 @endsection

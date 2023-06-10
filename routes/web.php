@@ -156,6 +156,9 @@ Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], fu
     Route::get('/folder', [FolderController::class, 'index'])->name('folder');
     Route::post('/add-folder', [FolderController::class, 'addFolder'])->name('add-folder');
     Route::post('/re-folder/{folder}', [FolderController::class, 'update'])->name('re-folder');
+    Route::get('folder/main', [FolderController::class, 'main'])->name('main-folder');
+    Route::get('folder/mech', [FolderController::class, 'mech'])->name('mech-folder');
+    Route::get('folder/elect', [FolderController::class, 'elect'])->name('elect-folder');
 
     Route::get('pwdoc/', [PwDocController::class, 'index'])->name('pwdoc');
     Route::post('pwdoc/store', [PwDocController::class, 'store'])->name('store-pw');

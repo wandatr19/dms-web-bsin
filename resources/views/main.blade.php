@@ -6,25 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" /> --}}
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}"/>
 
     <!-- My CSS -->
     <link rel="stylesheet" href="css/home.css" />
-
-    <!-- Font Link Poppins -->
-    {{-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" /> --}}
 
     <!-- Link Bootstrap Icons -->
     <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap-icons-1.10.5\font\bootstrap-icons.css') }}">
     
     <!-- Link CDN Buat Dropzone -->
-    {{-- <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script> --}}
     <script src="{{ asset('vendor/dropzone/dist/dropzone-min.js') }}"></script>
-    {{-- <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" /> --}}
     <link href="{{ asset('vendor/dropzone/dist/dropzone.css') }}" rel="stylesheet" type="text/css" />
 
     <style>
@@ -294,6 +286,20 @@
         }
       });
     });
+  </script>
+  <!-- Script ikon Caret List -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script>
+    var toggler = document.getElementsByClassName('caret');
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener('click', function () {
+        this.parentElement.querySelector('.nested').classList.toggle('active');
+        this.classList.toggle('caret-down');
+      });
+    }
   </script>
     
 </html>

@@ -11,7 +11,6 @@ class HomeController extends Controller
 {
     public function index(User $user)
     {
-        // $favorites = $user->favorites()->with('document')->get();
         $folders = Folder::all();
         return view('home', compact('folders'));
     }
@@ -32,10 +31,12 @@ class HomeController extends Controller
         return view('admin.history');
     }
     public function mech(){
-        return view('mechanical.mech');
+        $folders = Folder::all();
+        return view('mechanical.mech', compact('folders'));
     }
     public function elect(){
-        return view('electrical.electrical');
+        $folders = Folder::all();
+        return view('electrical.electrical', compact('folders'));
     }
     public function util(){
         return view('utility.utility');

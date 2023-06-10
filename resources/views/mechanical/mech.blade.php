@@ -26,9 +26,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="BANBURY">
-                  <p class="card-text word-wrap text-truncate">BANBURY</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 38)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -42,9 +46,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="STRAINER">
-                  <p class="card-text word-wrap text-truncate">STRAINER</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 39)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -58,9 +66,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="POLYFILM">
-                  <p class="card-text word-wrap text-truncate">POLYFILM</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 40)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -74,9 +86,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="CALENDER">
-                  <p class="card-text word-wrap text-truncate">CALENDER</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 41)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -90,9 +106,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="BEXTER">
-                  <p class="card-text word-wrap text-truncate">BEXTER</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 42)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -106,9 +126,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="QCT">
-                  <p class="card-text word-wrap text-truncate">QCT</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 43)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -122,9 +146,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="1/N DCT">
-                  <p class="card-text word-wrap text-truncate">1/N DCT</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 44)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -138,9 +166,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="8CT">
-                  <p class="card-text word-wrap text-truncate">8CT</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 45)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -154,9 +186,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="BEAD">
-                  <p class="card-text word-wrap text-truncate">BEAD</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 46)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -170,9 +206,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="MONOWIRE">
-                  <p class="card-text word-wrap text-truncate">MONOWIRE</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 47)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -186,9 +226,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="RTB">
-                  <p class="card-text word-wrap text-truncate">RTB</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 48)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -202,9 +246,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="PLY CUTTING NO.1">
-                  <p class="card-text word-wrap text-truncate">PLY CUTTING NO.1</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 49)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -218,9 +266,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="PLY CUTTING NO.2">
-                  <p class="card-text word-wrap text-truncate">PLY CUTTING NO.2</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 50)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -234,9 +286,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="SR BELT 1">
-                  <p class="card-text word-wrap text-truncate">SR BELT 1</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 51)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -250,9 +306,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="SR BELT 2">
-                  <p class="card-text word-wrap text-truncate">SR BELT 2</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 52)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -266,9 +326,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="PSP">
-                  <p class="card-text word-wrap text-truncate">PSP</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 53)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -282,9 +346,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="IL 2RH">
-                  <p class="card-text word-wrap text-truncate">IL 2RH</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 54)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -298,9 +366,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="KBN2">
-                  <p class="card-text word-wrap text-truncate">KBN2</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 55)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -314,9 +386,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="K1-S">
-                  <p class="card-text word-wrap text-truncate">K1-S</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 56)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -330,9 +406,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="HF-1">
-                  <p class="card-text word-wrap text-truncate">HF-1</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 57)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -346,9 +426,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="CURE">
-                  <p class="card-text word-wrap text-truncate">CURE</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 58)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -362,9 +446,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="APDD-1">
-                  <p class="card-text word-wrap text-truncate">APDD-1</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 59)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -378,9 +466,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="INNER APDD-1">
-                  <p class="card-text word-wrap text-truncate">INNER APDD-1</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 60)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -394,9 +486,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="WHITE BUFF-2">
-                  <p class="card-text word-wrap text-truncate">WHITE BUFF-2</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 61)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -410,9 +506,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="RIM FLOW">
-                  <p class="card-text word-wrap text-truncate">RIM FLOW</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 62)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -426,9 +526,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="UNIFORMITY">
-                  <p class="card-text word-wrap text-truncate">UNIFORMITY</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 63)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -442,9 +546,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="HP LRP">
-                  <p class="card-text word-wrap text-truncate">HP LRP</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 64)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -458,9 +566,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="LW BUFF">
-                  <p class="card-text word-wrap text-truncate">LW BUFF</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 65)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -474,9 +586,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="REWORK">
-                  <p class="card-text word-wrap text-truncate">REWORK</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 66)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -490,9 +606,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="TIRE REPAIR">
-                  <p class="card-text word-wrap text-truncate">TIRE REPAIR</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 67)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -506,9 +626,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="FURNITURE">
-                  <p class="card-text word-wrap text-truncate">FURNITURE</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 68)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>
@@ -522,9 +646,13 @@
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">
                 <i class="bi bi-folder-fill me-1 fs-1"></i>
-                <span class="tt" data-bs-placement="top" title="CEMENT HOUSE">
-                  <p class="card-text word-wrap text-truncate">CEMENT HOUSE</p>
-                </span>
+                @foreach ($folders as $folder)
+                    @if ($folder->id === 69)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                @endforeach
               </div>
             </div>
           </button>

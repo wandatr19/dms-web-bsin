@@ -18,8 +18,7 @@
 <body>
     <div id="pdf-container" style="width: 100%; height:100vh"></div>
 
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-    {{-- <script> src="{{asset('node_modules/pdfjs-dist/build/pdf.js')}}" </script> --}}
+    <script src="{{ asset('vendor/pdfjs-dist/build/pdf.js') }}"> </script>
     <script>
         const pdfData = "{{ $pdfData }}";
         const pdfjsLib = window['pdfjs-dist/build/pdf'];

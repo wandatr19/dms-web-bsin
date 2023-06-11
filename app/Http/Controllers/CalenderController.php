@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\PasswordDoc;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CalenderController extends Controller
 {
-    public function calender()
+    public function index()
     {
         $documents = Document::all();
-        return view('mechanical.layer2.calender', ['documents' => $documents]);
+        return view('mechanical.layer2.calender', compact('documents'));
     }
     public function upload(Request $request)
     {
@@ -25,7 +27,7 @@ class CalenderController extends Controller
             ]);
 
             // Simpan file ke dalam folder 'documents' di dalam direktori 'storage/app/public'
-            $path = $file->store('mechanical/calender');
+            $path = $file->store('mechanical/calender', 'public');
 
             // Simpan data dokumen ke dalam database
             $document = new Document;
@@ -45,25 +47,63 @@ class CalenderController extends Controller
             'message' => 'Tidak ada file yang diunggah'
         ], 400);
     }
-    public function show($id)
+    public function open(Request $request, $id)
     {
         $document = Document::findOrFail($id);
-        $filePath = storage_path('app/' . $document->path);
+        $user = $request->user();
+        $filePath = storage_path('app/public/' . $document->path);
         if (file_exists($filePath)) {
-            // Mengirimkan file sebagai respons HTTP dengan nama asli
+            activity()
+                ->causedBy($user)
+                ->performedOn($document)
+                ->withProperties($document->doc_name)
+                ->log("Open {$document->doc_name}");
             return response()->file($filePath, ['Content-Disposition' => 'inline']);
         } else {
             // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
             // ...
         }
     }
-    public function deleteUser($id)
+    public function view($id)
+    {
+        $document = Document::findOrFail($id);
+        $filePath = storage_path('app/public/' . $document->path);
+        if (file_exists($filePath)) {
+            $pdfData = base64_encode(file_get_contents($filePath));
+            return view('openpdf', compact('pdfData'));
+        } else {
+        }
+    }
+    public function delete($id)
     {
         $document = Document::find($id);
         if ($document) {
+            $path = $document->path;
+            Storage::disk('public')->delete($path);
             $document->delete();
             // Tindakan lain setelah penghapusan data
-            return redirect()->route('calender')->with('success', 'Pengguna Berhasil Dihapus!');
+            return redirect()->route('calender')->with('success', 'Dokumen Berhasil Dihapus!');
+        }
+    }
+    public function destroy($category)
+    {
+        $documents = Document::where('category', $category)->get();
+        foreach ($documents as $document) {
+            Storage::disk('public')->delete($document->path);
+            $document->delete();
+        }
+        return redirect()->route('calender')->with('success', 'Dokumen Calender Berhasil Dihapus');
+    }
+    public function password(Request $request, $id)
+    {
+        $password = $request->input('password');
+        $passwordDoc = PasswordDoc::find(1);
+        $document = Document::findOrFail($id);
+
+        if ($password === $passwordDoc->password) {
+            return redirect()->route('open-calender', $document->id);
+        } else {
+            return back()->with('failed', 'Password yang dimasukan salah');
         }
     }
 }

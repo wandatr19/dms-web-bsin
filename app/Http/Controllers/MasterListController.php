@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use App\Models\Document;
 use File;
+use Illuminate\Support\Facades\Storage;
 // use Response;
 
 class MasterListController extends Controller
@@ -18,6 +19,10 @@ class MasterListController extends Controller
     }
     public function upload(Request $request)
     {
+        $request->validate([
+            'pdf_file' => 'required|mimes:pdf|max:2048', // Pastikan file PDF terlampir
+        ]);
+        
         $file = $request->file('pdf_file');
         $file_name = $file->getClientOriginalName();
         $size = $file->getSize();
@@ -50,6 +55,8 @@ class MasterListController extends Controller
         $document = Document::find($id);
         if ($document) {
             $document->delete();
+            $path = $document->path;
+            Storage::disk()->delete($path);
             // Tindakan lain setelah penghapusan data
             return redirect()->route('masterlist')->with('success', 'Pengguna Berhasil Dihapus!');
         }

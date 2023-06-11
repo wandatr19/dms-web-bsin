@@ -63,6 +63,7 @@ class StrainerController extends Controller
         } else {
             // File tidak ditemukan, tangani kasus ini sesuai kebutuhan aplikasi Anda
             // ...
+            return redirect()->route('strainer');
         }
     }
     public function view($id)

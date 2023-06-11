@@ -17,7 +17,7 @@
   </div>
 @endif
 
-<div class="overflow-auto" style="max-width: 100%; max-height: 500px">
+<div class="overflow-auto" style="max-width: 100%; max-height: 100%">
   <div class="table-responsive">
     <table class="table table-sm table-bordered table-striped table-hover">
       <thead>

@@ -13,6 +13,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UtilityController;
 use App\Http\Controllers\PwDocController;
 use App\Http\Controllers\CivilController;
+use App\Http\Controllers\OthersController;
+use App\Http\Controllers\CalenderController;
+use App\Http\Controllers\BexterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,7 +55,6 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::get('/home/electrical', [HomeController::class, 'elect'])->name('elect');
     Route::get('/home/civil', [HomeController::class, 'civil'])->name('civil');
 
-    Route::get('/home/others', [HomeController::class, 'others'])->name('others');
     //Mechanical Banbury
     Route::get('/home/mechanical/banbury', [BanburyController::class, 'banbury'])->name('banbury');
     Route::post('/home/mechanical/add-banbury', [BanburyController::class, 'upload'])->name('upbanbury');
@@ -90,17 +92,45 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::post('/home/add-utility', [UtilityController::class, 'upload'])->name('uputil');
     Route::get('/home/utility/{id}', [UtilityController::class, 'open'])->name('show-ut');
     Route::get('/home/utility/view/{id}', [UtilityController::class, 'view'])->name('open-ut');
-    Route::get('/home/utility/delete/{id}', [UtilityController::class, 'destroy'])->name('deleteUT');
+    Route::get('/home/utility/delete/{id}', [UtilityController::class, 'delete'])->name('deleteUT');
     Route::get('/home/utility/deleteAll/{category}', [UtilityController::class, 'destroy'])->name('destroyUT');
     Route::post('/home/utility/pw/{id}', [UtilityController::class, 'verifPw'])->name('passwordUT');
-
+    //Others
+    Route::get('/home/others', [OthersController::class, 'index'])->name('oth');
+    Route::post('/home/add-others', [OthersController::class, 'upload'])->name('up-oth');
+    Route::get('/home/others/{id}', [OthersController::class, 'open'])->name('open-oth');
+    Route::get('/home/others/view/{id}', [OthersController::class, 'view'])->name('view-oth');
+    Route::get('/home/others/delete/{id}', [OthersController::class, 'delete'])->name('del-oth');
+    Route::get('/home/others/deleteAll/{category}', [OthersController::class, 'destroy'])->name('destroy-oth');
+    Route::post('/home/others/pw/{id}', [OthersController::class, 'password'])->name('pw-oth');
+    //Calender
+    Route::get('/home/mechanical/calender', [CalenderController::class, 'index'])->name('calender');
+    Route::post('/home/mechanical/add-calender', [CalenderController::class, 'upload'])->name('up-calender');
+    Route::get('/home/mechanical/calender/{id}', [CalenderController::class, 'open'])->name('open-calender');
+    Route::get('/home/mechanical/calender/view/{id}', [CalenderController::class, 'view'])->name('view-calender');
+    Route::get('/home/mechanical/calender/delete/{id}', [CalenderController::class, 'delete'])->name('del-calender');
+    Route::get('/home/mechanical/calender/deleteAll/{category}', [CalenderController::class, 'destroy'])->name('destroy-calender');
+    Route::post('/home/mechanical/calender/pw/{id}', [CalenderController::class, 'password'])->name('pw-calender');
+    //Bexter
+    Route::get('/home/mechanical/bexter', [BexterController::class, 'index'])->name('bexter');
+    Route::post('/home/mechanical/add-bexter', [BexterController::class, 'upload'])->name('up-bexter');
+    Route::get('/home/mechanical/bexter/{id}', [BexterController::class, 'open'])->name('open-bexter');
+    Route::get('/home/mechanical/bexter/view/{id}', [BexterController::class, 'view'])->name('view-bexter');
+    Route::get('/home/mechanical/bexter/delete/{id}', [BexterController::class, 'delete'])->name('del-bexter');
+    Route::get('/home/mechanical/bexter/deleteAll/{category}', [BexterController::class, 'destroy'])->name('destroy-bexter');
+    Route::post('/home/mechanical/bexter/pw/{id}', [BexterController::class, 'password'])->name('pw-bexter');
+    //QCT
+    Route::get('/home/mechanical/QCT', [QCTController::class, 'index'])->name('QCT');
+    Route::post('/home/mechanical/add-QCT', [QCTController::class, 'upload'])->name('up-QCT');
+    Route::get('/home/mechanical/QCT/{id}', [QCTController::class, 'open'])->name('open-QCT');
+    Route::get('/home/mechanical/QCT/view/{id}', [QCTController::class, 'view'])->name('view-QCT');
+    Route::get('/home/mechanical/QCT/delete/{id}', [QCTController::class, 'delete'])->name('del-QCT');
+    Route::get('/home/mechanical/QCT/deleteAll/{category}', [QCTController::class, 'destroy'])->name('destroy-QCT');
+    Route::post('/home/mechanical/QCT/pw/{id}', [QCTController::class, 'password'])->name('pw-QCT');
 
 
     
-    Route::get('/home/mechanical/calender', [HomeController::class, 'calender'])->name('calender');
 
-    Route::get('/home/mechanical/bexter', [HomeController::class, 'bexter'])->name('bexter');
-    Route::get('/home/mechanical/qct', [HomeController::class, 'qct'])->name('qct');
     Route::get('/home/mechanical/1ndct', [HomeController::class, 'ndct'])->name('ndct');
     Route::get('/home/mechanical/8ct', [HomeController::class, 'dlpn_ct'])->name('8ct');
     Route::get('/home/mechanical/bead', [HomeController::class, 'bead'])->name('bead');

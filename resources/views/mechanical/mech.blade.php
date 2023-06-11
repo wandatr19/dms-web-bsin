@@ -121,7 +121,7 @@
         <!-- Akhir Card BEXTER -->
         <!-- Card QCT -->
         <div class="col">
-        <a href="{{route('qct')}}">
+        <a href="{{route('QCT')}}">
           <button type="button" class="btn btn-primary btn-light">
             <div class="card shadow-sm" style="width: 8rem">
               <div class="card-body text-center">

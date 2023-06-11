@@ -145,7 +145,7 @@
         <!-- Card OTHERS -->
         @if (in_array('oth', $userAccess) || $role)
         <div class="col">
-          <a href="{{route('others')}}">
+          <a href="{{route('oth')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">

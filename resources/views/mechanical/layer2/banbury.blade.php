@@ -40,11 +40,11 @@
             <strong style="color: rgb(0, 0, 0)"
               >Are you sure you want to
               <span class="text-danger">Delete</span>
-              All the History?
+              All Document?
             </strong>
           </div>
           <div class="text-center">
-          <a href="{{route('destroyBB', ['category'=>'banbury'])}}">
+          <a href="{{route('destroy-banbury', ['category'=>'banbury'])}}">
             <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
           </a>
             <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">No</button>
@@ -81,7 +81,7 @@
     @foreach ($documents as $document)
       @if ($document->category == "banbury")
           <tr>
-              <td><a href="{{ route('open-bb', $document->id) }}" target="_blank">{{ $document->doc_name }}</a></td>
+              <td><a href="{{ route('view-banbury', $document->id) }}" target="_blank">{{ $document->doc_name }}</a></td>
               <td style="text-align: center">{{ $document->size }} mb</td>
               <td style="text-align: center"><a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalOpen{{ $document->id }}"><i class="bi bi-download"></i></a>
               <!-- Modal buat open Doc-->
@@ -94,7 +94,7 @@
                       </div>
                       <!-- buat input password -->
                       <div class="mb-3 row">
-                        <form action="{{route('passwordBB', $document->id)}}" method="POST" target="_blank">
+                        <form action="{{route('pw-banbury', $document->id)}}" method="POST" target="_blank">
                           @csrf
                           <div class="form-group">
                             <label for="password" class=" col-form-label"></label>
@@ -113,7 +113,7 @@
               {{-- <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td> --}}
               @if (auth()->user()->role == "admin")
                 <td style="text-align: center">{{ $document->created_at }}</td>
-                <td style="text-align: center"><a href="{{ route('deleteBB', ['id' => $document->id]) }}" type="button"
+                <td style="text-align: center"><a href="{{ route('del-banbury', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
               @endif
           </tr>
@@ -143,7 +143,7 @@
         
         <div class="text-center">
         <!-- Dropzone Baru -->
-          <form action="{{route('upbanbury')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
+          <form action="{{route('up-banbury')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
             @csrf
           </form>  
         <!-- Akhri Dropzone baru -->

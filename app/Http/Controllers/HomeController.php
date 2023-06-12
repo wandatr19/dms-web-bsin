@@ -14,16 +14,17 @@ class HomeController extends Controller
         $folders = Folder::all();
         return view('home', compact('folders'));
     }
-    public function treebr(){
-        $documents = Document::all();
-        return view('treebranch', ['documents' => $documents]);
-    }
+    // public function treebr(){
+    //     $documents = Document::all();
+    //     $folders = Folder::all();
+    //     return view('treebranch', [
+    //         'documents' => $documents,
+    //         'folders' => $folders,
+    //     ]);
+    // }
     public function masterlist(){
         return view('masterlist');
     }
-    // public function adduser(){
-    //     return view('admin.adduser');
-    // }
     public function listuser(){
         return view('admin.listuser');
     }
@@ -79,10 +80,10 @@ class HomeController extends Controller
     {
         return view('mechanical.layer2.8ct');
     }
-    public function bead()
-    {
-        return view('mechanical.layer2.bead');
-    }
+    // public function bead()
+    // {
+    //     return view('mechanical.layer2.bead');
+    // }
     public function monowire()
     {
         return view('mechanical.layer2.monowire');

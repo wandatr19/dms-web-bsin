@@ -4,23 +4,76 @@
 <!-- Back Button -->
 <div class="row">
     <div class="input-group input-group-sm m-0 p-0">
-      <a href="{{route('mech')}}">
+      <a href="{{route('home')}}">
       <button class="input-group-text" id="inputGroup-sizing-sm" onclick="">Back</button>
       </a>
       <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled />
     </div>
 </div>
+@if (session('success'))
+  <div class="alert alert-danger">
+    {{ session('success') }}
+  </div>
+@endif
+@if (session('failed'))
+  <div class="alert alert-danger">
+    {{ session('failed') }}
+  </div>
+@endif
+
+<!-- Baris 2: Btn Delete All-->
+@if (auth()->user()->role == "admin")
+<div class="row text-end mx-3">
+  <div class="col">
+    <!-- Button Delete All History -->
+    <!-- Button trigger modal -->
+    <button href="#" type="button" class="btn btn-danger btn-sm" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">Delete</button>
+    <!-- Akhir Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow" style="border-radius: 15px">
+          <!-- Header Modal & Tanda Silang -->
+
+          <div class="modal-body text-center">
+            <strong style="color: rgb(0, 0, 0)"
+              >Are you sure you want to
+              <span class="text-danger">Delete</span>
+              All Document?
+            </strong>
+          </div>
+          <div class="text-center">
+          <a href="{{route('destroy-util', ['category'=>'utility'])}}">
+            <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
+          </a>
+            <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">No</button>
+          </div>
+          <div class="mb-3"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir Modal -->
+    <!-- Akhir Button Delete All History -->
+  </div>
+</div>
+@endif
+<!-- Akhir Baris 2: Btn Export & Delete -->
+
+        
 
 <!-- List Doc -->
+<div class="overflow-auto" style="max-width: 100%; max-height: 93%">
 <table class="table table-sm table-bordered table-striped table-hover">
   <thead>
       <tr>
           <th scope="col">Doc Name</th>
-          <th scope="col">Size</th>
-          <th scope="col">Date Added</th>
-          <th scope="col">Action</th>
+          <th scope="col" style="text-align: center">Size</th>
+          <th scope="col" style="text-align: center">Action</th>
+          {{-- <th scope="col" style="text-align: center">Favorite</th> --}}
           @if (auth()->user()->role == "admin")
-          <th scope="col">Delete</th>
+          <th scope="col" style="text-align: center">Date Added</th>
+          <th scope="col" style="text-align: center">Delete</th>
           @endif
       </tr>
   </thead>
@@ -28,12 +81,39 @@
     @foreach ($documents as $document)
       @if ($document->category == "utility")
           <tr>
-              <td>{{ $document->doc_name }}</td>
-              <td>{{ $document->size }} mb</td>
-              <td>{{ $document->created_at }}</td>
-              <td><a href="{{ route('showutility', $document->id) }}" target="_blank">Open</a></td>
+              <td><a href="{{ route('view-util', $document->id) }}" target="_blank">{{ $document->doc_name }}</a></td>
+              <td style="text-align: center">{{ $document->size }} mb</td>
+              <td style="text-align: center"><a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalOpen{{ $document->id }}"><i class="bi bi-download"></i></a>
+              <!-- Modal buat open Doc-->
+                <div class="modal fade" id="exampleModalOpen{{ $document->id }}" tabindex="-1" aria-labelledby="exampleModalOpen{{ $document->id }}" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content shadow px-5" style="border-radius: 15px">
+                      <!-- Header Modal & Tanda Silang -->
+                      <div class="modal-body text-center">
+                        <strong style="color: rgb(0, 0, 0)">Please Input Password! </strong>
+                      </div>
+                      <!-- buat input password -->
+                      <div class="mb-3 row">
+                        <form action="{{route('pw-util', $document->id)}}" method="POST" target="_blank">
+                          @csrf
+                          <div class="form-group">
+                            <label for="password" class=" col-form-label"></label>
+                            <input type="password" class="form-control" id="password" name="password">
+                          </div>
+                          <div class="text-center">
+                            <button type="submit" class="btn btn-secondary btn-success">Confirm</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Akhir modal buat open doc -->
+              </td>
+              {{-- <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td> --}}
               @if (auth()->user()->role == "admin")
-                <td><a href="{{ route('deleteutility', ['id' => $document->id]) }}" type="button"
+                <td style="text-align: center">{{ $document->created_at }}</td>
+                <td style="text-align: center"><a href="{{ route('del-util', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
               @endif
           </tr>
@@ -41,8 +121,7 @@
     @endforeach
   </tbody>
 </table>
-
-
+</div>
 
 <!-- Button Plus -->
 @if (auth()->user()->role == "admin")
@@ -64,7 +143,7 @@
         
         <div class="text-center">
         <!-- Dropzone Baru -->
-          <form action="{{route('uputility')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
+          <form action="{{route('up-util')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
             @csrf
           </form>  
         <!-- Akhri Dropzone baru -->
@@ -80,5 +159,4 @@
 </div>
 @endif
 <!-- Akhir Button Plus -->
-
 @endsection

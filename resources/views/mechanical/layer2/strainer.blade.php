@@ -40,11 +40,11 @@
             <strong style="color: rgb(0, 0, 0)"
               >Are you sure you want to
               <span class="text-danger">Delete</span>
-              All the History?
+              All Document?
             </strong>
           </div>
           <div class="text-center">
-          <a href="{{route('destroy-strain', ['category'=>'strainer'])}}">
+          <a href="{{route('destroy-strainer', ['category'=>'strainer'])}}">
             <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
           </a>
             <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">No</button>
@@ -69,10 +69,10 @@
       <tr>
           <th scope="col">Doc Name</th>
           <th scope="col" style="text-align: center">Size</th>
-          <th scope="col" style="text-align: center">Date Added</th>
           <th scope="col" style="text-align: center">Action</th>
           {{-- <th scope="col" style="text-align: center">Favorite</th> --}}
           @if (auth()->user()->role == "admin")
+          <th scope="col" style="text-align: center">Date Added</th>
           <th scope="col" style="text-align: center">Delete</th>
           @endif
       </tr>
@@ -81,9 +81,8 @@
     @foreach ($documents as $document)
       @if ($document->category == "strainer")
           <tr>
-              <td><a href="{{ route('open-strain', $document->id) }}">{{ $document->doc_name }}</a></td>
+              <td><a href="{{ route('view-strainer', $document->id) }}" target="_blank">{{ $document->doc_name }}</a></td>
               <td style="text-align: center">{{ $document->size }} mb</td>
-              <td style="text-align: center">{{ $document->created_at }}</td>
               <td style="text-align: center"><a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalOpen{{ $document->id }}"><i class="bi bi-download"></i></a>
               <!-- Modal buat open Doc-->
                 <div class="modal fade" id="exampleModalOpen{{ $document->id }}" tabindex="-1" aria-labelledby="exampleModalOpen{{ $document->id }}" aria-hidden="true">
@@ -95,7 +94,7 @@
                       </div>
                       <!-- buat input password -->
                       <div class="mb-3 row">
-                        <form action="{{route('password-strain', $document->id)}}" method="POST" target="_blank">
+                        <form action="{{route('pw-strainer', $document->id)}}" method="POST" target="_blank">
                           @csrf
                           <div class="form-group">
                             <label for="password" class=" col-form-label"></label>
@@ -113,7 +112,8 @@
               </td>
               {{-- <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td> --}}
               @if (auth()->user()->role == "admin")
-                <td style="text-align: center"><a href="{{ route('delete-strain', ['id' => $document->id]) }}" type="button"
+                <td style="text-align: center">{{ $document->created_at }}</td>
+                <td style="text-align: center"><a href="{{ route('del-strainer', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
               @endif
           </tr>
@@ -143,7 +143,7 @@
         
         <div class="text-center">
         <!-- Dropzone Baru -->
-          <form action="{{route('up-strain')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
+          <form action="{{route('up-strainer')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
             @csrf
           </form>  
         <!-- Akhri Dropzone baru -->

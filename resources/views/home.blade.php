@@ -7,41 +7,6 @@
 @endphp
 <div class="overflow-auto" style="max-width: 100%; max-height: 100%">
 <div class="container-fluid m-0 p-0">
-  <!-- Baris 1: Favourites -->
-  {{-- @if (auth()->user()->role == "user")
-  <div class="row my-3 ms-4">
-    <h4><i class="bi bi-star-fill text-warning me-2"></i>Favourites</h4>
-    <div class="row">
-      <hr class="ms-0" />
-    </div>
-  </div> --}}
-  <!-- Baris 2 : card document -->
-  {{-- <div class="overflow-auto" style="max-width: 100%; max-height: 200px"> --}}
-  {{-- @if ($favorites->isEmpty())
-    <p>Tidak ada dokumen favorit.</p>
-  @else
-    @foreach ($favorites as $favorite)     
-      <div class="container-fluid">
-        <div class="row my-3 ms-4 fs-5 row-cols-auto">
-          <div class="col">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-filetype-pdf fs-1 text-danger"></i>
-                  <span class="tt" data-bs-placement="top" title="Banbury 1 - 1/20.pdf">
-                    <p class="card-text word-wrap text-truncate">{{ $favorite->document->doc_name }}</p>
-                  </span>
-                </div>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    @endforeach
-  @endif
-  </div>
-  @endif --}}
-
   <!-- Baris 3: Document Text -->
   <div class="row my-3 ms-4">
     <h4><i class="bi bi-folder-fill me-2 text-primary"></i>Documents</h4>
@@ -168,7 +133,7 @@
         <!-- Card AREA 6 -->
         @if (in_array('area6', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area6')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -191,7 +156,7 @@
         <!-- Card AREA 7 -->
         @if (in_array('area7', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area7')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -214,7 +179,7 @@
         <!-- Card AREA 8 -->
         @if (in_array('area8', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area8')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -237,7 +202,7 @@
         <!-- Card AREA 9 -->
         @if (in_array('area9', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area9')}}">
             <button type="button" class="btn btn-primary btn-light" href="">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -260,7 +225,7 @@
         <!-- Card AREA 10 -->
         @if (in_array('area10', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area10')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -283,7 +248,7 @@
         <!-- Card AREA 11 -->
         @if (in_array('area11', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area11')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -306,7 +271,7 @@
         <!-- Card AREA 12 -->
         @if (in_array('area12', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area12')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -329,7 +294,7 @@
         <!-- Card AREA 13 -->
         @if (in_array('area13', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area13')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -352,7 +317,7 @@
         <!-- Card AREA 14 -->
         @if (in_array('area14', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area14')}}">
             <button type="button" class="btn btn-primary btn-light" href="">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -375,7 +340,7 @@
         <!-- Card AREA 15 -->
         @if (in_array('area15', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area15')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -398,7 +363,7 @@
         <!-- Card AREA 16 -->
         @if (in_array('area16', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area16')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -421,7 +386,7 @@
         <!-- Card AREA 17 -->
         @if (in_array('area17', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area17')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -444,7 +409,7 @@
         <!-- Card AREA 18 -->
         @if (in_array('area18', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area18')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -467,7 +432,7 @@
         <!-- Card AREA 19 -->
         @if (in_array('area19', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area19')}}">
             <button type="button" class="btn btn-primary btn-light" href="">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -490,7 +455,7 @@
         <!-- Card AREA 20 -->
         @if (in_array('area20', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area20')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -513,7 +478,7 @@
         <!-- Card AREA 21 -->
         @if (in_array('area21', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area21')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -536,7 +501,7 @@
         <!-- Card AREA 22 -->
         @if (in_array('area22', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area22')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -559,7 +524,7 @@
         <!-- Card AREA 23 -->
         @if (in_array('area23', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area23')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -582,7 +547,7 @@
         <!-- Card AREA 24 -->
         @if (in_array('area24', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area24')}}">
             <button type="button" class="btn btn-primary btn-light" href="">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -602,10 +567,10 @@
         @endif
         <!-- Akhir Card AREA 24 -->
 
-        <!-- Card AREA 26 -->
-        @if (in_array('area26', $userAccess) || $role)
+        <!-- Card AREA 25 -->
+        @if (in_array('area25', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area25')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -623,12 +588,12 @@
           </a>
         </div>
         @endif
-        <!-- Akhir Card AREA 26 -->
+        <!-- Akhir Card AREA 25 -->
 
-        <!-- Card AREA 27 -->
-        @if (in_array('area27', $userAccess) || $role)
+        <!-- Card AREA 26 -->
+        @if (in_array('area26', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area26')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -646,12 +611,12 @@
           </a>
         </div>
         @endif
-        <!-- Akhir Card AREA 27 -->
+        <!-- Akhir Card AREA 26 -->
 
-        <!-- Card AREA 28 -->
-        @if (in_array('area28', $userAccess) || $role)
+        <!-- Card AREA 27 -->
+        @if (in_array('area27', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area27')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -669,12 +634,12 @@
           </a>
         </div>
         @endif
-        <!-- Akhir Card AREA 28 -->
+        <!-- Akhir Card AREA 27 -->
 
-        <!-- Card AREA 29 -->
-        @if (in_array('area29', $userAccess) || $role)
+        <!-- Card AREA 28 -->
+        @if (in_array('area28', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area28')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -692,12 +657,12 @@
           </a>
         </div>
         @endif
-        <!-- Akhir Card AREA 29 -->
+        <!-- Akhir Card AREA 28 -->
 
-        <!-- Card AREA 30 -->
-        @if (in_array('area30', $userAccess) || $role)
+        <!-- Card AREA 29 -->
+        @if (in_array('area29', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area29')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -715,12 +680,12 @@
           </a>
         </div>
         @endif
-        <!-- Akhir Card AREA 30 -->
+        <!-- Akhir Card AREA 29 -->
 
-        <!-- Card AREA 31 -->
-        @if (in_array('area31', $userAccess) || $role)
+        <!-- Card AREA 30 -->
+        @if (in_array('area30', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area30')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -738,12 +703,12 @@
           </a>
         </div>
         @endif
-        <!-- Akhir Card AREA 31 -->
+        <!-- Akhir Card AREA 30 -->
 
-        <!-- Card AREA 32 -->
-        @if (in_array('area32', $userAccess) || $role)
+        <!-- Card AREA 31 -->
+        @if (in_array('area31', $userAccess) || $role)
         <div class="col">
-          <a href="">
+          <a href="{{route('Area31')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -761,7 +726,7 @@
           </a>
         </div>
         @endif
-        <!-- Akhir Card AREA 32 -->
+        <!-- Akhir Card AREA 31 -->
       </div>
     </div>
   {{-- </div> --}}

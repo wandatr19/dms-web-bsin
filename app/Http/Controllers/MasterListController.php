@@ -19,23 +19,25 @@ class MasterListController extends Controller
     }
     public function upload(Request $request)
     {
-        $request->validate([
-            'pdf_file' => 'required|mimes:pdf|max:2048', // Pastikan file PDF terlampir
-        ]);
-        
-        $file = $request->file('pdf_file');
-        $file_name = $file->getClientOriginalName();
-        $size = $file->getSize();
-        $sizeInMegabytes = round($size / (1024 * 1024), 2);
-        $path = $file->store('masterlist');
+        activity()->withoutLogs(function () use ($request) {
 
-        $data = new Document();
-        $data->doc_name = $file_name;
-        $data->category = "masterlist";
-        $data->path = $path;
-        $data->size = $sizeInMegabytes;
-        $data->save();
+            $request->validate([
+                'pdf_file' => 'required|mimes:pdf|max:2048', // Pastikan file PDF terlampir
+            ]);
 
+            $file = $request->file('pdf_file');
+            $file_name = $file->getClientOriginalName();
+            $size = $file->getSize();
+            $sizeInMegabytes = round($size / (1024 * 1024), 2);
+            $path = $file->store('masterlist');
+
+            $data = new Document();
+            $data->doc_name = $file_name;
+            $data->category = "masterlist";
+            $data->path = $path;
+            $data->size = $sizeInMegabytes;
+            $data->save();
+        });
         return redirect()->route('masterlist')->with('success', 'Pengguna Berhasil Ditambahkan!');
     }
     public function show($id)
@@ -52,14 +54,16 @@ class MasterListController extends Controller
     }
     public function delete($id)
     {
-        $document = Document::find($id);
-        if ($document) {
-            $document->delete();
-            $path = $document->path;
-            Storage::disk()->delete($path);
-            // Tindakan lain setelah penghapusan data
-            return redirect()->route('masterlist')->with('success', 'Pengguna Berhasil Dihapus!');
-        }
+        activity()->withoutLogs(function () use ($id) {
+            $document = Document::find($id);
+            if ($document) {
+                $document->delete();
+                $path = $document->path;
+                Storage::disk()->delete($path);
+            }
+        });
+        return redirect()->route('masterlist')->with('success', 'Pengguna Berhasil Dihapus!');
+            
     }
         
     

@@ -19,9 +19,13 @@ class Document extends Model
     ];
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()
-            ->logOnly(['doc_name'])
-            ->logOnlyDirty();
+        $logOptions = new LogOptions();
+
+        // Mengatur aktivitas yang akan direkam
+        $logOptions->logOnly(['read']);
+        $logOptions->logExcept(['created', 'updated', 'deleted']);
+
+        return $logOptions;
     }
 
     public static function search($keyword)

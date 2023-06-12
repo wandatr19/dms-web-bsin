@@ -23,10 +23,12 @@ class PwDocController extends Controller
     }
     public function update(Request $request)
     {
-        $password = $request->input('password');
-        $passwordDoc = PasswordDoc::first();
-        $passwordDoc->password = $password;
-        $passwordDoc->save();
+        activity()->withoutLogs(function () use ($request) {
+            $password = $request->input('password');
+            $passwordDoc = PasswordDoc::first();
+            $passwordDoc->password = $password;
+            $passwordDoc->save();
+        });
 
         return redirect()->back()->with('success', 'Password berhasil diganti');
     }

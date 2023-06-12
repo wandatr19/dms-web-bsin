@@ -32,10 +32,20 @@ class User extends Authenticatable
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()
-            ->logOnly(['name', 'email'])
-            ->logOnlyDirty();
+        $logOptions = new LogOptions();
+
+        // Mengatur aktivitas yang akan direkam
+        $logOptions->logOnly(['read']);
+        $logOptions->logExcept(['created', 'updated', 'deleted']);
+
+        return $logOptions;
     }
+    public function getDescriptionForEvent(string $eventName): string
+    {
+
+        return "User {$this->name} $eventName";
+    }
+
 
     public function favorites()
     {

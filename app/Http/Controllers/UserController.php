@@ -21,6 +21,7 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
+        activity()->withoutLogs(function () use ($request) {
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -40,7 +41,7 @@ class UserController extends Controller
         $data->password = Hash::make($validatedData['password']);
         $data->remember_token = Str::random(60);
         $data->save();
-
+        });
         return redirect()->route('adduser')->with('success', 'Pengguna Berhasil Ditambahkan!');
     }
     public function edit(User $user)
@@ -50,6 +51,7 @@ class UserController extends Controller
     }
     public function update(Request $request, User $user)
     {
+        activity()->withoutLogs(function () use ($request, $user) {
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
@@ -66,16 +68,19 @@ class UserController extends Controller
         }
 
         $user->update($validatedData);
-
+        });
         return redirect()->route('listuser')->with('success1', 'Data pengguna berhasil diperbarui.');
     }
     public function deleteUser($id)
     {
-        $user = User::find($id);
-        if ($user) {
-            $user->delete();
-            return redirect()->route('listuser')->with('success', 'Pengguna Berhasil Dihapus!');
-        }
+        activity()->withoutLogs(function () use ($id) {
+            $user = User::find($id);
+            if ($user) {
+                $user->delete();
+            }
+        });
+        return redirect()->route('listuser')->with('success', 'Pengguna Berhasil Dihapus!');
+            
     }
 
     public function favorite(User $user)

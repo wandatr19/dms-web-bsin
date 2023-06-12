@@ -10,7 +10,6 @@
       <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" disabled />
     </div>
 </div>
-
 @if (session('success'))
   <div class="alert alert-danger">
     {{ session('success') }}
@@ -41,11 +40,11 @@
             <strong style="color: rgb(0, 0, 0)"
               >Are you sure you want to
               <span class="text-danger">Delete</span>
-              All the History?
+              All Document?
             </strong>
           </div>
           <div class="text-center">
-          <a href="{{route('destroyPF', ['category'=>'polyfilm'])}}">
+          <a href="{{route('destroy-polyfilm', ['category'=>'polyfilm'])}}">
             <button type="button" class="btn btn-secondary btn-success" data-bs-dismiss="modal">Yes</button>
           </a>
             <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">No</button>
@@ -82,7 +81,7 @@
     @foreach ($documents as $document)
       @if ($document->category == "polyfilm")
           <tr>
-              <td><a href="{{ route('open-pf', $document->id) }}" target="_blank">{{ $document->doc_name }}</a></td>
+              <td><a href="{{ route('view-polyfilm', $document->id) }}" target="_blank">{{ $document->doc_name }}</a></td>
               <td style="text-align: center">{{ $document->size }} mb</td>
               <td style="text-align: center"><a class="btn btn-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModalOpen{{ $document->id }}"><i class="bi bi-download"></i></a>
               <!-- Modal buat open Doc-->
@@ -95,7 +94,7 @@
                       </div>
                       <!-- buat input password -->
                       <div class="mb-3 row">
-                        <form action="{{route('passwordPF', $document->id)}}" method="POST" target="_blank">
+                        <form action="{{route('pw-polyfilm', $document->id)}}" method="POST" target="_blank">
                           @csrf
                           <div class="form-group">
                             <label for="password" class=" col-form-label"></label>
@@ -114,7 +113,7 @@
               {{-- <td style="text-align: center"><a href="{{route('add-fav', $document)}}">Add to <i class="bi bi-star"></i></a></td> --}}
               @if (auth()->user()->role == "admin")
                 <td style="text-align: center">{{ $document->created_at }}</td>
-                <td style="text-align: center"><a href="{{ route('deletePF', ['id' => $document->id]) }}" type="button"
+                <td style="text-align: center"><a href="{{ route('del-polyfilm', ['id' => $document->id]) }}" type="button"
                 class="btn btn-link"><i class="bi bi-trash-fill text-danger"></a></td>
               @endif
           </tr>
@@ -144,7 +143,7 @@
         
         <div class="text-center">
         <!-- Dropzone Baru -->
-          <form action="{{route('uppolyfilm')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
+          <form action="{{route('up-polyfilm')}}" method="POST" encytype="multipart/form-data" id="pdf-upload" class="dropzone">
             @csrf
           </form>  
         <!-- Akhri Dropzone baru -->

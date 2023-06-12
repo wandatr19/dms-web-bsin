@@ -177,12 +177,12 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::post('/home/mechanical/strainer/pw/{id}', [StrainerController::class, 'password'])->name('pw-strainer');
     //Polyfilm
     Route::get('/home/mechanical/polyfilm', [PolyfilmController::class, 'index'])->name('polyfilm');
-    Route::post('/home/mechanical/add-polyfilm', [PolyfilmController::class, 'upload'])->name('uppolyfilm');
-    Route::get('/home/mechanical/polyfilm/{id}', [PolyfilmController::class, 'open'])->name('show-polyfilm');
-    Route::get('/home/mechanical/polyfilm/view/{id}', [PolyfilmController::class, 'view'])->name('open-pf');
-    Route::get('/home/mechanical/polyfilm/delete/{id}', [PolyfilmController::class, 'delete'])->name('deletePF');
-    Route::get('/home/mechanical/polyfilm/deleteAll/{category}', [PolyfilmController::class, 'destroy'])->name('destroyPF');
-    Route::post('/home/mechanical/polyfilm/pw/{id}', [PolyfilmController::class, 'verifPw'])->name('passwordPF');
+    Route::post('/home/mechanical/add-polyfilm', [PolyfilmController::class, 'upload'])->name('up-polyfilm');
+    Route::get('/home/mechanical/polyfilm/{id}', [PolyfilmController::class, 'open'])->name('open-polyfilm');
+    Route::get('/home/mechanical/polyfilm/view/{id}', [PolyfilmController::class, 'view'])->name('view-polyfilm');
+    Route::get('/home/mechanical/polyfilm/delete/{id}', [PolyfilmController::class, 'delete'])->name('del-polyfilm');
+    Route::get('/home/mechanical/polyfilm/deleteAll/{category}', [PolyfilmController::class, 'destroy'])->name('destroy-polyfilm');
+    Route::post('/home/mechanical/polyfilm/pw/{id}', [PolyfilmController::class, 'password'])->name('pw-polyfilm');
     //Utility
     Route::get('/home/utility', [UtilityController::class, 'index'])->name('util');
     Route::post('/home/add-utility', [UtilityController::class, 'upload'])->name('up-util');

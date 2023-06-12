@@ -7,9 +7,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- DataTable --}}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
     <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="{{ asset('vendor/DataTables/DataTables-1.13.4/css/jquery.dataTables.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('vendor/DataTables/DataTables-1.13.4/css/dataTables.bootsrap5.min.css') }}"/>
 
 
     <!-- Bootstrap CSS -->
@@ -20,7 +22,7 @@
 
     <!-- Link Bootstrap Icons -->
     <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap-icons-1.10.5\font\bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap-icons-1.10.5/font/bootstrap-icons.css') }}">
     
     <!-- Link CDN Buat Dropzone -->
     <script src="{{ asset('vendor/dropzone/dist/dropzone-min.js') }}"></script>
@@ -90,11 +92,7 @@
 
         <div class="col-auto bg-dark mt-3 text-end">
           <p class="d-flex align-items-center text-white text-decoration-none fs-6" id="UserInfo" data-bs-toggle="UserInfo" aria-expanded="false">
-            {{-- <i class="bi bi-person-circle mx-2 fs-5"></i> --}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-            </svg>
+            <i class="bi bi-person-circle mx-2 fs-5"></i>
             {{auth()->user()->name}}
           </p>
         </div>
@@ -123,11 +121,6 @@
                   <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                 </form>
               <hr>
-                {{-- <form class="d-flex" action="{{route('searchdoc')}}" method="GET">
-                  <input class="form-control me-2" type="text" name="keyword" placeholder="Search by Keyword" aria-label="Search" />
-                  <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              <hr> --}}
               <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item btn-outline-secondary rounded">
                   <a href="{{route('home')}}" class="nav-link text-white" aria-current="page">
@@ -251,7 +244,8 @@
       <!-- Akhir Footer -->
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
+    <script src="{{ asset('vendor/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')}}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Buat Tooltips -->
     <script>
@@ -299,7 +293,7 @@
     });
   </script>
   <!-- Script ikon Caret List -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
 
   <script>
     var toggler = document.getElementsByClassName('caret');

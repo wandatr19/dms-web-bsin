@@ -29,19 +29,20 @@ class FolderController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'name' => 'required',
-        ]);
+        activity()->withoutLogs(function () use ($request, $id) {
+            $validatedData = $request->validate([
+                'name' => 'required',
+            ]);
 
-        $folder = Folder::find($id);
+            $folder = Folder::find($id);
 
-        if (!$folder) {
-            return redirect()->back()->with('error', 'Folder tidak ditemukan!');
-        }
+            if (!$folder) {
+                return redirect()->back()->with('error', 'Folder tidak ditemukan!');
+            }
 
-        $folder->name = $validatedData['name'];
-        $folder->save();
-
+            $folder->name = $validatedData['name'];
+            $folder->save();
+        });
         return redirect()->back();
     }
     public function main()

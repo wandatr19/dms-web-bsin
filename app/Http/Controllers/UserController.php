@@ -83,9 +83,4 @@ class UserController extends Controller
             
     }
 
-    public function favorite(User $user)
-    {
-        $favorites = $user->favorites()->with('document')->get();
-        return view('favorites.index', compact('favorites'));
-    }
 }

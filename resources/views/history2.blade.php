@@ -1,7 +1,7 @@
 @extends('main')
 @section('utama')
 <div class="overflow-auto" style="max-width: 100%; max-height: 100%">
-    <table class="table table-bordered yajra-datatable">
+    <table class="table table-sm yajra-datatable">
         <thead>
             <tr>
                 <th>Description</th>
@@ -13,9 +13,8 @@
         <tbody>
         </tbody>
     </table>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+    <script src="{{ asset('vendor/jquery/jquery-1.9.1.js')}}"></script>
     <script src="{{ asset('vendor/jquery-validation-1.19.0/js/jquery.validate.js')}}"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="{{ asset('vendor/DataTables/DataTables-1.13.4/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{ asset('vendor/DataTables/DataTables-1.13.4/js/dataTables.bootstrap4.min.js')}}"></script>
 
@@ -35,7 +34,7 @@
                         name: 'action', 
                         orderable: true, 
                         searchable: true
-                    },
+                    }
                 ]
             });
             

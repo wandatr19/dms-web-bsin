@@ -8,9 +8,23 @@ use Illuminate\Http\Request;
 
 class HistoryController extends Controller
 {
+    // public function index(Request $request)
+    // {
+    //     if ($request->ajax()) {
+    //         $data = Activity::all();
+    //         return DataTables::of($data)
+    //             ->addColumn('action', function ($row) {
+    //                 $btn = '<button type="button" class="btn btn-danger btn-sm" onclick="deleteLog(' . $row->id . ')">Delete</button>';
+    //                 return $btn;
+    //             })
+    //             ->rawColumns(['action'])
+    //             ->make(true);
+    //     }
+
+    //     return view('history2');
+    // }
     public function index()
     {
-        // $activites = Activity::paginate(20);
         return view('history2');
     }
     public function getActivities()
@@ -31,5 +45,7 @@ class HistoryController extends Controller
     }
     public function destroy()
     {
+        Activity::truncate();
+        return response()->json(['success' => 'All users have been deleted.']);
     }
 }

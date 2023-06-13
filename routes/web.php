@@ -917,6 +917,7 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
 
 Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], function () {
     Route::get('/history', [HistoryController::class, 'index'])->name('history');
+    Route::delete('history/delete-all', [HistoryController::class, 'destroy'])->name('del-history');
     Route::get('/history/getHistory', [HistoryController::class, 'getActivities'])->name('get-history');
 
 

@@ -7,28 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="{{ asset('vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css')}}" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <!-- My CSS -->
     <link rel="stylesheet" href="css/login.css" />
 
-    <!-- Font Link Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
-
+ 
     <!-- App css -->
-    <link href="assets/css/config/creative/bootstrap.min.css" rel="stylesheet" type="text/css"
+    {{-- <link href="assets/css/config/creative/bootstrap.min.css" rel="stylesheet" type="text/css"
         id="bs-default-stylesheet" />
     <link href="assets/css/config/creative/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
 
     <link href="assets/css/config/creative/bootstrap-dark.min.css" rel="stylesheet" type="text/css"
         id="bs-dark-stylesheet" />
     <link href="assets/css/config/creative/app-dark.min.css" rel="stylesheet" type="text/css"
-        id="app-dark-stylesheet" />
+        id="app-dark-stylesheet" /> --}}
 
     <!-- icons -->
     <link rel="icon" href="img/bs-logo-white.png">
@@ -102,7 +98,7 @@
     </section>
     <!-- Akhir Box Login-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="{{ asset('vendor/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')}}"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <!-- Vendor js -->

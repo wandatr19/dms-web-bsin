@@ -14,14 +14,6 @@ class HomeController extends Controller
         $folders = Folder::all();
         return view('home', compact('folders'));
     }
-    // public function treebr(){
-    //     $documents = Document::all();
-    //     $folders = Folder::all();
-    //     return view('treebranch', [
-    //         'documents' => $documents,
-    //         'folders' => $folders,
-    //     ]);
-    // }
     public function masterlist(){
         return view('masterlist');
     }

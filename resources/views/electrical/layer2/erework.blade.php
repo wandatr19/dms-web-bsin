@@ -63,7 +63,7 @@
         
 
 <!-- List Doc -->
-<div class="overflow-auto" style="max-width: 100%; max-height: 93%">
+<div class="overflow-auto" style="max-width: 100%; max-height: 90%">
 <table class="table table-sm table-bordered table-striped table-hover">
   <thead>
       <tr>

@@ -59,7 +59,11 @@ class UserController extends Controller
             'user_access' => 'nullable|array',
         ]);
 
-        $validatedData['user_access'] = implode(',', $validatedData['user_access']);
+            if (!empty($validatedData['user_access'])) {
+                $validatedData['user_access'] = implode(',', $validatedData['user_access']);
+            } else {
+                $validatedData['user_access'] = ''; // Assign an empty string if user_access is empty
+            }
 
         if (!empty($validatedData['password'])) {
             $validatedData['password'] = Hash::make($validatedData['password']);

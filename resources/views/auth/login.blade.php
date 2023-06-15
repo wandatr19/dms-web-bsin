@@ -11,20 +11,13 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="{{asset('css/login.css')}}" />
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico">
- 
     <!-- App css -->
-    {{-- <link href="assets/css/config/creative/bootstrap.min.css" rel="stylesheet" type="text/css"
-        id="bs-default-stylesheet" />
-    <link href="assets/css/config/creative/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
-
-    <link href="assets/css/config/creative/bootstrap-dark.min.css" rel="stylesheet" type="text/css"
-        id="bs-dark-stylesheet" />
-    <link href="assets/css/config/creative/app-dark.min.css" rel="stylesheet" type="text/css"
-        id="app-dark-stylesheet" /> --}}
+    <link href="assets/css/config/creative/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet"/>
+    {{-- <link href="assets/css/config/creative/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" /> --}}
+    <link href="assets/css/config/creative/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
+    {{-- <link href="assets/css/config/creative/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" /> --}}
 
     <!-- icons -->
     <link rel="icon" href="img/bs-logo-white.png">
@@ -50,10 +43,9 @@
                                     <div class="card-body text-black">
                                         <form action="{{ 'postlogin' }}" method="post">
                                             {{ csrf_field() }}
-                                            <h1 class="fw-bold">LOGIN</h1>
+                                            <h1 class="fw-bold">DMS Engineering Design</h1>
 
-                                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px">Sign in Using
-                                                Bridgestone Account</h5>
+                                            <h5 class="fw-normal mb-1 pb-3" style="letter-spacing: 1px">Log in to your account</h5>
                                             @if (session('failed'))
                                                 <div class="alert alert-danger">
                                                     {{ session('failed') }}

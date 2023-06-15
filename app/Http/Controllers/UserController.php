@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -22,16 +24,20 @@ class UserController extends Controller
     public function store(Request $request)
     {
         activity()->withoutLogs(function () use ($request) {
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'role' => 'required',
-            'user_access' => 'nullable|array',
-            'password' => 'required',
-            'department' => 'required',
+            $validatedData = Validator::make($request->all(), [
+                'name' => 'required',
+                'email' => 'required|unique:users,email', // Menambahkan aturan unique untuk email
+                'role' => 'required',
+                'user_access' => 'nullable|array',
+                'password' => 'required',
+                'department' => 'required',
+            ]);
 
-        ]);
-
+            // Cek apakah validasi email gagal
+            if ($validatedData->fails()) {
+                return redirect()->back()->withInput()->withErrors(['email' => 'Email sudah terdaftar.']); // Mengirim pesan error ke view
+            }
+        
         $data = new User();
         $data->name = $validatedData['name'];
         $data->email = $validatedData['email'];

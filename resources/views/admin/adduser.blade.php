@@ -20,6 +20,11 @@
           <hr class="ms-0" />
         </div>
       </div>
+      @if ($errors->has('email'))
+        <div class="alert alert-danger">
+          {{ $errors->first('email') }}
+        </div>
+      @endif
 
       <form method="POST" action="{{route('save-adduser')}}">
         {{ csrf_field() }}

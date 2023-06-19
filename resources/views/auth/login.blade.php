@@ -19,7 +19,7 @@
     <link href="assets/css/config/creative/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
     {{-- <link href="assets/css/config/creative/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" /> --}}
 
-    <!-- icons -->
+    <!-- Header Icons -->
     <link rel="icon" href="img/bs-logo-white.png">
     <title>Login | DMS Project</title>
 </head>

@@ -102,7 +102,26 @@ use App\Http\Controllers\Area\Area27Controller;
 use App\Http\Controllers\Area\Area28Controller;
 use App\Http\Controllers\Area\Area29Controller;
 use App\Http\Controllers\Area\Area30Controller;
-use App\Http\Controllers\Area\Area31Controller; 
+use App\Http\Controllers\Area\Area31Controller;
+use App\Http\Controllers\Area\Area32Controller;
+use App\Http\Controllers\Area\Area33Controller;
+use App\Http\Controllers\Area\Area34Controller;
+use App\Http\Controllers\Area\Area35Controller;
+use App\Http\Controllers\Area\Area36Controller;
+use App\Http\Controllers\Area\Area37Controller;
+use App\Http\Controllers\Area\Area38Controller;
+use App\Http\Controllers\Area\Area39Controller;
+use App\Http\Controllers\Area\Area40Controller;
+use App\Http\Controllers\Area\Area41Controller;
+use App\Http\Controllers\Area\Area42Controller;
+use App\Http\Controllers\Area\Area43Controller;
+use App\Http\Controllers\Area\Area44Controller;
+use App\Http\Controllers\Area\Area45Controller;
+use App\Http\Controllers\Area\Area46Controller;
+use App\Http\Controllers\Area\Area47Controller;
+use App\Http\Controllers\Area\Area48Controller;
+use App\Http\Controllers\Area\Area49Controller;
+use App\Http\Controllers\Area\Area50Controller; 
 
 
 
@@ -901,7 +920,158 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::post('/add-Area31', [Area31Controller::class, 'upload'])->name('up-Area31');
     Route::get('/Area31/delete/{id}', [Area31Controller::class, 'delete'])->name('del-Area31');
     Route::get('/Area31/deleteAll/{category}', [Area31Controller::class, 'destroy'])->name('destroy-Area31');
-
+    //Area32    
+    Route::get('/Area32', [Area32Controller::class, 'index'])->name('Area32');
+    Route::get('/Area32/{id}', [Area32Controller::class, 'open'])->name('open-Area32');
+    Route::get('/Area32/view/{id}', [Area32Controller::class, 'view'])->name('view-Area32');
+    Route::post('/Area32/pw/{id}', [Area32Controller::class, 'password'])->name('pw-Area32');
+    Route::post('/add-Area32', [Area32Controller::class, 'upload'])->name('up-Area32');
+    Route::get('/Area32/delete/{id}', [Area32Controller::class, 'delete'])->name('del-Area32');
+    Route::get('/Area32/deleteAll/{category}', [Area32Controller::class, 'destroy'])->name('destroy-Area32');
+    //Area33    
+    Route::get('/Area33', [Area33Controller::class, 'index'])->name('Area33');
+    Route::get('/Area33/{id}', [Area33Controller::class, 'open'])->name('open-Area33');
+    Route::get('/Area33/view/{id}', [Area33Controller::class, 'view'])->name('view-Area33');
+    Route::post('/Area33/pw/{id}', [Area33Controller::class, 'password'])->name('pw-Area33');
+    Route::post('/add-Area33', [Area33Controller::class, 'upload'])->name('up-Area33');
+    Route::get('/Area33/delete/{id}', [Area33Controller::class, 'delete'])->name('del-Area33');
+    Route::get('/Area33/deleteAll/{category}', [Area33Controller::class, 'destroy'])->name('destroy-Area33');
+    //Area34    
+    Route::get('/Area34', [Area34Controller::class, 'index'])->name('Area34');
+    Route::get('/Area34/{id}', [Area34Controller::class, 'open'])->name('open-Area34');
+    Route::get('/Area34/view/{id}', [Area34Controller::class, 'view'])->name('view-Area34');
+    Route::post('/Area34/pw/{id}', [Area34Controller::class, 'password'])->name('pw-Area34');
+    Route::post('/add-Area34', [Area34Controller::class, 'upload'])->name('up-Area34');
+    Route::get('/Area34/delete/{id}', [Area34Controller::class, 'delete'])->name('del-Area34');
+    Route::get('/Area34/deleteAll/{category}', [Area34Controller::class, 'destroy'])->name('destroy-Area34');
+    //Area35    
+    Route::get('/Area35', [Area35Controller::class, 'index'])->name('Area35');
+    Route::get('/Area35/{id}', [Area35Controller::class, 'open'])->name('open-Area35');
+    Route::get('/Area35/view/{id}', [Area35Controller::class, 'view'])->name('view-Area35');
+    Route::post('/Area35/pw/{id}', [Area35Controller::class, 'password'])->name('pw-Area35');
+    Route::post('/add-Area35', [Area35Controller::class, 'upload'])->name('up-Area35');
+    Route::get('/Area35/delete/{id}', [Area35Controller::class, 'delete'])->name('del-Area35');
+    Route::get('/Area35/deleteAll/{category}', [Area35Controller::class, 'destroy'])->name('destroy-Area35');
+    //Area36    
+    Route::get('/Area36', [Area36Controller::class, 'index'])->name('Area36');
+    Route::get('/Area36/{id}', [Area36Controller::class, 'open'])->name('open-Area36');
+    Route::get('/Area36/view/{id}', [Area36Controller::class, 'view'])->name('view-Area36');
+    Route::post('/Area36/pw/{id}', [Area36Controller::class, 'password'])->name('pw-Area36');
+    Route::post('/add-Area36', [Area36Controller::class, 'upload'])->name('up-Area36');
+    Route::get('/Area36/delete/{id}', [Area36Controller::class, 'delete'])->name('del-Area36');
+    Route::get('/Area36/deleteAll/{category}', [Area36Controller::class, 'destroy'])->name('destroy-Area36');
+    //Area37    
+    Route::get('/Area37', [Area37Controller::class, 'index'])->name('Area37');
+    Route::get('/Area37/{id}', [Area37Controller::class, 'open'])->name('open-Area37');
+    Route::get('/Area37/view/{id}', [Area37Controller::class, 'view'])->name('view-Area37');
+    Route::post('/Area37/pw/{id}', [Area37Controller::class, 'password'])->name('pw-Area37');
+    Route::post('/add-Area37', [Area37Controller::class, 'upload'])->name('up-Area37');
+    Route::get('/Area37/delete/{id}', [Area37Controller::class, 'delete'])->name('del-Area37');
+    Route::get('/Area37/deleteAll/{category}', [Area37Controller::class, 'destroy'])->name('destroy-Area37');
+    //Area38    
+    Route::get('/Area38', [Area38Controller::class, 'index'])->name('Area38');
+    Route::get('/Area38/{id}', [Area38Controller::class, 'open'])->name('open-Area38');
+    Route::get('/Area38/view/{id}', [Area38Controller::class, 'view'])->name('view-Area38');
+    Route::post('/Area38/pw/{id}', [Area38Controller::class, 'password'])->name('pw-Area38');
+    Route::post('/add-Area38', [Area38Controller::class, 'upload'])->name('up-Area38');
+    Route::get('/Area38/delete/{id}', [Area38Controller::class, 'delete'])->name('del-Area38');
+    Route::get('/Area38/deleteAll/{category}', [Area38Controller::class, 'destroy'])->name('destroy-Area38');
+    //Area39    
+    Route::get('/Area39', [Area39Controller::class, 'index'])->name('Area39');
+    Route::get('/Area39/{id}', [Area39Controller::class, 'open'])->name('open-Area39');
+    Route::get('/Area39/view/{id}', [Area39Controller::class, 'view'])->name('view-Area39');
+    Route::post('/Area39/pw/{id}', [Area39Controller::class, 'password'])->name('pw-Area39');
+    Route::post('/add-Area39', [Area39Controller::class, 'upload'])->name('up-Area39');
+    Route::get('/Area39/delete/{id}', [Area39Controller::class, 'delete'])->name('del-Area39');
+    Route::get('/Area39/deleteAll/{category}', [Area39Controller::class, 'destroy'])->name('destroy-Area39');
+    //Area40    
+    Route::get('/Area40', [Area40Controller::class, 'index'])->name('Area40');
+    Route::get('/Area40/{id}', [Area40Controller::class, 'open'])->name('open-Area40');
+    Route::get('/Area40/view/{id}', [Area40Controller::class, 'view'])->name('view-Area40');
+    Route::post('/Area40/pw/{id}', [Area40Controller::class, 'password'])->name('pw-Area40');
+    Route::post('/add-Area40', [Area40Controller::class, 'upload'])->name('up-Area40');
+    Route::get('/Area40/delete/{id}', [Area40Controller::class, 'delete'])->name('del-Area40');
+    Route::get('/Area40/deleteAll/{category}', [Area40Controller::class, 'destroy'])->name('destroy-Area40');
+    //Area41    
+    Route::get('/Area41', [Area41Controller::class, 'index'])->name('Area41');
+    Route::get('/Area41/{id}', [Area41Controller::class, 'open'])->name('open-Area41');
+    Route::get('/Area41/view/{id}', [Area41Controller::class, 'view'])->name('view-Area41');
+    Route::post('/Area41/pw/{id}', [Area41Controller::class, 'password'])->name('pw-Area41');
+    Route::post('/add-Area41', [Area41Controller::class, 'upload'])->name('up-Area41');
+    Route::get('/Area41/delete/{id}', [Area41Controller::class, 'delete'])->name('del-Area41');
+    Route::get('/Area41/deleteAll/{category}', [Area41Controller::class, 'destroy'])->name('destroy-Area41');
+    //Area42    
+    Route::get('/Area42', [Area42Controller::class, 'index'])->name('Area42');
+    Route::get('/Area42/{id}', [Area42Controller::class, 'open'])->name('open-Area42');
+    Route::get('/Area42/view/{id}', [Area42Controller::class, 'view'])->name('view-Area42');
+    Route::post('/Area42/pw/{id}', [Area42Controller::class, 'password'])->name('pw-Area42');
+    Route::post('/add-Area42', [Area42Controller::class, 'upload'])->name('up-Area42');
+    Route::get('/Area42/delete/{id}', [Area42Controller::class, 'delete'])->name('del-Area42');
+    Route::get('/Area42/deleteAll/{category}', [Area42Controller::class, 'destroy'])->name('destroy-Area42');
+    //Area43    
+    Route::get('/Area43', [Area43Controller::class, 'index'])->name('Area43');
+    Route::get('/Area43/{id}', [Area43Controller::class, 'open'])->name('open-Area43');
+    Route::get('/Area43/view/{id}', [Area43Controller::class, 'view'])->name('view-Area43');
+    Route::post('/Area43/pw/{id}', [Area43Controller::class, 'password'])->name('pw-Area43');
+    Route::post('/add-Area43', [Area43Controller::class, 'upload'])->name('up-Area43');
+    Route::get('/Area43/delete/{id}', [Area43Controller::class, 'delete'])->name('del-Area43');
+    Route::get('/Area43/deleteAll/{category}', [Area43Controller::class, 'destroy'])->name('destroy-Area43');
+    //Area44    
+    Route::get('/Area44', [Area44Controller::class, 'index'])->name('Area44');
+    Route::get('/Area44/{id}', [Area44Controller::class, 'open'])->name('open-Area44');
+    Route::get('/Area44/view/{id}', [Area44Controller::class, 'view'])->name('view-Area44');
+    Route::post('/Area44/pw/{id}', [Area44Controller::class, 'password'])->name('pw-Area44');
+    Route::post('/add-Area44', [Area44Controller::class, 'upload'])->name('up-Area44');
+    Route::get('/Area44/delete/{id}', [Area44Controller::class, 'delete'])->name('del-Area44');
+    Route::get('/Area44/deleteAll/{category}', [Area44Controller::class, 'destroy'])->name('destroy-Area44');
+    //Area45    
+    Route::get('/Area45', [Area45Controller::class, 'index'])->name('Area45');
+    Route::get('/Area45/{id}', [Area45Controller::class, 'open'])->name('open-Area45');
+    Route::get('/Area45/view/{id}', [Area45Controller::class, 'view'])->name('view-Area45');
+    Route::post('/Area45/pw/{id}', [Area45Controller::class, 'password'])->name('pw-Area45');
+    Route::post('/add-Area45', [Area45Controller::class, 'upload'])->name('up-Area45');
+    Route::get('/Area45/delete/{id}', [Area45Controller::class, 'delete'])->name('del-Area45');
+    Route::get('/Area45/deleteAll/{category}', [Area45Controller::class, 'destroy'])->name('destroy-Area45');
+    //Area46    
+    Route::get('/Area46', [Area46Controller::class, 'index'])->name('Area46');
+    Route::get('/Area46/{id}', [Area46Controller::class, 'open'])->name('open-Area46');
+    Route::get('/Area46/view/{id}', [Area46Controller::class, 'view'])->name('view-Area46');
+    Route::post('/Area46/pw/{id}', [Area46Controller::class, 'password'])->name('pw-Area46');
+    Route::post('/add-Area46', [Area46Controller::class, 'upload'])->name('up-Area46');
+    Route::get('/Area46/delete/{id}', [Area46Controller::class, 'delete'])->name('del-Area46');
+    Route::get('/Area46/deleteAll/{category}', [Area46Controller::class, 'destroy'])->name('destroy-Area47');
+    //Area47    
+    Route::get('/Area47', [Area47Controller::class, 'index'])->name('Area47');
+    Route::get('/Area47/{id}', [Area47Controller::class, 'open'])->name('open-Area47');
+    Route::get('/Area47/view/{id}', [Area47Controller::class, 'view'])->name('view-Area47');
+    Route::post('/Area47/pw/{id}', [Area47Controller::class, 'password'])->name('pw-Area47');
+    Route::post('/add-Area47', [Area47Controller::class, 'upload'])->name('up-Area47');
+    Route::get('/Area47/delete/{id}', [Area47Controller::class, 'delete'])->name('del-Area47');
+    Route::get('/Area47/deleteAll/{category}', [Area47Controller::class, 'destroy'])->name('destroy-Area47');
+    //Area48    
+    Route::get('/Area48', [Area48Controller::class, 'index'])->name('Area48');
+    Route::get('/Area48/{id}', [Area48Controller::class, 'open'])->name('open-Area48');
+    Route::get('/Area48/view/{id}', [Area48Controller::class, 'view'])->name('view-Area48');
+    Route::post('/Area48/pw/{id}', [Area48Controller::class, 'password'])->name('pw-Area48');
+    Route::post('/add-Area48', [Area48Controller::class, 'upload'])->name('up-Area48');
+    Route::get('/Area48/delete/{id}', [Area48Controller::class, 'delete'])->name('del-Area48');
+    Route::get('/Area48/deleteAll/{category}', [Area48Controller::class, 'destroy'])->name('destroy-Area48');
+    //Area49    
+    Route::get('/Area49', [Area49Controller::class, 'index'])->name('Area49');
+    Route::get('/Area49/{id}', [Area49Controller::class, 'open'])->name('open-Area49');
+    Route::get('/Area49/view/{id}', [Area49Controller::class, 'view'])->name('view-Area49');
+    Route::post('/Area49/pw/{id}', [Area49Controller::class, 'password'])->name('pw-Area49');
+    Route::post('/add-Area49', [Area49Controller::class, 'upload'])->name('up-Area49');
+    Route::get('/Area49/delete/{id}', [Area49Controller::class, 'delete'])->name('del-Area49');
+    Route::get('/Area49/deleteAll/{category}', [Area49Controller::class, 'destroy'])->name('destroy-Area49');
+    //Area50    
+    Route::get('/Area50', [Area50Controller::class, 'index'])->name('Area50');
+    Route::get('/Area50/{id}', [Area50Controller::class, 'open'])->name('open-Area50');
+    Route::get('/Area50/view/{id}', [Area50Controller::class, 'view'])->name('view-Area50');
+    Route::post('/Area50/pw/{id}', [Area50Controller::class, 'password'])->name('pw-Area50');
+    Route::post('/add-Area50', [Area50Controller::class, 'upload'])->name('up-Area50');
+    Route::get('/Area50/delete/{id}', [Area50Controller::class, 'delete'])->name('del-Area50');
+    Route::get('/Area50/deleteAll/{category}', [Area50Controller::class, 'destroy'])->name('destroy-Area50');
 
     //Masterlist
     Route::get('/masterlist', [MasterListController::class, 'mstrlist'])->name('masterlist');

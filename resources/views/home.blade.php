@@ -727,6 +727,441 @@
         </div>
         @endif
         <!-- Akhir Card AREA 31 -->
+        <!-- Card AREA 32 -->
+        @if (in_array('area32', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area32')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 34)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 32 -->
+
+        <!-- Card AREA 33 -->
+        @if (in_array('area33', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area33')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 35)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 33 -->
+
+        <!-- Card AREA 34 -->
+        @if (in_array('area34', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area34')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 36)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 34 -->
+        <!-- Card AREA 35 -->
+        @if (in_array('area35', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area35')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 37)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 35 -->
+
+        <!-- Card AREA 36 -->
+        @if (in_array('area36', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area36')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 114)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 36 -->
+
+        <!-- Card AREA 37 -->
+        @if (in_array('area37', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area37')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 115)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 37 -->
+
+        <!-- Card AREA 38 -->
+        @if (in_array('area38', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area38')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 116)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 38 -->
+
+        <!-- Card AREA 39 -->
+        @if (in_array('area39', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area39')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 117)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 39 -->
+
+        <!-- Card AREA 40 -->
+        @if (in_array('area40', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area40')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 118)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 40 -->
+
+        <!-- Card AREA 41 -->
+        @if (in_array('area41', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area41')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 119)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 41 -->
+
+        <!-- Card AREA 42 -->
+        @if (in_array('area42', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area42')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 120)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 42 -->
+
+        <!-- Card AREA 43 -->
+        @if (in_array('area43', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area43')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 121)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 43 -->
+
+        <!-- Card AREA 44 -->
+        @if (in_array('area44', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area44')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 122)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 44 -->
+
+        <!-- Card AREA 45 -->
+        @if (in_array('area45', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area45')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 123)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 45 -->
+
+        <!-- Card AREA 46 -->
+        @if (in_array('area46', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area46')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 124)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 46 -->
+
+        <!-- Card AREA 47 -->
+        @if (in_array('area47', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area47')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 125)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 47 -->
+
+        <!-- Card AREA 48 -->
+        @if (in_array('area48', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area48')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 126)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 48 -->
+
+        <!-- Card AREA 49 -->
+        @if (in_array('area49', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area49')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 127)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 49 -->
+
+        <!-- Card AREA 50 -->
+        @if (in_array('area50', $userAccess) || $role)
+        <div class="col">
+          <a href="{{route('Area50')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                    @if ($folder->id === 128)
+                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                      </span>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        @endif
+        <!-- Akhir Card AREA 50 -->
       </div>
     </div>
   {{-- </div> --}}

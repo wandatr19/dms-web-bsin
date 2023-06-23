@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     //
-    public function searchUser(Request $request)
+    public function search(Request $request)
     {
         $keyword = $request->input('keyword');
         $documents = Document::search($keyword);

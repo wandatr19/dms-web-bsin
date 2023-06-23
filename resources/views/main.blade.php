@@ -84,7 +84,7 @@
           <nav class="navbar navbar-light bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{route('home')}}">
-                <img src="/img/bs-putih.png" alt="" height="24" />
+                <img src="/img/Bridgestone-logo-White-scaled-removebg-preview.png" alt="" height="40" />
               </a>
             </div>
           </nav>

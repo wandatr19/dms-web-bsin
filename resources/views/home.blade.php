@@ -20,321 +20,321 @@
     <div class="container-fluid">
       <div class="row my-3 ms-4 fs-5 row-cols-auto">
         <!-- Card MECHANICAL -->
-        @if (in_array('mech', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route("mech")}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 3)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 3)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("mech")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card MECHANICAL -->
         <!-- Card ELECTRICAL -->
-        @if (in_array('elect', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route("elect")}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 4)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 4)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("elect")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card ELECTRICAL -->
         <!-- Card UTILITY -->
-        @if (in_array('util', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route("util")}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 5)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 5)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("util")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card UTILITY -->
         <!-- Card CIVIL -->
-        @if (in_array('civil', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route("civil")}}">
-            <button type="button" class="btn btn-primary btn-light" href="">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 6)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 6)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("civil")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card CIVIL -->
         <!-- Card OTHERS -->
-        @if (in_array('oth', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('oth')}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 7)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 7)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("oth")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card OTHERS -->
 
         <!-- Card AREA 6 -->
-        @if (in_array('area6', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area6')}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 8)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 8)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area6")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 6 -->
 
         <!-- Card AREA 7 -->
-        @if (in_array('area7', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area7')}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 9)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 9)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area7")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 7 -->
 
         <!-- Card AREA 8 -->
-        @if (in_array('area8', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area8')}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 10)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 10)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area8")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 8 -->
 
         <!-- Card AREA 9 -->
-        @if (in_array('area9', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area9')}}">
-            <button type="button" class="btn btn-primary btn-light" href="">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 11)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 11)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area9")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 9 -->
 
         <!-- Card AREA 10 -->
-        @if (in_array('area10', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area10')}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 12)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 12)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area10")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 10 -->
 
         <!-- Card AREA 11 -->
-        @if (in_array('area11', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area11')}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 13)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 13)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area11")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 11 -->
 
         <!-- Card AREA 12 -->
-        @if (in_array('area12', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area12')}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 14)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 14)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area12")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 12 -->
 
         <!-- Card AREA 13 -->
-        @if (in_array('area13', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area13')}}">
-            <button type="button" class="btn btn-primary btn-light">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 15)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 15)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area13")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 13 -->
 
         <!-- Card AREA 14 -->
-        @if (in_array('area14', $userAccess) || $role)
-        <div class="col">
-          <a href="{{route('Area14')}}">
-            <button type="button" class="btn btn-primary btn-light" href="">
-              <div class="card shadow-sm" style="width: 8rem">
-                <div class="card-body text-center">
-                  <i class="bi bi-folder-fill me-1 fs-1"></i>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 16)
-                      <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
-                        <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
-                      </span>
-                    @endif
-                  @endforeach
-                </div>
-              </div>
-            </button>
-          </a>
-        </div>
-        @endif
+        @foreach ($folders as $folder)
+          @if ($folder->id === 16)
+            @if (in_array("$folder->name", $userAccess) || $role)
+            <div class="col">
+              <a href="{{route("Area14")}}">
+                <button type="button" class="btn btn-primary btn-light">
+                  <div class="card shadow-sm" style="width: 8rem">
+                    <div class="card-body text-center">
+                      <i class="bi bi-folder-fill me-1 fs-1"></i>
+                        <span class="tt" data-bs-placement="top" title="">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                    </div>
+                  </div>
+                </button>
+              </a>
+            </div>
+            @endif
+          @endif
+        @endforeach
         <!-- Akhir Card AREA 14 -->
 
         <!-- Card AREA 15 -->

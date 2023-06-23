@@ -11,7 +11,7 @@ class CT8Controller extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('mechanical.layer2.8ct', compact('documents'));
     }
     public function upload(Request $request)

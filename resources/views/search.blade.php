@@ -12,9 +12,6 @@
 </div>
 
 
-{{-- @foreach($documents as $document)
-    <p>{{ $document->doc_name }}</p>
-@endforeach --}}
 
 @if(isset($documents) && count($documents) > 0)
 <div class="overflow-auto" style="max-width: 100%; max-height: 93%">

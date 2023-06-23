@@ -12,7 +12,7 @@ class Area28Controller extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('area.area28', compact('documents'));
     }
     public function upload(Request $request)

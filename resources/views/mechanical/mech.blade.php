@@ -681,7 +681,7 @@
         <!-- Akhir Card Hatsugama M/C -->
         <!-- Card Folder 1 -->
         <div class="col">
-          <a href="#">
+          <a href="{{route('Folder1')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -701,7 +701,7 @@
         <!-- Akhir Card Folder 1 -->
         <!-- Card Folder 2 -->
         <div class="col">
-          <a href="#">
+          <a href="{{route('Folder2')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -721,7 +721,7 @@
         <!-- Akhir Card Folder 2 -->
         <!-- Card Folder 3 -->
         <div class="col">
-          <a href="#">
+          <a href="{{route('Folder3')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -741,7 +741,7 @@
         <!-- Akhir Card Folder 3 -->
         <!-- Card Folder 4 -->
         <div class="col">
-          <a href="#">
+          <a href="{{route('Folder4')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -761,7 +761,7 @@
         <!-- Akhir Card Folder 4 -->
         <!-- Card Folder 5 -->
         <div class="col">
-          <a href="#">
+          <a href="{{route('Folder5')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">
@@ -779,6 +779,506 @@
           </a>
         </div>
         <!-- Akhir Card Folder 5 -->
+        <!-- Card Folder 6 -->
+        <div class="col">
+          <a href="{{route('Folder6')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 129)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder 6 -->
+        <!-- Card Folder7 -->
+        <div class="col">
+          <a href="{{route('Folder7')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 130)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder7 -->
+        <!-- Card Folder6 -->
+        <div class="col">
+          <a href="{{route('Folder6')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 131)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder6 -->
+        <!-- Card Folder9 -->
+        <div class="col">
+          <a href="{{route('Folder9')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 132)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder9 -->
+        <!-- Card Folder10 -->
+        <div class="col">
+          <a href="{{route('Folder10')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 133)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder10 -->
+        <!-- Card Folder11 -->
+        <div class="col">
+          <a href="{{route('Folder11')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 134)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder11 -->
+        <!-- Card Folder12 -->
+        <div class="col">
+          <a href="{{route('Folder12')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 135)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder12 -->
+        <!-- Card Folder13 -->
+        <div class="col">
+          <a href="{{route('Folder13')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 136)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder13 -->
+        <!-- Card Folder14 -->
+        <div class="col">
+          <a href="{{route('Folder14')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 137)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder14 -->
+        <!-- Card Folder15 -->
+        <div class="col">
+          <a href="{{route('Folder15')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 138)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder15 -->
+        <!-- Card Folder16 -->
+        <div class="col">
+          <a href="{{route('Folder16')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 139)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder16 -->
+        <!-- Card Folder17 -->
+        <div class="col">
+          <a href="{{route('Folder17')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 140)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder17 -->
+        <!-- Card Folder18 -->
+        <div class="col">
+          <a href="{{route('Folder18')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 141)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder18 -->
+        <!-- Card Folder19 -->
+        <div class="col">
+          <a href="{{route('Folder19')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 142)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder19 -->
+        <!-- Card Folder20 -->
+        <div class="col">
+          <a href="{{route('Folder20')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 143)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder20 -->
+        <!-- Card Folder21 -->
+        <div class="col">
+          <a href="{{route('Folder21')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 144)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder21 -->
+        <!-- Card Folder22 -->
+        <div class="col">
+          <a href="{{route('Folder22')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 145)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder22 -->
+        <!-- Card Folder23 -->
+        <div class="col">
+          <a href="{{route('Folder23')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 146)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder23 -->
+        <!-- Card Folder24 -->
+        <div class="col">
+          <a href="{{route('Folder24')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 147)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder24 -->
+        <!-- Card Folder25 -->
+        <div class="col">
+          <a href="{{route('Folder25')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 148)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder25 -->
+        <!-- Card Folder26 -->
+        <div class="col">
+          <a href="{{route('Folder26')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 149)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder26 -->
+        <!-- Card Folder27 -->
+        <div class="col">
+          <a href="{{route('Folder27')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 150)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder27 -->
+        <!-- Card Folder28 -->
+        <div class="col">
+          <a href="{{route('Folder28')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 151)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder28 -->
+        <!-- Card Folder29 -->
+        <div class="col">
+          <a href="{{route('Folder29')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 152)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder29 -->
+        <!-- Card Folder30 -->
+        <div class="col">
+          <a href="{{route('Folder30')}}">
+            <button type="button" class="btn btn-primary btn-light">
+              <div class="card shadow-sm" style="width: 8rem">
+                <div class="card-body text-center">
+                  <i class="bi bi-folder-fill me-1 fs-1"></i>
+                  @foreach ($folders as $folder)
+                      @if ($folder->id === 153)
+                        <span class="tt" data-bs-placement="top" title="{{ $folder->name }}">
+                          <p class="card-text word-wrap text-truncate">{{ $folder->name }}</p>
+                        </span>
+                      @endif
+                  @endforeach
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- Akhir Card Folder30 -->
       </div>
     </div>
   </div>

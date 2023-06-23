@@ -681,7 +681,7 @@
         <!-- Akhir Card Hatsugama M/C -->
         <!-- Card Folder 1 -->
         <div class="col">
-          <a href="#">
+          <a href="{{route('EFolder1')}}">
             <button type="button" class="btn btn-primary btn-light">
               <div class="card shadow-sm" style="width: 8rem">
                 <div class="card-body text-center">

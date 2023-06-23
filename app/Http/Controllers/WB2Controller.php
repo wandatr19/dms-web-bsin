@@ -11,7 +11,7 @@ class WB2Controller extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('mechanical.layer2.white_buff2', compact('documents'));
     }
     public function upload(Request $request)

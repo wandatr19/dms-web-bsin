@@ -17,7 +17,7 @@
   </div>
 @endif
 
-<form method="POST" action="{{route('add-folder')}}">
+{{-- <form method="POST" action="{{route('add-folder')}}">
     @csrf
     <div>
         <label for="name">Nama Folder:</label>
@@ -32,9 +32,9 @@
         </select>
     </div>
     <button type="submit">Tambah Folder</button>
-</form>
+</form> --}}
 
-<div class="overflow-auto" style="max-width: 100%; max-height: 80%">
+<div class="overflow-auto" style="max-width: 100%; max-height: 95%">
   <div class="table-responsive">
     <table class="table table-sm table-bordered table-striped table-hover">
       <thead>

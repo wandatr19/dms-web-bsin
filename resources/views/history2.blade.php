@@ -1,13 +1,18 @@
 @extends('main')
 @section('utama')
 <div class="overflow-auto" style="max-width: 100%; max-height: 100%">
+    <div class="d-flex justify-content-end mt-3">
+        <a href="{{route('del-history')}}">
+            <button class="btn btn-danger">Destroy</button>
+        </a>
+        <button id="exportBtn" class="btn btn-success ml-2">Export</button>
+    </div>   
     <table class="table table-sm yajra-datatable">
         <thead>
             <tr>
                 <th>Description</th>
                 <th>Dokumen</th>
                 <th>Waktu</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -29,15 +34,8 @@
                     {data: 'description', name: 'description'},
                     {data: 'properties', name: 'properties'},
                     {data: 'created_at', name: 'created_at'},
-                    {
-                        data: 'action', 
-                        name: 'action', 
-                        orderable: true, 
-                        searchable: true
-                    }
                 ]
             });
-            
         });
     </script>
 </div>

@@ -12,7 +12,7 @@ class E8CTController extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('electrical.layer2.e8ct', compact('documents'));
     }
     public function upload(Request $request)

@@ -12,7 +12,7 @@ class ESRB2Controller extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('electrical.layer2.esrb2', compact('documents'));
     }
     public function upload(Request $request)

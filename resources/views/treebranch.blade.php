@@ -1718,798 +1718,1304 @@
               <!-- AKHIR ELECTRICAL -->
 
               <!-- UTILITY -->
-              @if (in_array('util', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 5)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "utility")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
-                        @endif
-                      @endforeach
-                    </ul>
-                </li>
-              @endif
+              @foreach ($folders as $folder)
+                @if ($folder->id === 5)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "utility")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach    
               <!-- AKHIR UTILITY -->
 
               <!-- CIVIL -->
-              @if (in_array('civil', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 6)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "civil")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 6)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "civil")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR CIVIL -->
 
               <!-- OTHERS -->
-              @if (in_array('oth', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 7)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "others")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 7)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "others")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR OTHERS -->
               <!-- Area6 -->
-              @if (in_array('area6', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 8)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area6")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 8)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area6")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area6 -->
 
               <!-- Area7 -->
-              @if (in_array('area7', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 9)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area7")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 9)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area7")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area7 -->
               <!-- Area8 -->
-              @if (in_array('area8', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 10)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area8")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 10)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area8")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area8 -->
               <!-- Area9 -->
-              @if (in_array('area9', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 11)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area9")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 11)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area9")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area9 -->
               <!-- Area10 -->
-              @if (in_array('area10', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 12)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area10")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 12)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area10")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area10 -->
               <!-- Area11 -->
-              @if (in_array('area11', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 13)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area11")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 13)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area11")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area11 -->
               <!-- Area12 -->
-              @if (in_array('area12', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 14)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area12")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 14)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area12")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area12 -->
               <!-- Area13 -->
-              @if (in_array('area13', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 15)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area13")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 15)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area13")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area13 -->
               <!-- Area14 -->
-              @if (in_array('area14', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 16)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area14")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 16)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area14")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area14 -->
               <!-- Area15 -->
-              @if (in_array('area15', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 17)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area15")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 17)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area15")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area15 -->
               <!-- Area16 -->
-              @if (in_array('area16', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 18)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area16")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 18)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area16")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area16 -->
               <!-- Area17 -->
-              @if (in_array('area17', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 19)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area17")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 19)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area17")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area17 -->
               <!-- Area18 -->
-              @if (in_array('area18', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 20)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area18")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 20)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area18")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area18 -->
               <!-- Area19 -->
-              @if (in_array('area19', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 21)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area19")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 12)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area19")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area19 -->
               <!-- Area20 -->
-              @if (in_array('area20', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 22)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area20")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 22)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area20")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area20 -->
               <!-- Area21 -->
-              @if (in_array('area21', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 23)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area21")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 23)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area21")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area21 -->
               <!-- Area22 -->
-              @if (in_array('area22', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 24)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area22")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 24)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area22")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area22 -->
               <!-- Area23 -->
-              @if (in_array('area23', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 25)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area23")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 25)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area23")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area23 -->
               <!-- Area24 -->
-              @if (in_array('area24', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 26)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area24")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 26)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area24")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area24 -->
               <!-- Area25 -->
-              @if (in_array('area25', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 27)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area25")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 27)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area25")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area25 -->
               <!-- Area26 -->
-              @if (in_array('area26', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 28)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area26")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 28)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area26")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area26 -->
               <!-- Area27 -->
-              @if (in_array('area27', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 29)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area27")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 29)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area27")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area27 -->
               <!-- Area28 -->
-              @if (in_array('area28', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 30)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area28")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 30)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area28")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area28 -->
               <!-- Area29 -->
-              @if (in_array('Area29', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 31)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area29")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 31)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area29")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area29 -->
               <!-- Area30 -->
-              @if (in_array('area30', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 32)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area30")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 32)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area30")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area30 -->
               <!-- Area31 -->
-              @if (in_array('area31', $userAccess) || $role)
-                <li>
-                  @foreach ($folders as $folder)
-                    @if ($folder->id === 33)
-                      <span class="caret">
-                        <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
-                        {{$folder->name}}
-                      </span>
-                    @endif
-                  @endforeach
-                    <ul class="nested">
-                      @foreach ($documents as $document)
-                          @if ($document->category == "Area31")
-                          <li>
-                            <span>
-                              <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
-                              <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
-                              {{ $document->doc_name }}</a>
-                            </span>
-                          </li>
+              @foreach ($folders as $folder)
+                @if ($folder->id === 33)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area31")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
                           @endif
                         @endforeach
-                    </ul>
-                </li>
-              @endif
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
               <!-- AKHIR Area31 -->
-
-
-
-
-
-
-
+              <!-- Area32 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 34)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area32")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area32 -->
+              <!-- Area33 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 35)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area33")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area33 -->
+              <!-- Area34 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 36)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area34")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area34 -->
+              <!-- Area35 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 37)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area35")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area35 -->
+              <!-- Area36 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 114)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area36")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area36 -->
+              <!-- Area37 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 115)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area37")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area37 -->
+              <!-- Area38 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 116)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area38")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area38 -->
+              <!-- Area39 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 117)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area39")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area39 -->
+              <!-- Area40 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 118)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area40")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area40 -->
+              <!-- Area41 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 119)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area41")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area41 -->
+              <!-- Area42 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 120)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area42")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area42 -->
+              <!-- Area43 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 121)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area43")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area43 -->
+              <!-- Area44 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 122)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area44")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area44 -->
+              <!-- Area45 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 123)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area45")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area45 -->
+              <!-- Area46 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 124)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area46")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area46 -->
+              <!-- Area47 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 125)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area47")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area47 -->
+              <!-- Area48 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 126)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area48")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area48 -->
+              <!-- Area49 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 127)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area49")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area49 -->
+              <!-- Area50 -->
+              @foreach ($folders as $folder)
+                @if ($folder->id === 128)
+                  @if (in_array("$folder->name", $userAccess) || $role)
+                    <li>
+                        <span class="caret">
+                          <i class="bi bi-folder-fill text-warning fs-5 me-1"></i>
+                          {{$folder->name}}
+                        </span>
+                      <ul class="nested">
+                        @foreach ($documents as $document)
+                            @if ($document->category == "Area50")
+                            <li>
+                              <span>
+                                <a href="{{route('view-tr', $document->id)}}" target="_blank" style="text-decoration: none; color:black">
+                                <i class="bi bi-filetype-pdf text-danger fs-6 me-1"></i>
+                                {{ $document->doc_name }}</a>
+                              </span>
+                            </li>
+                          @endif
+                        @endforeach
+                      </ul>
+                    </li>
+                  @endif
+                @endif
+              @endforeach
+              <!-- AKHIR Area50 -->
             </ul>
           </div>
         </div>

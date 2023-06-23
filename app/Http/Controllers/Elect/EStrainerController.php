@@ -12,7 +12,7 @@ class EStrainerController extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('electrical.layer2.estrainer', compact('documents'));
     }
     public function upload(Request $request)

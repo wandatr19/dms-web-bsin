@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Folder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -14,17 +15,23 @@ class UserController extends Controller
 {
     public function create()
     {
-        return view('admin.adduser');
+        $folders = Folder::all();
+        return view('admin.adduser', compact('folders'));
     }
     public function index()
     {
         $users = User::all();
-        return view('admin.listuser', ['users' => $users]);
+        $folders = Folder::all();
+        return view('admin.listuser', [
+            'users' => $users,
+            'folders' => $folders
+        ]);
     }
     public function store(Request $request)
     {
         activity()->withoutLogs(function () use ($request) {
-            $validatedData = Validator::make($request->all(), [
+            // $validatedData = Validator::make($request->all(), [
+            $validatedData = $request->validate([
                 'name' => 'required',
                 'email' => 'required|unique:users,email', // Menambahkan aturan unique untuk email
                 'role' => 'required',
@@ -34,9 +41,9 @@ class UserController extends Controller
             ]);
 
             // Cek apakah validasi email gagal
-            if ($validatedData->fails()) {
-                return redirect()->back()->withInput()->withErrors(['email' => 'Email sudah terdaftar.']); // Mengirim pesan error ke view
-            }
+            // if ($validatedData->fails()) {
+            //     return redirect()->back()->withInput()->withErrors(['email' => 'Email sudah terdaftar.']); // Mengirim pesan error ke view
+            // }
         
         $data = new User();
         $data->name = $validatedData['name'];
@@ -53,7 +60,11 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $user->user_access = explode(',', $user->user_access);
-        return view('admin.edituser', compact('user'));
+        $folders = Folder::all();
+        return view('admin.edituser', [
+            'user' => $user,
+            'folders' => $folders
+        ]);
     }
     public function update(Request $request, User $user)
     {

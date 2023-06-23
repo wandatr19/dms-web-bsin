@@ -13,7 +13,7 @@ class StrainerController extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('mechanical.layer2.strainer', compact('documents'));
     }
     public function upload(Request $request)

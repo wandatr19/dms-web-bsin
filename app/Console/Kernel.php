@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -15,7 +16,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            // Tuliskan kode untuk menghapus isi tabel di sini
+            // Misalnya, jika Anda ingin menghapus semua data dari tabel "users":
+            DB::table('log_activity')->truncate();
+        })->monthly();
+        
     }
 
     /**

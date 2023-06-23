@@ -27,16 +27,22 @@ class HistoryController extends Controller
     {
         return view('history2');
     }
+    // public function getActivities()
+    // {
+    //     $activities = Activity::select(['description', 'properties', 'created_at']);
+    //     return DataTables::of($activities)
+    //         ->addColumn('action', function ($activity) {
+    //             return '<button class="btn btn-danger btn-sm delete-btn" data-id="' . $activity->id . '">Hapus</button>';
+    //         })
+    //         ->rawColumns(['action'])
+    //         ->make(true);
+    // }
     public function getActivities()
     {
         $activities = Activity::select(['description', 'properties', 'created_at']);
-        return DataTables::of($activities)
-            ->addColumn('action', function ($activity) {
-                return '<button class="btn btn-danger btn-sm delete-btn" data-id="' . $activity->id . '">Hapus</button>';
-            })
-            ->rawColumns(['action'])
-            ->make(true);
+        return DataTables::of($activities)->make(true);
     }
+
     public function export()
     {
     }
@@ -45,7 +51,18 @@ class HistoryController extends Controller
     }
     public function destroy()
     {
-        Activity::truncate();
-        return response()->json(['success' => 'All users have been deleted.']);
+        try {
+            Activity::truncate();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Semua data log activity berhasil dihapus.'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Terjadi kesalahan saat menghapus data log activity.'
+            ]);
+        }    
     }
 }

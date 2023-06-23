@@ -44,6 +44,40 @@ use App\Http\Controllers\TRController;
 use App\Http\Controllers\FurnController;
 use App\Http\Controllers\CHController;
 
+use App\Http\Controllers\Mech\Folder1Controller;
+use App\Http\Controllers\Mech\Folder2Controller;
+use App\Http\Controllers\Mech\Folder3Controller;
+use App\Http\Controllers\Mech\Folder4Controller;
+use App\Http\Controllers\Mech\Folder5Controller;
+use App\Http\Controllers\Mech\Folder6Controller;
+use App\Http\Controllers\Mech\Folder7Controller;
+use App\Http\Controllers\Mech\Folder8Controller;
+use App\Http\Controllers\Mech\Folder9Controller;
+use App\Http\Controllers\Mech\Folder10Controller;
+use App\Http\Controllers\Mech\Folder11Controller;
+use App\Http\Controllers\Mech\Folder12Controller;
+use App\Http\Controllers\Mech\Folder13Controller;
+use App\Http\Controllers\Mech\Folder14Controller;
+use App\Http\Controllers\Mech\Folder15Controller;
+use App\Http\Controllers\Mech\Folder16Controller;
+use App\Http\Controllers\Mech\Folder17Controller;
+use App\Http\Controllers\Mech\Folder18Controller;
+use App\Http\Controllers\Mech\Folder19Controller;
+use App\Http\Controllers\Mech\Folder20Controller;
+use App\Http\Controllers\Mech\Folder21Controller;
+use App\Http\Controllers\Mech\Folder22Controller;
+use App\Http\Controllers\Mech\Folder23Controller;
+use App\Http\Controllers\Mech\Folder24Controller;
+use App\Http\Controllers\Mech\Folder25Controller;
+use App\Http\Controllers\Mech\Folder26Controller;
+use App\Http\Controllers\Mech\Folder27Controller;
+use App\Http\Controllers\Mech\Folder28Controller;
+use App\Http\Controllers\Mech\Folder29Controller;
+use App\Http\Controllers\Mech\Folder30Controller;
+
+
+
+
 use App\Http\Controllers\Elect\EBanburyController;
 use App\Http\Controllers\Elect\EStrainerController;
 use App\Http\Controllers\Elect\EPolyfilmController;
@@ -76,6 +110,38 @@ use App\Http\Controllers\Elect\EReworkController;
 use App\Http\Controllers\Elect\ETRController;
 use App\Http\Controllers\Elect\EFurnController;
 use App\Http\Controllers\Elect\ECHController;
+use App\Http\Controllers\Elect\EFolder1Controller;
+use App\Http\Controllers\Elect\EFolder2Controller;
+use App\Http\Controllers\Elect\EFolder3Controller;
+use App\Http\Controllers\Elect\EFolder4Controller;
+use App\Http\Controllers\Elect\EFolder5Controller;
+use App\Http\Controllers\Elect\EFolder6Controller;
+use App\Http\Controllers\Elect\EFolder7Controller;
+use App\Http\Controllers\Elect\EFolder8Controller;
+use App\Http\Controllers\Elect\EFolder9Controller;
+use App\Http\Controllers\Elect\EFolder10Controller;
+use App\Http\Controllers\Elect\EFolder11Controller;
+use App\Http\Controllers\Elect\EFolder12Controller;
+use App\Http\Controllers\Elect\EFolder13Controller;
+use App\Http\Controllers\Elect\EFolder14Controller;
+use App\Http\Controllers\Elect\EFolder15Controller;
+use App\Http\Controllers\Elect\EFolder16Controller;
+use App\Http\Controllers\Elect\EFolder17Controller;
+use App\Http\Controllers\Elect\EFolder18Controller;
+use App\Http\Controllers\Elect\EFolder19Controller;
+use App\Http\Controllers\Elect\EFolder20Controller;
+use App\Http\Controllers\Elect\EFolder21Controller;
+use App\Http\Controllers\Elect\EFolder22Controller;
+use App\Http\Controllers\Elect\EFolder23Controller;
+use App\Http\Controllers\Elect\EFolder24Controller;
+use App\Http\Controllers\Elect\EFolder25Controller;
+use App\Http\Controllers\Elect\EFolder26Controller;
+use App\Http\Controllers\Elect\EFolder27Controller;
+use App\Http\Controllers\Elect\EFolder28Controller;
+use App\Http\Controllers\Elect\EFolder29Controller;
+use App\Http\Controllers\Elect\EFolder30Controller;
+
+
 
 use App\Http\Controllers\Area\Area6Controller;
 use App\Http\Controllers\Area\Area7Controller;
@@ -157,7 +223,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']], function() {
     //Search
-    Route::get('/search', [SearchController::class, 'searchUser'])->name('searchdoc');
+    Route::get('/search', [SearchController::class, 'search'])->name('searchdoc');
     Route::get('/search/{id}', [SearchController::class, 'open'])->name('open-doc');
     Route::get('/search/view/{id}', [SearchController::class, 'view'])->name('view-doc');
     Route::post('/search/pw/{id}', [SearchController::class, 'password'])->name('pw-search');
@@ -455,6 +521,249 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::post('/mechanical/add-CT8', [CT8Controller::class, 'upload'])->name('up-CT8');
     Route::get('/mechanical/CT8/delete/{id}', [CT8Controller::class, 'delete'])->name('del-CT8');
     Route::get('/mechanical/CT8/deleteAll/{category}', [CT8Controller::class, 'destroy'])->name('destroy-CT8');
+    //Folder1
+    Route::get('/mechanical/Folder1', [Folder1Controller::class, 'index'])->name('Folder1');
+    Route::get('/mechanical/Folder1/{id}', [Folder1Controller::class, 'open'])->name('open-Folder1');
+    Route::get('/mechanical/Folder1/view/{id}', [Folder1Controller::class, 'view'])->name('view-Folder1');
+    Route::post('/mechanical/Folder1/pw/{id}', [Folder1Controller::class, 'password'])->name('pw-Folder1');
+    Route::post('/mechanical/add-Folder1', [Folder1Controller::class, 'upload'])->name('up-Folder1');
+    Route::get('/mechanical/Folder1/delete/{id}', [Folder1Controller::class, 'delete'])->name('del-Folder1');
+    Route::get('/mechanical/Folder1/deleteAll/{category}', [Folder1Controller::class, 'destroy'])->name('destroy-Folder1');
+
+    Route::get('/mechanical/Folder2', [Folder2Controller::class, 'index'])->name('Folder2');
+    Route::get('/mechanical/Folder2/{id}', [Folder2Controller::class, 'open'])->name('open-Folder2');
+    Route::get('/mechanical/Folder2/view/{id}', [Folder2Controller::class, 'view'])->name('view-Folder2');
+    Route::post('/mechanical/Folder2/pw/{id}', [Folder2Controller::class, 'password'])->name('pw-Folder2');
+    Route::post('/mechanical/add-Folder2', [Folder2Controller::class, 'upload'])->name('up-Folder2');
+    Route::get('/mechanical/Folder2/delete/{id}', [Folder2Controller::class, 'delete'])->name('del-Folder2');
+    Route::get('/mechanical/Folder2/deleteAll/{category}', [Folder2Controller::class, 'destroy'])->name('destroy-Folder2');
+
+    Route::get('/mechanical/Folder3', [Folder3Controller::class, 'index'])->name('Folder3');
+    Route::get('/mechanical/Folder3/{id}', [Folder3Controller::class, 'open'])->name('open-Folder3');
+    Route::get('/mechanical/Folder3/view/{id}', [Folder3Controller::class, 'view'])->name('view-Folder3');
+    Route::post('/mechanical/Folder3/pw/{id}', [Folder3Controller::class, 'password'])->name('pw-Folder3');
+    Route::post('/mechanical/add-Folder3', [Folder3Controller::class, 'upload'])->name('up-Folder3');
+    Route::get('/mechanical/Folder3/delete/{id}', [Folder3Controller::class, 'delete'])->name('del-Folder3');
+    Route::get('/mechanical/Folder3/deleteAll/{category}', [Folder3Controller::class, 'destroy'])->name('destroy-Folder3');
+    //Folder4
+    Route::get('/mechanical/Folder4', [Folder4Controller::class, 'index'])->name('Folder4');
+    Route::get('/mechanical/Folder4/{id}', [Folder4Controller::class, 'open'])->name('open-Folder4');
+    Route::get('/mechanical/Folder4/view/{id}', [Folder4Controller::class, 'view'])->name('view-Folder4');
+    Route::post('/mechanical/Folder4/pw/{id}', [Folder4Controller::class, 'password'])->name('pw-Folder4');
+    Route::post('/mechanical/add-Folder4', [Folder4Controller::class, 'upload'])->name('up-Folder4');
+    Route::get('/mechanical/Folder4/delete/{id}', [Folder4Controller::class, 'delete'])->name('del-Folder4');
+    Route::get('/mechanical/Folder4/deleteAll/{category}', [Folder4Controller::class, 'destroy'])->name('destroy-Folder4');
+    //Folder5
+    Route::get('/mechanical/Folder5', [Folder5Controller::class, 'index'])->name('Folder5');
+    Route::get('/mechanical/Folder5/{id}', [Folder5Controller::class, 'open'])->name('open-Folder5');
+    Route::get('/mechanical/Folder5/view/{id}', [Folder5Controller::class, 'view'])->name('view-Folder5');
+    Route::post('/mechanical/Folder5/pw/{id}', [Folder5Controller::class, 'password'])->name('pw-Folder5');
+    Route::post('/mechanical/add-Folder5', [Folder5Controller::class, 'upload'])->name('up-Folder5');
+    Route::get('/mechanical/Folder5/delete/{id}', [Folder5Controller::class, 'delete'])->name('del-Folder5');
+    Route::get('/mechanical/Folder5/deleteAll/{category}', [Folder5Controller::class, 'destroy'])->name('destroy-Folder5');
+    //Folder6
+    Route::get('/mechanical/Folder6', [Folder6Controller::class, 'index'])->name('Folder6');
+    Route::get('/mechanical/Folder6/{id}', [Folder6Controller::class, 'open'])->name('open-Folder6');
+    Route::get('/mechanical/Folder6/view/{id}', [Folder6Controller::class, 'view'])->name('view-Folder6');
+    Route::post('/mechanical/Folder6/pw/{id}', [Folder6Controller::class, 'password'])->name('pw-Folder6');
+    Route::post('/mechanical/add-Folder6', [Folder6Controller::class, 'upload'])->name('up-Folder6');
+    Route::get('/mechanical/Folder6/delete/{id}', [Folder6Controller::class, 'delete'])->name('del-Folder6');
+    Route::get('/mechanical/Folder6/deleteAll/{category}', [Folder6Controller::class, 'destroy'])->name('destroy-Folder6');
+    //Folder7
+    Route::get('/mechanical/Folder7', [Folder7Controller::class, 'index'])->name('Folder7');
+    Route::get('/mechanical/Folder7/{id}', [Folder7Controller::class, 'open'])->name('open-Folder7');
+    Route::get('/mechanical/Folder7/view/{id}', [Folder7Controller::class, 'view'])->name('view-Folder7');
+    Route::post('/mechanical/Folder7/pw/{id}', [Folder7Controller::class, 'password'])->name('pw-Folder7');
+    Route::post('/mechanical/add-Folder7', [Folder7Controller::class, 'upload'])->name('up-Folder7');
+    Route::get('/mechanical/Folder7/delete/{id}', [Folder7Controller::class, 'delete'])->name('del-Folder7');
+    Route::get('/mechanical/Folder7/deleteAll/{category}', [Folder7Controller::class, 'destroy'])->name('destroy-Folder7');
+    //Folder8
+    Route::get('/mechanical/Folder8', [Folder8Controller::class, 'index'])->name('Folder8');
+    Route::get('/mechanical/Folder8/{id}', [Folder8Controller::class, 'open'])->name('open-Folder8');
+    Route::get('/mechanical/Folder8/view/{id}', [Folder8Controller::class, 'view'])->name('view-Folder8');
+    Route::post('/mechanical/Folder8/pw/{id}', [Folder8Controller::class, 'password'])->name('pw-Folder8');
+    Route::post('/mechanical/add-Folder8', [Folder8Controller::class, 'upload'])->name('up-Folder8');
+    Route::get('/mechanical/Folder8/delete/{id}', [Folder8Controller::class, 'delete'])->name('del-Folder8');
+    Route::get('/mechanical/Folder8/deleteAll/{category}', [Folder8Controller::class, 'destroy'])->name('destroy-Folder8');
+    //Folder9
+    Route::get('/mechanical/Folder9', [Folder9Controller::class, 'index'])->name('Folder9');
+    Route::get('/mechanical/Folder9/{id}', [Folder9Controller::class, 'open'])->name('open-Folder9');
+    Route::get('/mechanical/Folder9/view/{id}', [Folder9Controller::class, 'view'])->name('view-Folder9');
+    Route::post('/mechanical/Folder9/pw/{id}', [Folder9Controller::class, 'password'])->name('pw-Folder9');
+    Route::post('/mechanical/add-Folder9', [Folder9Controller::class, 'upload'])->name('up-Folder9');
+    Route::get('/mechanical/Folder9/delete/{id}', [Folder9Controller::class, 'delete'])->name('del-Folder9');
+    Route::get('/mechanical/Folder9/deleteAll/{category}', [Folder9Controller::class, 'destroy'])->name('destroy-Folder9');
+    //Folder10
+    Route::get('/mechanical/Folder10', [Folder10Controller::class, 'index'])->name('Folder10');
+    Route::get('/mechanical/Folder10/{id}', [Folder10Controller::class, 'open'])->name('open-Folder10');
+    Route::get('/mechanical/Folder10/view/{id}', [Folder10Controller::class, 'view'])->name('view-Folder10');
+    Route::post('/mechanical/Folder10/pw/{id}', [Folder10Controller::class, 'password'])->name('pw-Folder10');
+    Route::post('/mechanical/add-Folder10', [Folder10Controller::class, 'upload'])->name('up-Folder10');
+    Route::get('/mechanical/Folder10/delete/{id}', [Folder10Controller::class, 'delete'])->name('del-Folder10');
+    Route::get('/mechanical/Folder10/deleteAll/{category}', [Folder10Controller::class, 'destroy'])->name('destroy-Folder10');
+    //Folder11
+    Route::get('/mechanical/Folder11', [Folder11Controller::class, 'index'])->name('Folder11');
+    Route::get('/mechanical/Folder11/{id}', [Folder11Controller::class, 'open'])->name('open-Folder11');
+    Route::get('/mechanical/Folder11/view/{id}', [Folder11Controller::class, 'view'])->name('view-Folder11');
+    Route::post('/mechanical/Folder11/pw/{id}', [Folder11Controller::class, 'password'])->name('pw-Folder11');
+    Route::post('/mechanical/add-Folder11', [Folder11Controller::class, 'upload'])->name('up-Folder11');
+    Route::get('/mechanical/Folder11/delete/{id}', [Folder11Controller::class, 'delete'])->name('del-Folder11');
+    Route::get('/mechanical/Folder11/deleteAll/{category}', [Folder11Controller::class, 'destroy'])->name('destroy-Folder11');
+    //Folder12
+    Route::get('/mechanical/Folder12', [Folder12Controller::class, 'index'])->name('Folder12');
+    Route::get('/mechanical/Folder12/{id}', [Folder12Controller::class, 'open'])->name('open-Folder12');
+    Route::get('/mechanical/Folder12/view/{id}', [Folder12Controller::class, 'view'])->name('view-Folder12');
+    Route::post('/mechanical/Folder12/pw/{id}', [Folder12Controller::class, 'password'])->name('pw-Folder12');
+    Route::post('/mechanical/add-Folder12', [Folder12Controller::class, 'upload'])->name('up-Folder12');
+    Route::get('/mechanical/Folder12/delete/{id}', [Folder12Controller::class, 'delete'])->name('del-Folder12');
+    Route::get('/mechanical/Folder12/deleteAll/{category}', [Folder12Controller::class, 'destroy'])->name('destroy-Folder12');
+    //Folder13
+    Route::get('/mechanical/Folder13', [Folder13Controller::class, 'index'])->name('Folder13');
+    Route::get('/mechanical/Folder13/{id}', [Folder13Controller::class, 'open'])->name('open-Folder13');
+    Route::get('/mechanical/Folder13/view/{id}', [Folder13Controller::class, 'view'])->name('view-Folder13');
+    Route::post('/mechanical/Folder13/pw/{id}', [Folder13Controller::class, 'password'])->name('pw-Folder13');
+    Route::post('/mechanical/add-Folder13', [Folder13Controller::class, 'upload'])->name('up-Folder13');
+    Route::get('/mechanical/Folder13/delete/{id}', [Folder13Controller::class, 'delete'])->name('del-Folder13');
+    Route::get('/mechanical/Folder13/deleteAll/{category}', [Folder13Controller::class, 'destroy'])->name('destroy-Folder13');
+    //Folder14
+    Route::get('/mechanical/Folder14', [Folder14Controller::class, 'index'])->name('Folder14');
+    Route::get('/mechanical/Folder14/{id}', [Folder14Controller::class, 'open'])->name('open-Folder14');
+    Route::get('/mechanical/Folder14/view/{id}', [Folder14Controller::class, 'view'])->name('view-Folder14');
+    Route::post('/mechanical/Folder14/pw/{id}', [Folder14Controller::class, 'password'])->name('pw-Folder14');
+    Route::post('/mechanical/add-Folder14', [Folder14Controller::class, 'upload'])->name('up-Folder14');
+    Route::get('/mechanical/Folder14/delete/{id}', [Folder14Controller::class, 'delete'])->name('del-Folder14');
+    Route::get('/mechanical/Folder14/deleteAll/{category}', [Folder14Controller::class, 'destroy'])->name('destroy-Folder14');
+    //Folder15
+    Route::get('/mechanical/Folder15', [Folder15Controller::class, 'index'])->name('Folder15');
+    Route::get('/mechanical/Folder15/{id}', [Folder15Controller::class, 'open'])->name('open-Folder15');
+    Route::get('/mechanical/Folder15/view/{id}', [Folder15Controller::class, 'view'])->name('view-Folder15');
+    Route::post('/mechanical/Folder15/pw/{id}', [Folder15Controller::class, 'password'])->name('pw-Folder15');
+    Route::post('/mechanical/add-Folder15', [Folder15Controller::class, 'upload'])->name('up-Folder15');
+    Route::get('/mechanical/Folder15/delete/{id}', [Folder15Controller::class, 'delete'])->name('del-Folder15');
+    Route::get('/mechanical/Folder15/deleteAll/{category}', [Folder15Controller::class, 'destroy'])->name('destroy-Folder15');
+    //Folder16
+    Route::get('/mechanical/Folder16', [Folder16Controller::class, 'index'])->name('Folder16');
+    Route::get('/mechanical/Folder16/{id}', [Folder16Controller::class, 'open'])->name('open-Folder16');
+    Route::get('/mechanical/Folder16/view/{id}', [Folder16Controller::class, 'view'])->name('view-Folder16');
+    Route::post('/mechanical/Folder16/pw/{id}', [Folder16Controller::class, 'password'])->name('pw-Folder16');
+    Route::post('/mechanical/add-Folder16', [Folder16Controller::class, 'upload'])->name('up-Folder16');
+    Route::get('/mechanical/Folder16/delete/{id}', [Folder16Controller::class, 'delete'])->name('del-Folder16');
+    Route::get('/mechanical/Folder16/deleteAll/{category}', [Folder16Controller::class, 'destroy'])->name('destroy-Folder16');
+    //Folder17
+    Route::get('/mechanical/Folder17', [Folder17Controller::class, 'index'])->name('Folder17');
+    Route::get('/mechanical/Folder17/{id}', [Folder17Controller::class, 'open'])->name('open-Folder17');
+    Route::get('/mechanical/Folder17/view/{id}', [Folder17Controller::class, 'view'])->name('view-Folder17');
+    Route::post('/mechanical/Folder17/pw/{id}', [Folder17Controller::class, 'password'])->name('pw-Folder17');
+    Route::post('/mechanical/add-Folder17', [Folder17Controller::class, 'upload'])->name('up-Folder17');
+    Route::get('/mechanical/Folder17/delete/{id}', [Folder17Controller::class, 'delete'])->name('del-Folder17');
+    Route::get('/mechanical/Folder17/deleteAll/{category}', [Folder17Controller::class, 'destroy'])->name('destroy-Folder17');
+    //Folder18
+    Route::get('/mechanical/Folder18', [Folder18Controller::class, 'index'])->name('Folder18');
+    Route::get('/mechanical/Folder18/{id}', [Folder18Controller::class, 'open'])->name('open-Folder18');
+    Route::get('/mechanical/Folder18/view/{id}', [Folder18Controller::class, 'view'])->name('view-Folder18');
+    Route::post('/mechanical/Folder18/pw/{id}', [Folder18Controller::class, 'password'])->name('pw-Folder18');
+    Route::post('/mechanical/add-Folder18', [Folder18Controller::class, 'upload'])->name('up-Folder18');
+    Route::get('/mechanical/Folder18/delete/{id}', [Folder18Controller::class, 'delete'])->name('del-Folder18');
+    Route::get('/mechanical/Folder18/deleteAll/{category}', [Folder18Controller::class, 'destroy'])->name('destroy-Folder18');
+    //Folder19
+    Route::get('/mechanical/Folder19', [Folder19Controller::class, 'index'])->name('Folder19');
+    Route::get('/mechanical/Folder19/{id}', [Folder19Controller::class, 'open'])->name('open-Folder19');
+    Route::get('/mechanical/Folder19/view/{id}', [Folder19Controller::class, 'view'])->name('view-Folder19');
+    Route::post('/mechanical/Folder19/pw/{id}', [Folder19Controller::class, 'password'])->name('pw-Folder19');
+    Route::post('/mechanical/add-Folder19', [Folder19Controller::class, 'upload'])->name('up-Folder19');
+    Route::get('/mechanical/Folder19/delete/{id}', [Folder19Controller::class, 'delete'])->name('del-Folder19');
+    Route::get('/mechanical/Folder19/deleteAll/{category}', [Folder19Controller::class, 'destroy'])->name('destroy-Folder19');
+    //Folder20
+    Route::get('/mechanical/Folder20', [Folder20Controller::class, 'index'])->name('Folder20');
+    Route::get('/mechanical/Folder20/{id}', [Folder20Controller::class, 'open'])->name('open-Folder20');
+    Route::get('/mechanical/Folder20/view/{id}', [Folder20Controller::class, 'view'])->name('view-Folder20');
+    Route::post('/mechanical/Folder20/pw/{id}', [Folder20Controller::class, 'password'])->name('pw-Folder20');
+    Route::post('/mechanical/add-Folder20', [Folder20Controller::class, 'upload'])->name('up-Folder20');
+    Route::get('/mechanical/Folder20/delete/{id}', [Folder20Controller::class, 'delete'])->name('del-Folder20');
+    Route::get('/mechanical/Folder20/deleteAll/{category}', [Folder20Controller::class, 'destroy'])->name('destroy-Folder20');
+    //Folder21
+    Route::get('/mechanical/Folder21', [Folder21Controller::class, 'index'])->name('Folder21');
+    Route::get('/mechanical/Folder21/{id}', [Folder21Controller::class, 'open'])->name('open-Folder21');
+    Route::get('/mechanical/Folder21/view/{id}', [Folder21Controller::class, 'view'])->name('view-Folder21');
+    Route::post('/mechanical/Folder21/pw/{id}', [Folder21Controller::class, 'password'])->name('pw-Folder21');
+    Route::post('/mechanical/add-Folder21', [Folder21Controller::class, 'upload'])->name('up-Folder21');
+    Route::get('/mechanical/Folder21/delete/{id}', [Folder21Controller::class, 'delete'])->name('del-Folder21');
+    Route::get('/mechanical/Folder21/deleteAll/{category}', [Folder21Controller::class, 'destroy'])->name('destroy-Folder21');
+    //Folder22
+    Route::get('/mechanical/Folder22', [Folder22Controller::class, 'index'])->name('Folder22');
+    Route::get('/mechanical/Folder22/{id}', [Folder22Controller::class, 'open'])->name('open-Folder22');
+    Route::get('/mechanical/Folder22/view/{id}', [Folder22Controller::class, 'view'])->name('view-Folder22');
+    Route::post('/mechanical/Folder22/pw/{id}', [Folder22Controller::class, 'password'])->name('pw-Folder22');
+    Route::post('/mechanical/add-Folder22', [Folder22Controller::class, 'upload'])->name('up-Folder22');
+    Route::get('/mechanical/Folder22/delete/{id}', [Folder22Controller::class, 'delete'])->name('del-Folder22');
+    Route::get('/mechanical/Folder22/deleteAll/{category}', [Folder22Controller::class, 'destroy'])->name('destroy-Folder22');
+    //Folder23
+    Route::get('/mechanical/Folder23', [Folder23Controller::class, 'index'])->name('Folder23');
+    Route::get('/mechanical/Folder23/{id}', [Folder23Controller::class, 'open'])->name('open-Folder23');
+    Route::get('/mechanical/Folder23/view/{id}', [Folder23Controller::class, 'view'])->name('view-Folder23');
+    Route::post('/mechanical/Folder23/pw/{id}', [Folder23Controller::class, 'password'])->name('pw-Folder23');
+    Route::post('/mechanical/add-Folder23', [Folder23Controller::class, 'upload'])->name('up-Folder23');
+    Route::get('/mechanical/Folder23/delete/{id}', [Folder23Controller::class, 'delete'])->name('del-Folder23');
+    Route::get('/mechanical/Folder23/deleteAll/{category}', [Folder23Controller::class, 'destroy'])->name('destroy-Folder23');
+    //Folder24
+    Route::get('/mechanical/Folder24', [Folder24Controller::class, 'index'])->name('Folder24');
+    Route::get('/mechanical/Folder24/{id}', [Folder24Controller::class, 'open'])->name('open-Folder24');
+    Route::get('/mechanical/Folder24/view/{id}', [Folder24Controller::class, 'view'])->name('view-Folder24');
+    Route::post('/mechanical/Folder24/pw/{id}', [Folder24Controller::class, 'password'])->name('pw-Folder24');
+    Route::post('/mechanical/add-Folder24', [Folder24Controller::class, 'upload'])->name('up-Folder24');
+    Route::get('/mechanical/Folder24/delete/{id}', [Folder24Controller::class, 'delete'])->name('del-Folder24');
+    Route::get('/mechanical/Folder24/deleteAll/{category}', [Folder24Controller::class, 'destroy'])->name('destroy-Folder24');
+    //Folder25
+    Route::get('/mechanical/Folder25', [Folder25Controller::class, 'index'])->name('Folder25');
+    Route::get('/mechanical/Folder25/{id}', [Folder25Controller::class, 'open'])->name('open-Folder25');
+    Route::get('/mechanical/Folder25/view/{id}', [Folder25Controller::class, 'view'])->name('view-Folder25');
+    Route::post('/mechanical/Folder25/pw/{id}', [Folder25Controller::class, 'password'])->name('pw-Folder25');
+    Route::post('/mechanical/add-Folder25', [Folder25Controller::class, 'upload'])->name('up-Folder25');
+    Route::get('/mechanical/Folder25/delete/{id}', [Folder25Controller::class, 'delete'])->name('del-Folder25');
+    Route::get('/mechanical/Folder25/deleteAll/{category}', [Folder25Controller::class, 'destroy'])->name('destroy-Folder25');
+    //Folder26
+    Route::get('/mechanical/Folder26', [Folder26Controller::class, 'index'])->name('Folder26');
+    Route::get('/mechanical/Folder26/{id}', [Folder26Controller::class, 'open'])->name('open-Folder26');
+    Route::get('/mechanical/Folder26/view/{id}', [Folder26Controller::class, 'view'])->name('view-Folder26');
+    Route::post('/mechanical/Folder26/pw/{id}', [Folder26Controller::class, 'password'])->name('pw-Folder26');
+    Route::post('/mechanical/add-Folder26', [Folder26Controller::class, 'upload'])->name('up-Folder26');
+    Route::get('/mechanical/Folder26/delete/{id}', [Folder26Controller::class, 'delete'])->name('del-Folder26');
+    Route::get('/mechanical/Folder26/deleteAll/{category}', [Folder26Controller::class, 'destroy'])->name('destroy-Folder26');
+    //Folder27
+    Route::get('/mechanical/Folder27', [Folder27Controller::class, 'index'])->name('Folder27');
+    Route::get('/mechanical/Folder27/{id}', [Folder27Controller::class, 'open'])->name('open-Folder27');
+    Route::get('/mechanical/Folder27/view/{id}', [Folder27Controller::class, 'view'])->name('view-Folder27');
+    Route::post('/mechanical/Folder27/pw/{id}', [Folder27Controller::class, 'password'])->name('pw-Folder27');
+    Route::post('/mechanical/add-Folder27', [Folder27Controller::class, 'upload'])->name('up-Folder27');
+    Route::get('/mechanical/Folder27/delete/{id}', [Folder27Controller::class, 'delete'])->name('del-Folder27');
+    Route::get('/mechanical/Folder27/deleteAll/{category}', [Folder27Controller::class, 'destroy'])->name('destroy-Folder27');
+    //Folder28
+    Route::get('/mechanical/Folder28', [Folder28Controller::class, 'index'])->name('Folder28');
+    Route::get('/mechanical/Folder28/{id}', [Folder28Controller::class, 'open'])->name('open-Folder28');
+    Route::get('/mechanical/Folder28/view/{id}', [Folder28Controller::class, 'view'])->name('view-Folder28');
+    Route::post('/mechanical/Folder28/pw/{id}', [Folder28Controller::class, 'password'])->name('pw-Folder28');
+    Route::post('/mechanical/add-Folder28', [Folder28Controller::class, 'upload'])->name('up-Folder28');
+    Route::get('/mechanical/Folder28/delete/{id}', [Folder28Controller::class, 'delete'])->name('del-Folder28');
+    Route::get('/mechanical/Folder28/deleteAll/{category}', [Folder28Controller::class, 'destroy'])->name('destroy-Folder28');
+    //Folder29
+    Route::get('/mechanical/Folder29', [Folder29Controller::class, 'index'])->name('Folder29');
+    Route::get('/mechanical/Folder29/{id}', [Folder29Controller::class, 'open'])->name('open-Folder29');
+    Route::get('/mechanical/Folder29/view/{id}', [Folder29Controller::class, 'view'])->name('view-Folder29');
+    Route::post('/mechanical/Folder29/pw/{id}', [Folder29Controller::class, 'password'])->name('pw-Folder29');
+    Route::post('/mechanical/add-Folder29', [Folder29Controller::class, 'upload'])->name('up-Folder29');
+    Route::get('/mechanical/Folder29/delete/{id}', [Folder29Controller::class, 'delete'])->name('del-Folder29');
+    Route::get('/mechanical/Folder29/deleteAll/{category}', [Folder29Controller::class, 'destroy'])->name('destroy-Folder29');
+    //Folder30
+    Route::get('/mechanical/Folder30', [Folder30Controller::class, 'index'])->name('Folder30');
+    Route::get('/mechanical/Folder30/{id}', [Folder30Controller::class, 'open'])->name('open-Folder30');
+    Route::get('/mechanical/Folder30/view/{id}', [Folder30Controller::class, 'view'])->name('view-Folder30');
+    Route::post('/mechanical/Folder30/pw/{id}', [Folder30Controller::class, 'password'])->name('pw-Folder30');
+    Route::post('/mechanical/add-Folder30', [Folder30Controller::class, 'upload'])->name('up-Folder30');
+    Route::get('/mechanical/Folder30/delete/{id}', [Folder30Controller::class, 'delete'])->name('del-Folder30');
+    Route::get('/mechanical/Folder30/deleteAll/{category}', [Folder30Controller::class, 'destroy'])->name('destroy-Folder30');
+
+
+
     //Electrical
     //Banbury
     Route::get('/electrical/EBanbury', [EBanburyController::class, 'index'])->name('EBanbury');
@@ -712,6 +1021,249 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
     Route::post('/electrical/add-ECH', [ECHController::class, 'upload'])->name('up-ECH');
     Route::get('/electrical/ECH/delete/{id}', [ECHController::class, 'delete'])->name('del-ECH');
     Route::get('/electrical/ECH/deleteAll/{category}', [ECHController::class, 'destroy'])->name('destroy-ECH');
+    //EFolder1    
+    Route::get('/electrical/EFolder1', [EFolder1Controller::class, 'index'])->name('EFolder1');
+    Route::get('/electrical/EFolder1/{id}', [EFolder1Controller::class, 'open'])->name('open-EFolder1');
+    Route::get('/electrical/EFolder1/view/{id}', [EFolder1Controller::class, 'view'])->name('view-EFolder1');
+    Route::post('/electrical/EFolder1/pw/{id}', [EFolder1Controller::class, 'password'])->name('pw-EFolder1');
+    Route::post('/electrical/add-EFolder1', [EFolder1Controller::class, 'upload'])->name('up-EFolder1');
+    Route::get('/electrical/EFolder1/delete/{id}', [EFolder1Controller::class, 'delete'])->name('del-EFolder1');
+    Route::get('/electrical/EFolder1/deleteAll/{category}', [EFolder1Controller::class, 'destroy'])->name('destroy-EFolder1');
+    //EFolder2    
+    Route::get('/electrical/EFolder2', [EFolder2Controller::class, 'index'])->name('EFolder2');
+    Route::get('/electrical/EFolder2/{id}', [EFolder2Controller::class, 'open'])->name('open-EFolder2');
+    Route::get('/electrical/EFolder2/view/{id}', [EFolder2Controller::class, 'view'])->name('view-EFolder2');
+    Route::post('/electrical/EFolder2/pw/{id}', [EFolder2Controller::class, 'password'])->name('pw-EFolder2');
+    Route::post('/electrical/add-EFolder2', [EFolder2Controller::class, 'upload'])->name('up-EFolder2');
+    Route::get('/electrical/EFolder2/delete/{id}', [EFolder2Controller::class, 'delete'])->name('del-EFolder2');
+    Route::get('/electrical/EFolder2/deleteAll/{category}', [EFolder2Controller::class, 'destroy'])->name('destroy-EFolder2');
+    //EFolder3    
+    Route::get('/electrical/EFolder3', [EFolder3Controller::class, 'index'])->name('EFolder3');
+    Route::get('/electrical/EFolder3/{id}', [EFolder3Controller::class, 'open'])->name('open-EFolder3');
+    Route::get('/electrical/EFolder3/view/{id}', [EFolder3Controller::class, 'view'])->name('view-EFolder3');
+    Route::post('/electrical/EFolder3/pw/{id}', [EFolder3Controller::class, 'password'])->name('pw-EFolder3');
+    Route::post('/electrical/add-EFolder3', [EFolder3Controller::class, 'upload'])->name('up-EFolder3');
+    Route::get('/electrical/EFolder3/delete/{id}', [EFolder3Controller::class, 'delete'])->name('del-EFolder3');
+    Route::get('/electrical/EFolder3/deleteAll/{category}', [EFolder3Controller::class, 'destroy'])->name('destroy-EFolder3');
+    //EFolder4    
+    Route::get('/electrical/EFolder4', [EFolder4Controller::class, 'index'])->name('EFolder4');
+    Route::get('/electrical/EFolder4/{id}', [EFolder4Controller::class, 'open'])->name('open-EFolder4');
+    Route::get('/electrical/EFolder4/view/{id}', [EFolder4Controller::class, 'view'])->name('view-EFolder4');
+    Route::post('/electrical/EFolder4/pw/{id}', [EFolder4Controller::class, 'password'])->name('pw-EFolder4');
+    Route::post('/electrical/add-EFolder4', [EFolder4Controller::class, 'upload'])->name('up-EFolder4');
+    Route::get('/electrical/EFolder4/delete/{id}', [EFolder4Controller::class, 'delete'])->name('del-EFolder4');
+    Route::get('/electrical/EFolder4/deleteAll/{category}', [EFolder4Controller::class, 'destroy'])->name('destroy-EFolder4');
+    //EFolder5    
+    Route::get('/electrical/EFolder5', [EFolder5Controller::class, 'index'])->name('EFolder5');
+    Route::get('/electrical/EFolder5/{id}', [EFolder5Controller::class, 'open'])->name('open-EFolder5');
+    Route::get('/electrical/EFolder5/view/{id}', [EFolder5Controller::class, 'view'])->name('view-EFolder5');
+    Route::post('/electrical/EFolder5/pw/{id}', [EFolder5Controller::class, 'password'])->name('pw-EFolder5');
+    Route::post('/electrical/add-EFolder5', [EFolder5Controller::class, 'upload'])->name('up-EFolder5');
+    Route::get('/electrical/EFolder5/delete/{id}', [EFolder5Controller::class, 'delete'])->name('del-EFolder5');
+    Route::get('/electrical/EFolder5/deleteAll/{category}', [EFolder5Controller::class, 'destroy'])->name('destroy-EFolder5');
+    //EFolder6    
+    Route::get('/electrical/EFolder6', [EFolder6Controller::class, 'index'])->name('EFolder6');
+    Route::get('/electrical/EFolder6/{id}', [EFolder6Controller::class, 'open'])->name('open-EFolder6');
+    Route::get('/electrical/EFolder6/view/{id}', [EFolder6Controller::class, 'view'])->name('view-EFolder6');
+    Route::post('/electrical/EFolder6/pw/{id}', [EFolder6Controller::class, 'password'])->name('pw-EFolder6');
+    Route::post('/electrical/add-EFolder6', [EFolder6Controller::class, 'upload'])->name('up-EFolder6');
+    Route::get('/electrical/EFolder6/delete/{id}', [EFolder6Controller::class, 'delete'])->name('del-EFolder6');
+    Route::get('/electrical/EFolder6/deleteAll/{category}', [EFolder6Controller::class, 'destroy'])->name('destroy-EFolder6');
+    //EFolder7    
+    Route::get('/electrical/EFolder7', [EFolder7Controller::class, 'index'])->name('EFolder7');
+    Route::get('/electrical/EFolder7/{id}', [EFolder7Controller::class, 'open'])->name('open-EFolder7');
+    Route::get('/electrical/EFolder7/view/{id}', [EFolder7Controller::class, 'view'])->name('view-EFolder7');
+    Route::post('/electrical/EFolder7/pw/{id}', [EFolder7Controller::class, 'password'])->name('pw-EFolder7');
+    Route::post('/electrical/add-EFolder7', [EFolder7Controller::class, 'upload'])->name('up-EFolder7');
+    Route::get('/electrical/EFolder7/delete/{id}', [EFolder7Controller::class, 'delete'])->name('del-EFolder7');
+    Route::get('/electrical/EFolder7/deleteAll/{category}', [EFolder7Controller::class, 'destroy'])->name('destroy-EFolder7');
+    //EFolder8    
+    Route::get('/electrical/EFolder8', [EFolder8Controller::class, 'index'])->name('EFolder8');
+    Route::get('/electrical/EFolder8/{id}', [EFolder8Controller::class, 'open'])->name('open-EFolder8');
+    Route::get('/electrical/EFolder8/view/{id}', [EFolder8Controller::class, 'view'])->name('view-EFolder8');
+    Route::post('/electrical/EFolder8/pw/{id}', [EFolder8Controller::class, 'password'])->name('pw-EFolder8');
+    Route::post('/electrical/add-EFolder8', [EFolder8Controller::class, 'upload'])->name('up-EFolder8');
+    Route::get('/electrical/EFolder8/delete/{id}', [EFolder8Controller::class, 'delete'])->name('del-EFolder8');
+    Route::get('/electrical/EFolder8/deleteAll/{category}', [EFolder8Controller::class, 'destroy'])->name('destroy-EFolder8');
+    //EFolder9    
+    Route::get('/electrical/EFolder9', [EFolder9Controller::class, 'index'])->name('EFolder9');
+    Route::get('/electrical/EFolder9/{id}', [EFolder9Controller::class, 'open'])->name('open-EFolder9');
+    Route::get('/electrical/EFolder9/view/{id}', [EFolder9Controller::class, 'view'])->name('view-EFolder9');
+    Route::post('/electrical/EFolder9/pw/{id}', [EFolder9Controller::class, 'password'])->name('pw-EFolder9');
+    Route::post('/electrical/add-EFolder9', [EFolder9Controller::class, 'upload'])->name('up-EFolder9');
+    Route::get('/electrical/EFolder9/delete/{id}', [EFolder9Controller::class, 'delete'])->name('del-EFolder9');
+    Route::get('/electrical/EFolder9/deleteAll/{category}', [EFolder9Controller::class, 'destroy'])->name('destroy-EFolder9');
+    //EFolder10    
+    Route::get('/electrical/EFolder10', [EFolder10Controller::class, 'index'])->name('EFolder10');
+    Route::get('/electrical/EFolder10/{id}', [EFolder10Controller::class, 'open'])->name('open-EFolder10');
+    Route::get('/electrical/EFolder10/view/{id}', [EFolder10Controller::class, 'view'])->name('view-EFolder10');
+    Route::post('/electrical/EFolder10/pw/{id}', [EFolder10Controller::class, 'password'])->name('pw-EFolder10');
+    Route::post('/electrical/add-EFolder10', [EFolder10Controller::class, 'upload'])->name('up-EFolder10');
+    Route::get('/electrical/EFolder10/delete/{id}', [EFolder10Controller::class, 'delete'])->name('del-EFolder10');
+    Route::get('/electrical/EFolder10/deleteAll/{category}', [EFolder10Controller::class, 'destroy'])->name('destroy-EFolder10');
+    //EFolder11    
+    Route::get('/electrical/EFolder11', [EFolder11Controller::class, 'index'])->name('EFolder11');
+    Route::get('/electrical/EFolder11/{id}', [EFolder11Controller::class, 'open'])->name('open-EFolder11');
+    Route::get('/electrical/EFolder11/view/{id}', [EFolder11Controller::class, 'view'])->name('view-EFolder11');
+    Route::post('/electrical/EFolder11/pw/{id}', [EFolder11Controller::class, 'password'])->name('pw-EFolder11');
+    Route::post('/electrical/add-EFolder11', [EFolder11Controller::class, 'upload'])->name('up-EFolder11');
+    Route::get('/electrical/EFolder11/delete/{id}', [EFolder11Controller::class, 'delete'])->name('del-EFolder11');
+    Route::get('/electrical/EFolder11/deleteAll/{category}', [EFolder11Controller::class, 'destroy'])->name('destroy-EFolder11');
+    //EFolder12    
+    Route::get('/electrical/EFolder12', [EFolder12Controller::class, 'index'])->name('EFolder12');
+    Route::get('/electrical/EFolder12/{id}', [EFolder12Controller::class, 'open'])->name('open-EFolder12');
+    Route::get('/electrical/EFolder12/view/{id}', [EFolder12Controller::class, 'view'])->name('view-EFolder12');
+    Route::post('/electrical/EFolder12/pw/{id}', [EFolder12Controller::class, 'password'])->name('pw-EFolder12');
+    Route::post('/electrical/add-EFolder12', [EFolder12Controller::class, 'upload'])->name('up-EFolder12');
+    Route::get('/electrical/EFolder12/delete/{id}', [EFolder12Controller::class, 'delete'])->name('del-EFolder12');
+    Route::get('/electrical/EFolder12/deleteAll/{category}', [EFolder12Controller::class, 'destroy'])->name('destroy-EFolder12');
+    //EFolder13    
+    Route::get('/electrical/EFolder13', [EFolder13Controller::class, 'index'])->name('EFolder13');
+    Route::get('/electrical/EFolder13/{id}', [EFolder13Controller::class, 'open'])->name('open-EFolder13');
+    Route::get('/electrical/EFolder13/view/{id}', [EFolder13Controller::class, 'view'])->name('view-EFolder13');
+    Route::post('/electrical/EFolder13/pw/{id}', [EFolder13Controller::class, 'password'])->name('pw-EFolder13');
+    Route::post('/electrical/add-EFolder13', [EFolder13Controller::class, 'upload'])->name('up-EFolder13');
+    Route::get('/electrical/EFolder13/delete/{id}', [EFolder13Controller::class, 'delete'])->name('del-EFolder13');
+    Route::get('/electrical/EFolder13/deleteAll/{category}', [EFolder13Controller::class, 'destroy'])->name('destroy-EFolder13');
+    //EFolder14    
+    Route::get('/electrical/EFolder14', [EFolder14Controller::class, 'index'])->name('EFolder14');
+    Route::get('/electrical/EFolder14/{id}', [EFolder14Controller::class, 'open'])->name('open-EFolder14');
+    Route::get('/electrical/EFolder14/view/{id}', [EFolder14Controller::class, 'view'])->name('view-EFolder14');
+    Route::post('/electrical/EFolder14/pw/{id}', [EFolder14Controller::class, 'password'])->name('pw-EFolder14');
+    Route::post('/electrical/add-EFolder14', [EFolder14Controller::class, 'upload'])->name('up-EFolder14');
+    Route::get('/electrical/EFolder14/delete/{id}', [EFolder14Controller::class, 'delete'])->name('del-EFolder14');
+    Route::get('/electrical/EFolder14/deleteAll/{category}', [EFolder14Controller::class, 'destroy'])->name('destroy-EFolder14');
+    //EFolder15    
+    Route::get('/electrical/EFolder15', [EFolder15Controller::class, 'index'])->name('EFolder15');
+    Route::get('/electrical/EFolder15/{id}', [EFolder15Controller::class, 'open'])->name('open-EFolder15');
+    Route::get('/electrical/EFolder15/view/{id}', [EFolder15Controller::class, 'view'])->name('view-EFolder15');
+    Route::post('/electrical/EFolder15/pw/{id}', [EFolder15Controller::class, 'password'])->name('pw-EFolder15');
+    Route::post('/electrical/add-EFolder15', [EFolder15Controller::class, 'upload'])->name('up-EFolder15');
+    Route::get('/electrical/EFolder15/delete/{id}', [EFolder15Controller::class, 'delete'])->name('del-EFolder15');
+    Route::get('/electrical/EFolder15/deleteAll/{category}', [EFolder15Controller::class, 'destroy'])->name('destroy-EFolder15');
+    //EFolder16    
+    Route::get('/electrical/EFolder16', [EFolder16Controller::class, 'index'])->name('EFolder16');
+    Route::get('/electrical/EFolder16/{id}', [EFolder16Controller::class, 'open'])->name('open-EFolder16');
+    Route::get('/electrical/EFolder16/view/{id}', [EFolder16Controller::class, 'view'])->name('view-EFolder16');
+    Route::post('/electrical/EFolder16/pw/{id}', [EFolder16Controller::class, 'password'])->name('pw-EFolder16');
+    Route::post('/electrical/add-EFolder16', [EFolder16Controller::class, 'upload'])->name('up-EFolder16');
+    Route::get('/electrical/EFolder16/delete/{id}', [EFolder16Controller::class, 'delete'])->name('del-EFolder16');
+    Route::get('/electrical/EFolder16/deleteAll/{category}', [EFolder16Controller::class, 'destroy'])->name('destroy-EFolder16');
+    //EFolder17    
+    Route::get('/electrical/EFolder17', [EFolder17Controller::class, 'index'])->name('EFolder17');
+    Route::get('/electrical/EFolder17/{id}', [EFolder17Controller::class, 'open'])->name('open-EFolder17');
+    Route::get('/electrical/EFolder17/view/{id}', [EFolder17Controller::class, 'view'])->name('view-EFolder17');
+    Route::post('/electrical/EFolder17/pw/{id}', [EFolder17Controller::class, 'password'])->name('pw-EFolder17');
+    Route::post('/electrical/add-EFolder17', [EFolder17Controller::class, 'upload'])->name('up-EFolder17');
+    Route::get('/electrical/EFolder17/delete/{id}', [EFolder17Controller::class, 'delete'])->name('del-EFolder17');
+    Route::get('/electrical/EFolder17/deleteAll/{category}', [EFolder17Controller::class, 'destroy'])->name('destroy-EFolder17');
+    //EFolder18    
+    Route::get('/electrical/EFolder18', [EFolder18Controller::class, 'index'])->name('EFolder18');
+    Route::get('/electrical/EFolder18/{id}', [EFolder18Controller::class, 'open'])->name('open-EFolder18');
+    Route::get('/electrical/EFolder18/view/{id}', [EFolder18Controller::class, 'view'])->name('view-EFolder18');
+    Route::post('/electrical/EFolder18/pw/{id}', [EFolder18Controller::class, 'password'])->name('pw-EFolder18');
+    Route::post('/electrical/add-EFolder18', [EFolder18Controller::class, 'upload'])->name('up-EFolder18');
+    Route::get('/electrical/EFolder18/delete/{id}', [EFolder18Controller::class, 'delete'])->name('del-EFolder18');
+    Route::get('/electrical/EFolder18/deleteAll/{category}', [EFolder18Controller::class, 'destroy'])->name('destroy-EFolder18');
+    //EFolder19    
+    Route::get('/electrical/EFolder19', [EFolder19Controller::class, 'index'])->name('EFolder19');
+    Route::get('/electrical/EFolder19/{id}', [EFolder19Controller::class, 'open'])->name('open-EFolder19');
+    Route::get('/electrical/EFolder19/view/{id}', [EFolder19Controller::class, 'view'])->name('view-EFolder19');
+    Route::post('/electrical/EFolder19/pw/{id}', [EFolder19Controller::class, 'password'])->name('pw-EFolder19');
+    Route::post('/electrical/add-EFolder19', [EFolder19Controller::class, 'upload'])->name('up-EFolder19');
+    Route::get('/electrical/EFolder19/delete/{id}', [EFolder19Controller::class, 'delete'])->name('del-EFolder19');
+    Route::get('/electrical/EFolder19/deleteAll/{category}', [EFolder19Controller::class, 'destroy'])->name('destroy-EFolder19');
+    //EFolder20    
+    Route::get('/electrical/EFolder20', [EFolder20Controller::class, 'index'])->name('EFolder20');
+    Route::get('/electrical/EFolder20/{id}', [EFolder20Controller::class, 'open'])->name('open-EFolder20');
+    Route::get('/electrical/EFolder20/view/{id}', [EFolder20Controller::class, 'view'])->name('view-EFolder20');
+    Route::post('/electrical/EFolder20/pw/{id}', [EFolder20Controller::class, 'password'])->name('pw-EFolder20');
+    Route::post('/electrical/add-EFolder20', [EFolder20Controller::class, 'upload'])->name('up-EFolder20');
+    Route::get('/electrical/EFolder20/delete/{id}', [EFolder20Controller::class, 'delete'])->name('del-EFolder20');
+    Route::get('/electrical/EFolder20/deleteAll/{category}', [EFolder20Controller::class, 'destroy'])->name('destroy-EFolder20');
+    //EFolder21    
+    Route::get('/electrical/EFolder21', [EFolder21Controller::class, 'index'])->name('EFolder21');
+    Route::get('/electrical/EFolder21/{id}', [EFolder21Controller::class, 'open'])->name('open-EFolder21');
+    Route::get('/electrical/EFolder21/view/{id}', [EFolder21Controller::class, 'view'])->name('view-EFolder21');
+    Route::post('/electrical/EFolder21/pw/{id}', [EFolder21Controller::class, 'password'])->name('pw-EFolder21');
+    Route::post('/electrical/add-EFolder21', [EFolder21Controller::class, 'upload'])->name('up-EFolder21');
+    Route::get('/electrical/EFolder21/delete/{id}', [EFolder21Controller::class, 'delete'])->name('del-EFolder21');
+    Route::get('/electrical/EFolder21/deleteAll/{category}', [EFolder21Controller::class, 'destroy'])->name('destroy-EFolder21');
+    //EFolder22    
+    Route::get('/electrical/EFolder22', [EFolder22Controller::class, 'index'])->name('EFolder22');
+    Route::get('/electrical/EFolder22/{id}', [EFolder22Controller::class, 'open'])->name('open-EFolder22');
+    Route::get('/electrical/EFolder22/view/{id}', [EFolder22Controller::class, 'view'])->name('view-EFolder22');
+    Route::post('/electrical/EFolder22/pw/{id}', [EFolder22Controller::class, 'password'])->name('pw-EFolder22');
+    Route::post('/electrical/add-EFolder22', [EFolder22Controller::class, 'upload'])->name('up-EFolder22');
+    Route::get('/electrical/EFolder22/delete/{id}', [EFolder22Controller::class, 'delete'])->name('del-EFolder22');
+    Route::get('/electrical/EFolder22/deleteAll/{category}', [EFolder22Controller::class, 'destroy'])->name('destroy-EFolder22');
+    //EFolder23    
+    Route::get('/electrical/EFolder23', [EFolder23Controller::class, 'index'])->name('EFolder23');
+    Route::get('/electrical/EFolder23/{id}', [EFolder23Controller::class, 'open'])->name('open-EFolder23');
+    Route::get('/electrical/EFolder23/view/{id}', [EFolder23Controller::class, 'view'])->name('view-EFolder23');
+    Route::post('/electrical/EFolder23/pw/{id}', [EFolder23Controller::class, 'password'])->name('pw-EFolder23');
+    Route::post('/electrical/add-EFolder23', [EFolder23Controller::class, 'upload'])->name('up-EFolder23');
+    Route::get('/electrical/EFolder23/delete/{id}', [EFolder23Controller::class, 'delete'])->name('del-EFolder23');
+    Route::get('/electrical/EFolder23/deleteAll/{category}', [EFolder23Controller::class, 'destroy'])->name('destroy-EFolder23');
+    //EFolder24    
+    Route::get('/electrical/EFolder24', [EFolder24Controller::class, 'index'])->name('EFolder24');
+    Route::get('/electrical/EFolder24/{id}', [EFolder24Controller::class, 'open'])->name('open-EFolder24');
+    Route::get('/electrical/EFolder24/view/{id}', [EFolder24Controller::class, 'view'])->name('view-EFolder24');
+    Route::post('/electrical/EFolder24/pw/{id}', [EFolder24Controller::class, 'password'])->name('pw-EFolder24');
+    Route::post('/electrical/add-EFolder24', [EFolder24Controller::class, 'upload'])->name('up-EFolder24');
+    Route::get('/electrical/EFolder24/delete/{id}', [EFolder24Controller::class, 'delete'])->name('del-EFolder24');
+    Route::get('/electrical/EFolder24/deleteAll/{category}', [EFolder24Controller::class, 'destroy'])->name('destroy-EFolder24');
+    //EFolder25    
+    Route::get('/electrical/EFolder25', [EFolder25Controller::class, 'index'])->name('EFolder25');
+    Route::get('/electrical/EFolder25/{id}', [EFolder25Controller::class, 'open'])->name('open-EFolder25');
+    Route::get('/electrical/EFolder25/view/{id}', [EFolder25Controller::class, 'view'])->name('view-EFolder25');
+    Route::post('/electrical/EFolder25/pw/{id}', [EFolder25Controller::class, 'password'])->name('pw-EFolder25');
+    Route::post('/electrical/add-EFolder25', [EFolder25Controller::class, 'upload'])->name('up-EFolder25');
+    Route::get('/electrical/EFolder25/delete/{id}', [EFolder25Controller::class, 'delete'])->name('del-EFolder25');
+    Route::get('/electrical/EFolder25/deleteAll/{category}', [EFolder25Controller::class, 'destroy'])->name('destroy-EFolder25');
+    //EFolder26    
+    Route::get('/electrical/EFolder26', [EFolder26Controller::class, 'index'])->name('EFolder26');
+    Route::get('/electrical/EFolder26/{id}', [EFolder26Controller::class, 'open'])->name('open-EFolder26');
+    Route::get('/electrical/EFolder26/view/{id}', [EFolder26Controller::class, 'view'])->name('view-EFolder26');
+    Route::post('/electrical/EFolder26/pw/{id}', [EFolder26Controller::class, 'password'])->name('pw-EFolder26');
+    Route::post('/electrical/add-EFolder26', [EFolder26Controller::class, 'upload'])->name('up-EFolder26');
+    Route::get('/electrical/EFolder26/delete/{id}', [EFolder26Controller::class, 'delete'])->name('del-EFolder26');
+    Route::get('/electrical/EFolder26/deleteAll/{category}', [EFolder26Controller::class, 'destroy'])->name('destroy-EFolder26');
+    //EFolder27    
+    Route::get('/electrical/EFolder27', [EFolder27Controller::class, 'index'])->name('EFolder27');
+    Route::get('/electrical/EFolder27/{id}', [EFolder27Controller::class, 'open'])->name('open-EFolder27');
+    Route::get('/electrical/EFolder27/view/{id}', [EFolder27Controller::class, 'view'])->name('view-EFolder27');
+    Route::post('/electrical/EFolder27/pw/{id}', [EFolder27Controller::class, 'password'])->name('pw-EFolder27');
+    Route::post('/electrical/add-EFolder27', [EFolder27Controller::class, 'upload'])->name('up-EFolder27');
+    Route::get('/electrical/EFolder27/delete/{id}', [EFolder27Controller::class, 'delete'])->name('del-EFolder27');
+    Route::get('/electrical/EFolder27/deleteAll/{category}', [EFolder27Controller::class, 'destroy'])->name('destroy-EFolder27');
+    //EFolder28    
+    Route::get('/electrical/EFolder28', [EFolder28Controller::class, 'index'])->name('EFolder28');
+    Route::get('/electrical/EFolder28/{id}', [EFolder28Controller::class, 'open'])->name('open-EFolder28');
+    Route::get('/electrical/EFolder28/view/{id}', [EFolder28Controller::class, 'view'])->name('view-EFolder28');
+    Route::post('/electrical/EFolder28/pw/{id}', [EFolder28Controller::class, 'password'])->name('pw-EFolder28');
+    Route::post('/electrical/add-EFolder28', [EFolder28Controller::class, 'upload'])->name('up-EFolder28');
+    Route::get('/electrical/EFolder28/delete/{id}', [EFolder28Controller::class, 'delete'])->name('del-EFolder28');
+    Route::get('/electrical/EFolder28/deleteAll/{category}', [EFolder28Controller::class, 'destroy'])->name('destroy-EFolder28');
+    //EFolder29    
+    Route::get('/electrical/EFolder29', [EFolder29Controller::class, 'index'])->name('EFolder29');
+    Route::get('/electrical/EFolder29/{id}', [EFolder29Controller::class, 'open'])->name('open-EFolder29');
+    Route::get('/electrical/EFolder29/view/{id}', [EFolder29Controller::class, 'view'])->name('view-EFolder29');
+    Route::post('/electrical/EFolder29/pw/{id}', [EFolder29Controller::class, 'password'])->name('pw-EFolder29');
+    Route::post('/electrical/add-EFolder29', [EFolder29Controller::class, 'upload'])->name('up-EFolder29');
+    Route::get('/electrical/EFolder29/delete/{id}', [EFolder29Controller::class, 'delete'])->name('del-EFolder29');
+    Route::get('/electrical/EFolder29/deleteAll/{category}', [EFolder29Controller::class, 'destroy'])->name('destroy-EFolder29');
+    //EFolder30    
+    Route::get('/electrical/EFolder30', [EFolder30Controller::class, 'index'])->name('EFolder30');
+    Route::get('/electrical/EFolder30/{id}', [EFolder30Controller::class, 'open'])->name('open-EFolder30');
+    Route::get('/electrical/EFolder30/view/{id}', [EFolder30Controller::class, 'view'])->name('view-EFolder30');
+    Route::post('/electrical/EFolder30/pw/{id}', [EFolder30Controller::class, 'password'])->name('pw-EFolder30');
+    Route::post('/electrical/add-EFolder30', [EFolder30Controller::class, 'upload'])->name('up-EFolder30');
+    Route::get('/electrical/EFolder30/delete/{id}', [EFolder30Controller::class, 'delete'])->name('del-EFolder30');
+    Route::get('/electrical/EFolder30/deleteAll/{category}', [EFolder30Controller::class, 'destroy'])->name('destroy-EFolder30');
+
+
+
     //Area6    
     Route::get('/Area6', [Area6Controller::class, 'index'])->name('Area6');
     Route::get('/Area6/{id}', [Area6Controller::class, 'open'])->name('open-Area6');
@@ -1087,7 +1639,7 @@ Route::group(['middleware' => ['auth','App\Http\Middleware\CekRole:admin,user']]
 
 Route::group(['middleware' => ['auth', 'App\Http\Middleware\CekRole:admin']], function () {
     Route::get('/history', [HistoryController::class, 'index'])->name('history');
-    Route::delete('history/delete-all', [HistoryController::class, 'destroy'])->name('del-history');
+    Route::get('history/delete-all', [HistoryController::class, 'destroy'])->name('del-history');
     Route::get('/history/getHistory', [HistoryController::class, 'getActivities'])->name('get-history');
 
 

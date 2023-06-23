@@ -92,206 +92,406 @@
                 <div class="overflow-auto" style="max-width: 500px; max-height: 380px">
                   <ul class="list-group fs-6">
                     <li class="list-group-item bg-secondary text-light sticky-top">Area Access<i class="bi bi-caret-up-fill ms-2"></i><i class="bi bi-caret-down-fill"></i></li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="mech"/>
-                      MECHANICAL
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="elect"/>
-                      ELECTRICAL
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="util"/>
-                      UTILITY
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="civil"/>
-                      CIVIL
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="oth"/>
-                      OTHERS
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area6"/>
-                      AREA 6
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area7"/>
-                      AREA 7
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area8"/>
-                      AREA 8
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area9"/>
-                      AREA 9
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area10"/>
-                      AREA 10
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area11"/>
-                      AREA 11
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area12"/>
-                      AREA 12
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area13"/>
-                      AREA 13
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area14"/>
-                      AREA 14
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="area15"/>
-                      AREA 15
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area16"/>
-                      AREA 16
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area17"/>
-                      AREA 17
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area18"/>
-                      AREA 18
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area19"/>
-                      AREA 19
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area20"/>
-                      AREA 20
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area21"/>
-                      AREA 21
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area22"/>
-                      AREA 22
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area23"/>
-                      AREA 23
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area24"/>
-                      AREA 24
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area25"/>
-                      AREA 25
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area26"/>
-                      AREA 26
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area27"/>
-                      AREA 27
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area28"/>
-                      AREA 28
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area29"/>
-                      AREA 29
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area30"/>
-                      AREA 30
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area31"/>
-                      AREA 31
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area32"/>
-                      AREA 32
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area33"/>
-                      AREA 33
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area34"/>
-                      AREA 34
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area35"/>
-                      AREA 35
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area36"/>
-                      AREA 36
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area37"/>
-                      AREA 37
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area38"/>
-                      AREA 38
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area39"/>
-                      AREA 39
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area40"/>
-                      AREA 40
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area41"/>
-                      AREA 41
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area42"/>
-                      AREA 42
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area43"/>
-                      AREA 43
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area44"/>
-                      AREA 44
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area45"/>
-                      AREA 45
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area46"/>
-                      AREA 46
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area47"/>
-                      AREA 47
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area48"/>
-                      AREA 48
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area49"/>
-                      AREA 49
-                    </li>
-                    <li class="list-group-item">
-                      <input class="form-check-input me-1" name="user_access" type="checkbox" value="area50"/>
-                      AREA 50
-                    </li>
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 3) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 4) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 5) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 6) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 7) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 8) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 9) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 10) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 11) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 12) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 13) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 14) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 15) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 16) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 17) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 18) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 19) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 20) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 21) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 22) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 23) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 24) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 25) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 26) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 27) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 28) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 29) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 30) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 31) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 32) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 33) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 34) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 35) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 36) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 37) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 114) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 115) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 116) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 117) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 118) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 119) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 120) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 121) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 122) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 123) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 124) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 125) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 126) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 127) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
+                    @foreach ($folders as $folder)
+                      @if ($folder->id === 128) 
+                      <li class="list-group-item">
+                        <input class="form-check-input me-1" name="user_access[]" type="checkbox" value="{{ $folder->name }}"/>
+                        {{ $folder->name }}
+                      </li>
+                      @endif  
+                    @endforeach
                   </ul>
                 </div>
                 <!-- Akhir scroll -->

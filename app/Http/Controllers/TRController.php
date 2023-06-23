@@ -11,7 +11,7 @@ class TRController extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('mechanical.layer2.tire_repair', compact('documents'));
     }
     public function upload(Request $request)

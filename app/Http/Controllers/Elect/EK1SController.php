@@ -12,7 +12,7 @@ class EK1SController extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('electrical.layer2.ek1s', compact('documents'));
     }
     public function upload(Request $request)

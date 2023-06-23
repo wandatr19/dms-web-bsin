@@ -12,7 +12,7 @@ class EAPPD1Controller extends Controller
 {
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('doc_name')->get();
         return view('electrical.layer2.eappd1', compact('documents'));
     }
     public function upload(Request $request)
